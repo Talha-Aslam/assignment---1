@@ -1,0 +1,87 @@
+[
+  {
+    "course_id": "CS101",
+    "course_name": "Introduction to Programming",
+    "instructor": "teacher1",
+    "capacity": 30,
+    "section": "A",
+    "enrolled_students": [
+      "STU001",
+      "STU002",
+      "STU004"
+    ],
+    "created_date": "2025-07-27T17:15:18.529844"
+  },
+  {
+    "course_id": "CS102",
+    "course_name": "Data Structures",
+    "instructor": "teacher1",
+    "capacity": 25,
+    "section": "A",
+    "enrolled_students": [
+      "STU003"
+    ],
+    "created_date": "2025-07-27T17:15:18.529847"
+  },
+  {
+    "course_id": "MATH101",
+    "course_name": "Calculus I",
+    "instructor": "teacher2",
+    "capacity": 40,
+    "section": "A",
+    "enrolled_students": [
+      "STU001",
+      "STU002",
+      "STU005"
+    ],
+    "created_date": "2025-07-27T17:15:18.529848"
+  },
+  {
+    "course_id": "MATH102",
+    "course_name": "Calculus II",
+    "instructor": "teacher2",
+    "capacity": 35,
+    "section": "A",
+    "enrolled_students": [
+      "STU003"
+    ],
+    "created_date": "2025-07-27T17:15:18.529849"
+  },
+  {
+    "course_id": "PHYS101",
+    "course_name": "Physics I",
+    "instructor": "teacher3",
+    "capacity": 30,
+    "section": "A",
+    "enrolled_students": [
+      "STU002",
+      "STU005"
+    ],
+    "created_date": "2025-07-27T17:15:18.529850"
+  },
+  {
+    "course_id": "ENG101",
+    "course_name": "English Composition",
+    "instructor": "teacher4",
+    "capacity": 25,
+    "section": "A",
+    "enrolled_students": [
+      "STU001",
+      "STU004",
+      "STU005"
+    ],
+    "created_date": "2025-07-27T17:15:18.529851"
+  },
+  {
+    "course_id": "BUS101",
+    "course_name": "Business Fundamentals",
+    "instructor": "teacher5",
+    "capacity": 35,
+    "section": "A",
+    "enrolled_students": [
+      "STU003",
+      "STU004"
+    ],
+    "created_date": "2025-07-27T17:15:18.529852"
+  }
+]

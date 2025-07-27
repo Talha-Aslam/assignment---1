@@ -1,0 +1,1017 @@
+[
+  {
+    "username": "admin",
+    "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+    "name": "System Administrator",
+    "email": "admin@portal.edu",
+    "user_id": "ADM001",
+    "user_type": "Admin",
+    "last_login": "2025-07-27T17:15:18.536097",
+    "admin_id": "ADM001",
+    "access_level": "full",
+    "system_logs": [],
+    "created_users": []
+  },
+  {
+    "username": "student1",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 1",
+    "email": "student1@portal.edu",
+    "user_id": "STU001",
+    "user_type": "Student",
+    "last_login": "2025-07-27T17:15:18.535411",
+    "student_id": "STU001",
+    "enrolled_courses": [
+      "CS101",
+      "MATH101",
+      "ENG101"
+    ],
+    "academic_records": {
+      "Fall 2023": {
+        "courses_grades": {
+          "CS101": "A",
+          "MATH101": "B+",
+          "ENG101": "A-"
+        },
+        "cgpa": 3.67,
+        "date_added": "2025-07-27T17:15:18.529434"
+      },
+      "Spring 2024": {
+        "courses_grades": {
+          "CS102": "A-",
+          "MATH102": "A",
+          "PHYS101": "B"
+        },
+        "cgpa": 3.78,
+        "date_added": "2025-07-27T17:15:18.529447"
+      }
+    },
+    "cgpa_history": [
+      {
+        "semester": "Fall 2023",
+        "cgpa": 3.67,
+        "date": "2025-07-27T17:15:18.529441"
+      },
+      {
+        "semester": "Spring 2024",
+        "cgpa": 3.78,
+        "date": "2025-07-27T17:15:18.529450"
+      }
+    ],
+    "semester_data": {
+      "Fall 2023": {
+        "total_courses": 3,
+        "grades": {
+          "CS101": "A",
+          "MATH101": "B+",
+          "ENG101": "A-"
+        },
+        "cgpa": 3.67
+      },
+      "Spring 2024": {
+        "total_courses": 3,
+        "grades": {
+          "CS102": "A-",
+          "MATH102": "A",
+          "PHYS101": "B"
+        },
+        "cgpa": 3.78
+      }
+    }
+  },
+  {
+    "username": "student2",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 2",
+    "email": "student2@portal.edu",
+    "user_id": "STU002",
+    "user_type": "Student",
+    "last_login": null,
+    "student_id": "STU002",
+    "enrolled_courses": [
+      "CS101",
+      "MATH101",
+      "PHYS101"
+    ],
+    "academic_records": {
+      "Fall 2023": {
+        "courses_grades": {
+          "CS101": "A",
+          "MATH101": "B+",
+          "ENG101": "A-"
+        },
+        "cgpa": 3.67,
+        "date_added": "2025-07-27T17:15:18.529467"
+      },
+      "Spring 2024": {
+        "courses_grades": {
+          "CS102": "A-",
+          "MATH102": "A",
+          "PHYS101": "B"
+        },
+        "cgpa": 3.78,
+        "date_added": "2025-07-27T17:15:18.529477"
+      }
+    },
+    "cgpa_history": [
+      {
+        "semester": "Fall 2023",
+        "cgpa": 3.67,
+        "date": "2025-07-27T17:15:18.529470"
+      },
+      {
+        "semester": "Spring 2024",
+        "cgpa": 3.78,
+        "date": "2025-07-27T17:15:18.529480"
+      }
+    ],
+    "semester_data": {
+      "Fall 2023": {
+        "total_courses": 3,
+        "grades": {
+          "CS101": "A",
+          "MATH101": "B+",
+          "ENG101": "A-"
+        },
+        "cgpa": 3.67
+      },
+      "Spring 2024": {
+        "total_courses": 3,
+        "grades": {
+          "CS102": "A-",
+          "MATH102": "A",
+          "PHYS101": "B"
+        },
+        "cgpa": 3.78
+      }
+    }
+  },
+  {
+    "username": "student3",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 3",
+    "email": "student3@portal.edu",
+    "user_id": "STU003",
+    "user_type": "Student",
+    "last_login": null,
+    "student_id": "STU003",
+    "enrolled_courses": [
+      "CS102",
+      "MATH102",
+      "BUS101"
+    ],
+    "academic_records": {
+      "Fall 2023": {
+        "courses_grades": {
+          "CS101": "A",
+          "MATH101": "B+",
+          "ENG101": "A-"
+        },
+        "cgpa": 3.67,
+        "date_added": "2025-07-27T17:15:18.529493"
+      },
+      "Spring 2024": {
+        "courses_grades": {
+          "CS102": "A-",
+          "MATH102": "A",
+          "PHYS101": "B"
+        },
+        "cgpa": 3.78,
+        "date_added": "2025-07-27T17:15:18.529499"
+      }
+    },
+    "cgpa_history": [
+      {
+        "semester": "Fall 2023",
+        "cgpa": 3.67,
+        "date": "2025-07-27T17:15:18.529496"
+      },
+      {
+        "semester": "Spring 2024",
+        "cgpa": 3.78,
+        "date": "2025-07-27T17:15:18.529501"
+      }
+    ],
+    "semester_data": {
+      "Fall 2023": {
+        "total_courses": 3,
+        "grades": {
+          "CS101": "A",
+          "MATH101": "B+",
+          "ENG101": "A-"
+        },
+        "cgpa": 3.67
+      },
+      "Spring 2024": {
+        "total_courses": 3,
+        "grades": {
+          "CS102": "A-",
+          "MATH102": "A",
+          "PHYS101": "B"
+        },
+        "cgpa": 3.78
+      }
+    }
+  },
+  {
+    "username": "student4",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 4",
+    "email": "student4@portal.edu",
+    "user_id": "STU004",
+    "user_type": "Student",
+    "last_login": null,
+    "student_id": "STU004",
+    "enrolled_courses": [
+      "CS101",
+      "ENG101",
+      "BUS101"
+    ],
+    "academic_records": {
+      "Fall 2023": {
+        "courses_grades": {
+          "CS101": "A",
+          "MATH101": "B+",
+          "ENG101": "A-"
+        },
+        "cgpa": 3.67,
+        "date_added": "2025-07-27T17:15:18.529513"
+      },
+      "Spring 2024": {
+        "courses_grades": {
+          "CS102": "A-",
+          "MATH102": "A",
+          "PHYS101": "B"
+        },
+        "cgpa": 3.78,
+        "date_added": "2025-07-27T17:15:18.529518"
+      }
+    },
+    "cgpa_history": [
+      {
+        "semester": "Fall 2023",
+        "cgpa": 3.67,
+        "date": "2025-07-27T17:15:18.529515"
+      },
+      {
+        "semester": "Spring 2024",
+        "cgpa": 3.78,
+        "date": "2025-07-27T17:15:18.529521"
+      }
+    ],
+    "semester_data": {
+      "Fall 2023": {
+        "total_courses": 3,
+        "grades": {
+          "CS101": "A",
+          "MATH101": "B+",
+          "ENG101": "A-"
+        },
+        "cgpa": 3.67
+      },
+      "Spring 2024": {
+        "total_courses": 3,
+        "grades": {
+          "CS102": "A-",
+          "MATH102": "A",
+          "PHYS101": "B"
+        },
+        "cgpa": 3.78
+      }
+    }
+  },
+  {
+    "username": "student5",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 5",
+    "email": "student5@portal.edu",
+    "user_id": "STU005",
+    "user_type": "Student",
+    "last_login": null,
+    "student_id": "STU005",
+    "enrolled_courses": [
+      "MATH101",
+      "PHYS101",
+      "ENG101"
+    ],
+    "academic_records": {
+      "Fall 2023": {
+        "courses_grades": {
+          "CS101": "A",
+          "MATH101": "B+",
+          "ENG101": "A-"
+        },
+        "cgpa": 3.67,
+        "date_added": "2025-07-27T17:15:18.529531"
+      },
+      "Spring 2024": {
+        "courses_grades": {
+          "CS102": "A-",
+          "MATH102": "A",
+          "PHYS101": "B"
+        },
+        "cgpa": 3.78,
+        "date_added": "2025-07-27T17:15:18.529540"
+      }
+    },
+    "cgpa_history": [
+      {
+        "semester": "Fall 2023",
+        "cgpa": 3.67,
+        "date": "2025-07-27T17:15:18.529534"
+      },
+      {
+        "semester": "Spring 2024",
+        "cgpa": 3.78,
+        "date": "2025-07-27T17:15:18.529543"
+      }
+    ],
+    "semester_data": {
+      "Fall 2023": {
+        "total_courses": 3,
+        "grades": {
+          "CS101": "A",
+          "MATH101": "B+",
+          "ENG101": "A-"
+        },
+        "cgpa": 3.67
+      },
+      "Spring 2024": {
+        "total_courses": 3,
+        "grades": {
+          "CS102": "A-",
+          "MATH102": "A",
+          "PHYS101": "B"
+        },
+        "cgpa": 3.78
+      }
+    }
+  },
+  {
+    "username": "student6",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 6",
+    "email": "student6@portal.edu",
+    "user_id": "STU006",
+    "user_type": "Student",
+    "last_login": null,
+    "student_id": "STU006",
+    "enrolled_courses": [],
+    "academic_records": {},
+    "cgpa_history": [],
+    "semester_data": {}
+  },
+  {
+    "username": "student7",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 7",
+    "email": "student7@portal.edu",
+    "user_id": "STU007",
+    "user_type": "Student",
+    "last_login": null,
+    "student_id": "STU007",
+    "enrolled_courses": [],
+    "academic_records": {},
+    "cgpa_history": [],
+    "semester_data": {}
+  },
+  {
+    "username": "student8",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 8",
+    "email": "student8@portal.edu",
+    "user_id": "STU008",
+    "user_type": "Student",
+    "last_login": null,
+    "student_id": "STU008",
+    "enrolled_courses": [],
+    "academic_records": {},
+    "cgpa_history": [],
+    "semester_data": {}
+  },
+  {
+    "username": "student9",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 9",
+    "email": "student9@portal.edu",
+    "user_id": "STU009",
+    "user_type": "Student",
+    "last_login": null,
+    "student_id": "STU009",
+    "enrolled_courses": [],
+    "academic_records": {},
+    "cgpa_history": [],
+    "semester_data": {}
+  },
+  {
+    "username": "student10",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 10",
+    "email": "student10@portal.edu",
+    "user_id": "STU010",
+    "user_type": "Student",
+    "last_login": "2025-07-27T17:15:18.537217",
+    "student_id": "STU010",
+    "enrolled_courses": [
+      "CS101"
+    ],
+    "academic_records": {},
+    "cgpa_history": [],
+    "semester_data": {}
+  },
+  {
+    "username": "student11",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 11",
+    "email": "student11@portal.edu",
+    "user_id": "STU011",
+    "user_type": "Student",
+    "last_login": null,
+    "student_id": "STU011",
+    "enrolled_courses": [],
+    "academic_records": {},
+    "cgpa_history": [],
+    "semester_data": {}
+  },
+  {
+    "username": "student12",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 12",
+    "email": "student12@portal.edu",
+    "user_id": "STU012",
+    "user_type": "Student",
+    "last_login": null,
+    "student_id": "STU012",
+    "enrolled_courses": [],
+    "academic_records": {},
+    "cgpa_history": [],
+    "semester_data": {}
+  },
+  {
+    "username": "student13",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 13",
+    "email": "student13@portal.edu",
+    "user_id": "STU013",
+    "user_type": "Student",
+    "last_login": null,
+    "student_id": "STU013",
+    "enrolled_courses": [],
+    "academic_records": {},
+    "cgpa_history": [],
+    "semester_data": {}
+  },
+  {
+    "username": "student14",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 14",
+    "email": "student14@portal.edu",
+    "user_id": "STU014",
+    "user_type": "Student",
+    "last_login": null,
+    "student_id": "STU014",
+    "enrolled_courses": [],
+    "academic_records": {},
+    "cgpa_history": [],
+    "semester_data": {}
+  },
+  {
+    "username": "student15",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 15",
+    "email": "student15@portal.edu",
+    "user_id": "STU015",
+    "user_type": "Student",
+    "last_login": null,
+    "student_id": "STU015",
+    "enrolled_courses": [],
+    "academic_records": {},
+    "cgpa_history": [],
+    "semester_data": {}
+  },
+  {
+    "username": "teacher1",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 1",
+    "email": "teacher1@portal.edu",
+    "user_id": "TCH001",
+    "user_type": "Teacher",
+    "last_login": "2025-07-27T17:15:18.535696",
+    "teacher_id": "TCH001",
+    "department": "Computer Science",
+    "qualification": "PhD",
+    "contact_info": {},
+    "salary": 76000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "PAYTCH001202507",
+        "teacher_id": "TCH001",
+        "month": "January",
+        "year": 2024,
+        "basic_salary": 76000,
+        "allowances": {
+          "Housing": 10000,
+          "Transport": 5000
+        },
+        "deductions": {
+          "Tax": 8000,
+          "Insurance": 2000
+        },
+        "net_salary": 81000,
+        "generated_date": "2025-07-27T17:15:18.529629"
+      }
+    ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher2",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 2",
+    "email": "teacher2@portal.edu",
+    "user_id": "TCH002",
+    "user_type": "Teacher",
+    "last_login": null,
+    "teacher_id": "TCH002",
+    "department": "Mathematics",
+    "qualification": "PhD",
+    "contact_info": {},
+    "salary": 77000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "PAYTCH002202507",
+        "teacher_id": "TCH002",
+        "month": "January",
+        "year": 2024,
+        "basic_salary": 77000,
+        "allowances": {
+          "Housing": 10000,
+          "Transport": 5000
+        },
+        "deductions": {
+          "Tax": 8000,
+          "Insurance": 2000
+        },
+        "net_salary": 82000,
+        "generated_date": "2025-07-27T17:15:18.529664"
+      }
+    ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher3",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 3",
+    "email": "teacher3@portal.edu",
+    "user_id": "TCH003",
+    "user_type": "Teacher",
+    "last_login": null,
+    "teacher_id": "TCH003",
+    "department": "Physics",
+    "qualification": "PhD",
+    "contact_info": {},
+    "salary": 78000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "PAYTCH003202507",
+        "teacher_id": "TCH003",
+        "month": "January",
+        "year": 2024,
+        "basic_salary": 78000,
+        "allowances": {
+          "Housing": 10000,
+          "Transport": 5000
+        },
+        "deductions": {
+          "Tax": 8000,
+          "Insurance": 2000
+        },
+        "net_salary": 83000,
+        "generated_date": "2025-07-27T17:15:18.529690"
+      }
+    ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher4",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 4",
+    "email": "teacher4@portal.edu",
+    "user_id": "TCH004",
+    "user_type": "Teacher",
+    "last_login": null,
+    "teacher_id": "TCH004",
+    "department": "English",
+    "qualification": "PhD",
+    "contact_info": {},
+    "salary": 79000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "PAYTCH004202507",
+        "teacher_id": "TCH004",
+        "month": "January",
+        "year": 2024,
+        "basic_salary": 79000,
+        "allowances": {
+          "Housing": 10000,
+          "Transport": 5000
+        },
+        "deductions": {
+          "Tax": 8000,
+          "Insurance": 2000
+        },
+        "net_salary": 84000,
+        "generated_date": "2025-07-27T17:15:18.529705"
+      }
+    ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher5",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 5",
+    "email": "teacher5@portal.edu",
+    "user_id": "TCH005",
+    "user_type": "Teacher",
+    "last_login": null,
+    "teacher_id": "TCH005",
+    "department": "Business",
+    "qualification": "PhD",
+    "contact_info": {},
+    "salary": 80000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "PAYTCH005202507",
+        "teacher_id": "TCH005",
+        "month": "January",
+        "year": 2024,
+        "basic_salary": 80000,
+        "allowances": {
+          "Housing": 10000,
+          "Transport": 5000
+        },
+        "deductions": {
+          "Tax": 8000,
+          "Insurance": 2000
+        },
+        "net_salary": 85000,
+        "generated_date": "2025-07-27T17:15:18.529718"
+      }
+    ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher6",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 6",
+    "email": "teacher6@portal.edu",
+    "user_id": "TCH006",
+    "user_type": "Teacher",
+    "last_login": null,
+    "teacher_id": "TCH006",
+    "department": "Computer Science",
+    "qualification": "PhD",
+    "contact_info": {},
+    "salary": 81000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "PAYTCH006202507",
+        "teacher_id": "TCH006",
+        "month": "January",
+        "year": 2024,
+        "basic_salary": 81000,
+        "allowances": {
+          "Housing": 10000,
+          "Transport": 5000
+        },
+        "deductions": {
+          "Tax": 8000,
+          "Insurance": 2000
+        },
+        "net_salary": 86000,
+        "generated_date": "2025-07-27T17:15:18.529729"
+      }
+    ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher7",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 7",
+    "email": "teacher7@portal.edu",
+    "user_id": "TCH007",
+    "user_type": "Teacher",
+    "last_login": null,
+    "teacher_id": "TCH007",
+    "department": "Mathematics",
+    "qualification": "PhD",
+    "contact_info": {},
+    "salary": 82000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "PAYTCH007202507",
+        "teacher_id": "TCH007",
+        "month": "January",
+        "year": 2024,
+        "basic_salary": 82000,
+        "allowances": {
+          "Housing": 10000,
+          "Transport": 5000
+        },
+        "deductions": {
+          "Tax": 8000,
+          "Insurance": 2000
+        },
+        "net_salary": 87000,
+        "generated_date": "2025-07-27T17:15:18.529746"
+      }
+    ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher8",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 8",
+    "email": "teacher8@portal.edu",
+    "user_id": "TCH008",
+    "user_type": "Teacher",
+    "last_login": null,
+    "teacher_id": "TCH008",
+    "department": "Physics",
+    "qualification": "PhD",
+    "contact_info": {},
+    "salary": 83000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "PAYTCH008202507",
+        "teacher_id": "TCH008",
+        "month": "January",
+        "year": 2024,
+        "basic_salary": 83000,
+        "allowances": {
+          "Housing": 10000,
+          "Transport": 5000
+        },
+        "deductions": {
+          "Tax": 8000,
+          "Insurance": 2000
+        },
+        "net_salary": 88000,
+        "generated_date": "2025-07-27T17:15:18.529758"
+      }
+    ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher9",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 9",
+    "email": "teacher9@portal.edu",
+    "user_id": "TCH009",
+    "user_type": "Teacher",
+    "last_login": null,
+    "teacher_id": "TCH009",
+    "department": "English",
+    "qualification": "PhD",
+    "contact_info": {},
+    "salary": 84000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "PAYTCH009202507",
+        "teacher_id": "TCH009",
+        "month": "January",
+        "year": 2024,
+        "basic_salary": 84000,
+        "allowances": {
+          "Housing": 10000,
+          "Transport": 5000
+        },
+        "deductions": {
+          "Tax": 8000,
+          "Insurance": 2000
+        },
+        "net_salary": 89000,
+        "generated_date": "2025-07-27T17:15:18.529769"
+      }
+    ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher10",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 10",
+    "email": "teacher10@portal.edu",
+    "user_id": "TCH010",
+    "user_type": "Teacher",
+    "last_login": null,
+    "teacher_id": "TCH010",
+    "department": "Business",
+    "qualification": "PhD",
+    "contact_info": {},
+    "salary": 85000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "PAYTCH010202507",
+        "teacher_id": "TCH010",
+        "month": "January",
+        "year": 2024,
+        "basic_salary": 85000,
+        "allowances": {
+          "Housing": 10000,
+          "Transport": 5000
+        },
+        "deductions": {
+          "Tax": 8000,
+          "Insurance": 2000
+        },
+        "net_salary": 90000,
+        "generated_date": "2025-07-27T17:15:18.529781"
+      }
+    ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher11",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 11",
+    "email": "teacher11@portal.edu",
+    "user_id": "TCH011",
+    "user_type": "Teacher",
+    "last_login": null,
+    "teacher_id": "TCH011",
+    "department": "Computer Science",
+    "qualification": "PhD",
+    "contact_info": {},
+    "salary": 86000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "PAYTCH011202507",
+        "teacher_id": "TCH011",
+        "month": "January",
+        "year": 2024,
+        "basic_salary": 86000,
+        "allowances": {
+          "Housing": 10000,
+          "Transport": 5000
+        },
+        "deductions": {
+          "Tax": 8000,
+          "Insurance": 2000
+        },
+        "net_salary": 91000,
+        "generated_date": "2025-07-27T17:15:18.529792"
+      }
+    ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher12",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 12",
+    "email": "teacher12@portal.edu",
+    "user_id": "TCH012",
+    "user_type": "Teacher",
+    "last_login": null,
+    "teacher_id": "TCH012",
+    "department": "Mathematics",
+    "qualification": "PhD",
+    "contact_info": {},
+    "salary": 87000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "PAYTCH012202507",
+        "teacher_id": "TCH012",
+        "month": "January",
+        "year": 2024,
+        "basic_salary": 87000,
+        "allowances": {
+          "Housing": 10000,
+          "Transport": 5000
+        },
+        "deductions": {
+          "Tax": 8000,
+          "Insurance": 2000
+        },
+        "net_salary": 92000,
+        "generated_date": "2025-07-27T17:15:18.529803"
+      }
+    ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher13",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 13",
+    "email": "teacher13@portal.edu",
+    "user_id": "TCH013",
+    "user_type": "Teacher",
+    "last_login": null,
+    "teacher_id": "TCH013",
+    "department": "Physics",
+    "qualification": "PhD",
+    "contact_info": {},
+    "salary": 88000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "PAYTCH013202507",
+        "teacher_id": "TCH013",
+        "month": "January",
+        "year": 2024,
+        "basic_salary": 88000,
+        "allowances": {
+          "Housing": 10000,
+          "Transport": 5000
+        },
+        "deductions": {
+          "Tax": 8000,
+          "Insurance": 2000
+        },
+        "net_salary": 93000,
+        "generated_date": "2025-07-27T17:15:18.529817"
+      }
+    ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher14",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 14",
+    "email": "teacher14@portal.edu",
+    "user_id": "TCH014",
+    "user_type": "Teacher",
+    "last_login": null,
+    "teacher_id": "TCH014",
+    "department": "English",
+    "qualification": "PhD",
+    "contact_info": {},
+    "salary": 89000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "PAYTCH014202507",
+        "teacher_id": "TCH014",
+        "month": "January",
+        "year": 2024,
+        "basic_salary": 89000,
+        "allowances": {
+          "Housing": 10000,
+          "Transport": 5000
+        },
+        "deductions": {
+          "Tax": 8000,
+          "Insurance": 2000
+        },
+        "net_salary": 94000,
+        "generated_date": "2025-07-27T17:15:18.529827"
+      }
+    ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher15",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 15",
+    "email": "teacher15@portal.edu",
+    "user_id": "TCH015",
+    "user_type": "Teacher",
+    "last_login": null,
+    "teacher_id": "TCH015",
+    "department": "Business",
+    "qualification": "PhD",
+    "contact_info": {},
+    "salary": 90000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "PAYTCH015202507",
+        "teacher_id": "TCH015",
+        "month": "January",
+        "year": 2024,
+        "basic_salary": 90000,
+        "allowances": {
+          "Housing": 10000,
+          "Transport": 5000
+        },
+        "deductions": {
+          "Tax": 8000,
+          "Insurance": 2000
+        },
+        "net_salary": 95000,
+        "generated_date": "2025-07-27T17:15:18.529838"
+      }
+    ],
+    "profile_updates": []
+  }
+]
