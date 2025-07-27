@@ -41,7 +41,6 @@ def get_yes_no_input(prompt: str) -> bool:
                 print("   • For NO: n, no, nope, false, 0")
                 continue
 
-                
         except KeyboardInterrupt:
             print("\nOperation cancelled.")
             return False

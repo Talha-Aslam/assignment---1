@@ -89,8 +89,7 @@
     "capacity": 35,
     "section": "A",
     "enrolled_students": [
-      "STU003",
-      "STU009"
+      "STU003"
     ],
     "created_date": "2025-07-27T18:18:54.019077"
   },
@@ -152,8 +151,7 @@
     "capacity": 22,
     "section": "C",
     "enrolled_students": [
-      "STU001",
-      "STU009"
+      "STU001"
     ],
     "created_date": "2025-07-27T18:18:54.019079"
   },

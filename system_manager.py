@@ -85,6 +85,8 @@ class SystemManager:
         """
         try:
             user_type = user_data.get('user_type', '').lower()
+            print(f"Creating user of type: {user_type}")
+            print(f"User data: {user_data}")
             
             if user_type == 'student':
                 return Student.from_dict(user_data)
@@ -98,6 +100,8 @@ class SystemManager:
                 
         except Exception as e:
             print(f"Error creating user from data: {e}")
+            import traceback
+            traceback.print_exc()
             return None
     
     def initialize_default_data(self):
@@ -470,10 +474,20 @@ class SystemManager:
             bool: True if save successful
         """
         try:
+            # Check if user already exists to avoid duplicates
+            username = user_data.get('username')
+            if username in self.users:
+                print(f"User with username {username} already exists!")
+                return False
+                
+            # Create a User object from the data
             user = self.create_user_from_data(user_data)
             if user:
+                # Add to users dictionary with username as key
                 self.users[user.username] = user
+                # Save all data to files
                 self.save_all_data()
+                print(f"User {username} saved successfully!")
                 return True
             return False
         except Exception as e:

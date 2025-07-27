@@ -6,7 +6,7 @@
     "email": "admin@portal.edu",
     "user_id": "ADM001",
     "user_type": "Admin",
-    "last_login": "2025-07-28T00:02:06.753583",
+    "last_login": null,
     "admin_id": "ADM001",
     "access_level": "full",
     "system_logs": [
@@ -44,27 +44,6 @@
         "action": "create_user_Student",
         "details": "Created Student account for Test Student (ID: STU202507275199)",
         "timestamp": "2025-07-27T23:42:20.729704"
-      },
-      {
-        "log_id": "LOG20250727235048297",
-        "user_id": "ADM001",
-        "action": "create_user_Teacher",
-        "details": "Created Teacher account for teacher18 (ID: TEA202507275948)",
-        "timestamp": "2025-07-27T23:50:48.935057"
-      },
-      {
-        "log_id": "LOG20250727235144309",
-        "user_id": "ADM001",
-        "action": "create_user_Teacher",
-        "details": "Created Teacher account for teacher19 (ID: TEA202507270464)",
-        "timestamp": "2025-07-27T23:51:44.086880"
-      },
-      {
-        "log_id": "LOG20250728000421639",
-        "user_id": "ADM001",
-        "action": "create_user_Teacher",
-        "details": "Created Teacher account for teacher20 (ID: TEA202507286402)",
-        "timestamp": "2025-07-28T00:04:21.989866"
       }
     ],
     "created_users": [
@@ -126,45 +105,6 @@
         "created_by": "ADM001",
         "created_date": "2025-07-27T23:42:20.729683",
         "student_id": "STU202507275199"
-      },
-      {
-        "user_id": "TEA202507275948",
-        "username": "teacher275948",
-        "password": "HrM6Otc6",
-        "name": "teacher18",
-        "email": "teacher18@gmail.com",
-        "user_type": "Teacher",
-        "created_by": "ADM001",
-        "created_date": "2025-07-27T23:50:48.935029",
-        "teacher_id": "TEA202507275948",
-        "department": "arts",
-        "salary": 10000000.0
-      },
-      {
-        "user_id": "TEA202507270464",
-        "username": "teacher270464",
-        "password": "osHVw9ie",
-        "name": "teacher19",
-        "email": "teacher19@gmail.com",
-        "user_type": "Teacher",
-        "created_by": "ADM001",
-        "created_date": "2025-07-27T23:51:44.086852",
-        "teacher_id": "TEA202507270464",
-        "department": "bio",
-        "salary": 500000.0
-      },
-      {
-        "user_id": "TEA202507286402",
-        "username": "teacher286402",
-        "password": "VbsNnz50",
-        "name": "teacher20",
-        "email": "teacher20@gmail.com",
-        "user_type": "Teacher",
-        "created_by": "ADM001",
-        "created_date": "2025-07-28T00:04:21.989839",
-        "teacher_id": "TEA202507286402",
-        "department": "cs",
-        "salary": 10.0
       }
     ]
   },
@@ -2359,56 +2299,5 @@
     "academic_records": {},
     "cgpa_history": [],
     "semester_data": {}
-  },
-  {
-    "username": "teacher275948",
-    "password": "HrM6Otc6",
-    "name": "teacher18",
-    "email": "teacher18@gmail.com",
-    "user_id": "TEA202507275948",
-    "user_type": "Teacher",
-    "last_login": null,
-    "teacher_id": "TEA202507275948",
-    "department": "arts",
-    "qualification": "",
-    "contact_info": {},
-    "salary": 10000000.0,
-    "courses_taught": [],
-    "salary_slips": [],
-    "profile_updates": []
-  },
-  {
-    "username": "teacher270464",
-    "password": "osHVw9ie",
-    "name": "teacher19",
-    "email": "teacher19@gmail.com",
-    "user_id": "TEA202507270464",
-    "user_type": "Teacher",
-    "last_login": null,
-    "teacher_id": "TEA202507270464",
-    "department": "bio",
-    "qualification": "",
-    "contact_info": {},
-    "salary": 500000.0,
-    "courses_taught": [],
-    "salary_slips": [],
-    "profile_updates": []
-  },
-  {
-    "username": "teacher286402",
-    "password": "VbsNnz50",
-    "name": "teacher20",
-    "email": "teacher20@gmail.com",
-    "user_id": "TEA202507286402",
-    "user_type": "Teacher",
-    "last_login": null,
-    "teacher_id": "TEA202507286402",
-    "department": "cs",
-    "qualification": "",
-    "contact_info": {},
-    "salary": 10.0,
-    "courses_taught": [],
-    "salary_slips": [],
-    "profile_updates": []
   }
 ]

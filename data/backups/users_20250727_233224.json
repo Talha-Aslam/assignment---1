@@ -6,7 +6,7 @@
     "email": "admin@portal.edu",
     "user_id": "ADM001",
     "user_type": "Admin",
-    "last_login": "2025-07-28T00:02:06.753583",
+    "last_login": "2025-07-27T23:29:36.857068",
     "admin_id": "ADM001",
     "access_level": "full",
     "system_logs": [
@@ -37,34 +37,6 @@
         "action": "create_user_Student",
         "details": "Created Student account for 1 (ID: STU202507272843)",
         "timestamp": "2025-07-27T23:32:19.913764"
-      },
-      {
-        "log_id": "LOG20250727234220265",
-        "user_id": "ADM001",
-        "action": "create_user_Student",
-        "details": "Created Student account for Test Student (ID: STU202507275199)",
-        "timestamp": "2025-07-27T23:42:20.729704"
-      },
-      {
-        "log_id": "LOG20250727235048297",
-        "user_id": "ADM001",
-        "action": "create_user_Teacher",
-        "details": "Created Teacher account for teacher18 (ID: TEA202507275948)",
-        "timestamp": "2025-07-27T23:50:48.935057"
-      },
-      {
-        "log_id": "LOG20250727235144309",
-        "user_id": "ADM001",
-        "action": "create_user_Teacher",
-        "details": "Created Teacher account for teacher19 (ID: TEA202507270464)",
-        "timestamp": "2025-07-27T23:51:44.086880"
-      },
-      {
-        "log_id": "LOG20250728000421639",
-        "user_id": "ADM001",
-        "action": "create_user_Teacher",
-        "details": "Created Teacher account for teacher20 (ID: TEA202507286402)",
-        "timestamp": "2025-07-28T00:04:21.989866"
       }
     ],
     "created_users": [
@@ -115,56 +87,6 @@
         "created_by": "ADM001",
         "created_date": "2025-07-27T23:32:19.913740",
         "student_id": "STU202507272843"
-      },
-      {
-        "user_id": "STU202507275199",
-        "username": "student275199",
-        "password": "IGJfCyBd",
-        "name": "Test Student",
-        "email": "teststudent@example.com",
-        "user_type": "Student",
-        "created_by": "ADM001",
-        "created_date": "2025-07-27T23:42:20.729683",
-        "student_id": "STU202507275199"
-      },
-      {
-        "user_id": "TEA202507275948",
-        "username": "teacher275948",
-        "password": "HrM6Otc6",
-        "name": "teacher18",
-        "email": "teacher18@gmail.com",
-        "user_type": "Teacher",
-        "created_by": "ADM001",
-        "created_date": "2025-07-27T23:50:48.935029",
-        "teacher_id": "TEA202507275948",
-        "department": "arts",
-        "salary": 10000000.0
-      },
-      {
-        "user_id": "TEA202507270464",
-        "username": "teacher270464",
-        "password": "osHVw9ie",
-        "name": "teacher19",
-        "email": "teacher19@gmail.com",
-        "user_type": "Teacher",
-        "created_by": "ADM001",
-        "created_date": "2025-07-27T23:51:44.086852",
-        "teacher_id": "TEA202507270464",
-        "department": "bio",
-        "salary": 500000.0
-      },
-      {
-        "user_id": "TEA202507286402",
-        "username": "teacher286402",
-        "password": "VbsNnz50",
-        "name": "teacher20",
-        "email": "teacher20@gmail.com",
-        "user_type": "Teacher",
-        "created_by": "ADM001",
-        "created_date": "2025-07-28T00:04:21.989839",
-        "teacher_id": "TEA202507286402",
-        "department": "cs",
-        "salary": 10.0
       }
     ]
   },
@@ -175,7 +97,7 @@
     "email": "student1@portal.edu",
     "user_id": "STU001",
     "user_type": "Student",
-    "last_login": null,
+    "last_login": "2025-07-27T23:08:20.023658",
     "student_id": "STU001",
     "enrolled_courses": [
       "MATH101",
@@ -242,7 +164,7 @@
     "email": "student2@portal.edu",
     "user_id": "STU002",
     "user_type": "Student",
-    "last_login": null,
+    "last_login": "2025-07-27T23:09:07.640828",
     "student_id": "STU002",
     "enrolled_courses": [
       "CS101",
@@ -309,7 +231,7 @@
     "email": "student3@portal.edu",
     "user_id": "STU003",
     "user_type": "Student",
-    "last_login": null,
+    "last_login": "2025-07-27T23:10:24.208571",
     "student_id": "STU003",
     "enrolled_courses": [
       "CS102",
@@ -376,7 +298,7 @@
     "email": "student4@portal.edu",
     "user_id": "STU004",
     "user_type": "Student",
-    "last_login": null,
+    "last_login": "2025-07-27T23:11:04.965143",
     "student_id": "STU004",
     "enrolled_courses": [
       "CS101",
@@ -443,7 +365,7 @@
     "email": "student5@portal.edu",
     "user_id": "STU005",
     "user_type": "Student",
-    "last_login": null,
+    "last_login": "2025-07-27T23:12:11.309842",
     "student_id": "STU005",
     "enrolled_courses": [
       "MATH101",
@@ -510,7 +432,7 @@
     "email": "student6@portal.edu",
     "user_id": "STU006",
     "user_type": "Student",
-    "last_login": null,
+    "last_login": "2025-07-27T23:13:38.171433",
     "student_id": "STU006",
     "enrolled_courses": [],
     "academic_records": {},
@@ -524,7 +446,7 @@
     "email": "student7@portal.edu",
     "user_id": "STU007",
     "user_type": "Student",
-    "last_login": null,
+    "last_login": "2025-07-27T23:14:45.218457",
     "student_id": "STU007",
     "enrolled_courses": [],
     "academic_records": {},
@@ -552,7 +474,7 @@
     "email": "student9@portal.edu",
     "user_id": "STU009",
     "user_type": "Student",
-    "last_login": null,
+    "last_login": "2025-07-27T23:18:08.976703",
     "student_id": "STU009",
     "enrolled_courses": [
       "ENG101",
@@ -653,7 +575,7 @@
     "email": "teacher1@gmail.com",
     "user_id": "TCH001",
     "user_type": "Teacher",
-    "last_login": null,
+    "last_login": "2025-07-27T22:25:03.259024",
     "teacher_id": "TCH001",
     "department": "computer science",
     "qualification": "ms",
@@ -2345,70 +2267,5 @@
     "academic_records": {},
     "cgpa_history": [],
     "semester_data": {}
-  },
-  {
-    "username": "student275199",
-    "password": "IGJfCyBd",
-    "name": "Test Student",
-    "email": "teststudent@example.com",
-    "user_id": "STU202507275199",
-    "user_type": "Student",
-    "last_login": null,
-    "student_id": "STU202507275199",
-    "enrolled_courses": [],
-    "academic_records": {},
-    "cgpa_history": [],
-    "semester_data": {}
-  },
-  {
-    "username": "teacher275948",
-    "password": "HrM6Otc6",
-    "name": "teacher18",
-    "email": "teacher18@gmail.com",
-    "user_id": "TEA202507275948",
-    "user_type": "Teacher",
-    "last_login": null,
-    "teacher_id": "TEA202507275948",
-    "department": "arts",
-    "qualification": "",
-    "contact_info": {},
-    "salary": 10000000.0,
-    "courses_taught": [],
-    "salary_slips": [],
-    "profile_updates": []
-  },
-  {
-    "username": "teacher270464",
-    "password": "osHVw9ie",
-    "name": "teacher19",
-    "email": "teacher19@gmail.com",
-    "user_id": "TEA202507270464",
-    "user_type": "Teacher",
-    "last_login": null,
-    "teacher_id": "TEA202507270464",
-    "department": "bio",
-    "qualification": "",
-    "contact_info": {},
-    "salary": 500000.0,
-    "courses_taught": [],
-    "salary_slips": [],
-    "profile_updates": []
-  },
-  {
-    "username": "teacher286402",
-    "password": "VbsNnz50",
-    "name": "teacher20",
-    "email": "teacher20@gmail.com",
-    "user_id": "TEA202507286402",
-    "user_type": "Teacher",
-    "last_login": null,
-    "teacher_id": "TEA202507286402",
-    "department": "cs",
-    "qualification": "",
-    "contact_info": {},
-    "salary": 10.0,
-    "courses_taught": [],
-    "salary_slips": [],
-    "profile_updates": []
   }
 ]
