@@ -49,13 +49,15 @@ class SystemManager:
             if user:
                 self.users[user.username] = user
         
-        # Load courses
+        # Load courses with section-aware keys
         courses_data = self.file_manager.load_data('courses')
         for course_data in courses_data:
             course = Course.from_dict(course_data)
-            self.courses[course.course_id] = course
+            # Create unique key using course_id + section
+            course_key = f"{course.course_id}-{course.section}"
+            self.courses[course_key] = course
         
-        print(f"Loaded {len(self.users)} users and {len(self.courses)} courses.")
+        print(f"Loaded {len(self.users)} users and {len(self.courses)} course sections.")
     
     def save_all_data(self):
         """Save all data to files."""
@@ -267,7 +269,8 @@ class SystemManager:
     
     def get_course_by_id(self, course_id: str) -> Optional[Course]:
         """
-        Get course by ID.
+        Get course by ID. Returns the first available section.
+        For backward compatibility with existing enrollment data.
         
         Args:
             course_id (str): Course ID
@@ -275,25 +278,75 @@ class SystemManager:
         Returns:
             Course object or None
         """
-        return self.courses.get(course_id)
+        # First try direct lookup for backward compatibility
+        if course_id in self.courses:
+            return self.courses[course_id]
+        
+        # Then search for course sections
+        for course_key, course in self.courses.items():
+            if course.course_id == course_id:
+                return course
+        
+        return None
     
-    def enroll_student_in_course(self, student_id: str, course_id: str) -> bool:
+    def get_course_by_id_and_section(self, course_id: str, section: str) -> Optional[Course]:
         """
-        Enroll student in course.
+        Get course by ID and section.
+        
+        Args:
+            course_id (str): Course ID
+            section (str): Section
+            
+        Returns:
+            Course object or None
+        """
+        course_key = f"{course_id}-{section}"
+        return self.courses.get(course_key)
+    
+    def get_all_sections_by_course_id(self, course_id: str) -> List[Course]:
+        """
+        Get all sections for a given course ID.
+        
+        Args:
+            course_id (str): Course ID
+            
+        Returns:
+            List of Course objects for all sections
+        """
+        sections = []
+        for course in self.courses.values():
+            if course.course_id == course_id:
+                sections.append(course)
+        return sections
+    
+    def find_student_enrolled_section(self, student_id: str, course_id: str) -> Optional[Course]:
+        """
+        Find which section a student is enrolled in for a given course.
         
         Args:
             student_id (str): Student ID
             course_id (str): Course ID
             
         Returns:
+            Course object of the section where student is enrolled, or None
+        """
+        for course in self.courses.values():
+            if course.course_id == course_id and student_id in course.enrolled_students:
+                return course
+        return None
+    
+    def enroll_student_in_course(self, student_id: str, course_id: str, section: str = None) -> bool:
+        """
+        Enroll student in course section.
+        
+        Args:
+            student_id (str): Student ID
+            course_id (str): Course ID
+            section (str): Section (optional, will find first available if not specified)
+            
+        Returns:
             bool: True if enrollment successful
         """
-        if course_id not in self.courses:
-            print(f"Course {course_id} not found.")
-            return False
-        
-        course = self.courses[course_id]
-        
         # Find student by student_id
         student = None
         for user in self.users.values():
@@ -305,7 +358,35 @@ class SystemManager:
             print(f"Student {student_id} not found.")
             return False
         
-        if course.add_student(student_id):
+        # Check if student is already enrolled in any section of this course
+        existing_section = self.find_student_enrolled_section(student_id, course_id)
+        if existing_section:
+            print(f"Student {student_id} is already enrolled in {course_id} Section {existing_section.section}")
+            return False
+        
+        # Find the target course section
+        target_course = None
+        if section:
+            # Specific section requested
+            target_course = self.get_course_by_id_and_section(course_id, section)
+            if not target_course:
+                print(f"Course {course_id} Section {section} not found.")
+                return False
+        else:
+            # Find first available section
+            sections = self.get_all_sections_by_course_id(course_id)
+            for course_section in sections:
+                if not course_section.is_full():
+                    target_course = course_section
+                    break
+            
+            if not target_course:
+                print(f"No available sections found for course {course_id}")
+                return False
+        
+        # Attempt enrollment
+        if target_course.add_student(student_id):
+            # Add course_id to student's enrolled courses (base course ID, not section-specific)
             if course_id not in student.enrolled_courses:
                 student.enrolled_courses.append(course_id)
             self.save_all_data()
@@ -324,12 +405,6 @@ class SystemManager:
         Returns:
             bool: True if unenrollment successful
         """
-        if course_id not in self.courses:
-            print(f"Course {course_id} not found.")
-            return False
-        
-        course = self.courses[course_id]
-        
         # Find student by student_id
         student = None
         for user in self.users.values():
@@ -341,7 +416,15 @@ class SystemManager:
             print(f"Student {student_id} not found.")
             return False
         
-        if course.remove_student(student_id):
+        # Find which section the student is enrolled in
+        enrolled_section = self.find_student_enrolled_section(student_id, course_id)
+        if not enrolled_section:
+            print(f"Student {student_id} is not enrolled in course {course_id}")
+            return False
+        
+        # Remove student from the section
+        if enrolled_section.remove_student(student_id):
+            # Remove course_id from student's enrolled courses
             if course_id in student.enrolled_courses:
                 student.enrolled_courses.remove(course_id)
             self.save_all_data()
@@ -356,6 +439,17 @@ class SystemManager:
     def get_all_students(self) -> List[Student]:
         """Get all student objects."""
         return [user for user in self.users.values() if isinstance(user, Student)]
+    
+    def get_user_by_id(self, user_id: str) -> Optional[User]:
+        """Get user by their ID (student_id, teacher_id, admin_id)."""
+        for user in self.users.values():
+            if hasattr(user, 'student_id') and user.student_id == user_id:
+                return user
+            elif hasattr(user, 'teacher_id') and user.teacher_id == user_id:
+                return user
+            elif hasattr(user, 'admin_id') and user.admin_id == user_id:
+                return user
+        return None
     
     def get_all_admins(self) -> List[Admin]:
         """Get all admin objects."""

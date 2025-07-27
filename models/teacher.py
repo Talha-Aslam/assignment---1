@@ -255,9 +255,10 @@ class Teacher(User):
         teacher.courses_taught = data.get('courses_taught', [])
         teacher.profile_updates = data.get('profile_updates', [])
         
-        # Load salary slips (will need SalarySlip class)
-        # teacher.salary_slips = [SalarySlip.from_dict(slip_data) 
-        #                        for slip_data in data.get('salary_slips', [])]
+        # Load salary slips
+        from models.salary_slip import SalarySlip
+        teacher.salary_slips = [SalarySlip.from_dict(slip_data) 
+                               for slip_data in data.get('salary_slips', [])]
         
         return teacher
     

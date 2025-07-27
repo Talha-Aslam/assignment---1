@@ -494,7 +494,7 @@
     "email": "teacher1@gmail.com",
     "user_id": "TCH001",
     "user_type": "Teacher",
-    "last_login": "2025-07-27T22:25:03.259024",
+    "last_login": null,
     "teacher_id": "TCH001",
     "department": "computer science",
     "qualification": "ms",

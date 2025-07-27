@@ -7,7 +7,8 @@
     "section": "A",
     "enrolled_students": [
       "STU002",
-      "STU004"
+      "STU004",
+      "STU001"
     ],
     "created_date": "2025-07-27T18:18:54.019072"
   },
@@ -46,9 +47,7 @@
     "instructor": "teacher8",
     "capacity": 28,
     "section": "B",
-    "enrolled_students": [
-      "STU001"
-    ],
+    "enrolled_students": [],
     "created_date": "2025-07-27T18:18:54.019075"
   },
   {
@@ -130,6 +129,7 @@
     "capacity": 25,
     "section": "A",
     "enrolled_students": [
+      "STU001",
       "STU004",
       "STU005"
     ],
@@ -150,9 +150,7 @@
     "instructor": "teacher14",
     "capacity": 22,
     "section": "C",
-    "enrolled_students": [
-      "STU001"
-    ],
+    "enrolled_students": [],
     "created_date": "2025-07-27T18:18:54.019079"
   },
   {
@@ -163,7 +161,8 @@
     "section": "A",
     "enrolled_students": [
       "STU003",
-      "STU004"
+      "STU004",
+      "STU001"
     ],
     "created_date": "2025-07-27T18:18:54.019080"
   },

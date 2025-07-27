@@ -22,9 +22,9 @@
     "last_login": null,
     "student_id": "STU001",
     "enrolled_courses": [
-      "CS101",
       "MATH101",
-      "ENG101"
+      "ENG101",
+      "CS101"
     ],
     "academic_records": {
       "Fall 2023": {
@@ -34,7 +34,7 @@
           "ENG101": "A-"
         },
         "cgpa": 3.67,
-        "date_added": "2025-07-27T17:15:18.529434"
+        "date_added": "2025-07-27T18:18:54.018736"
       },
       "Spring 2024": {
         "courses_grades": {
@@ -43,19 +43,19 @@
           "PHYS101": "B"
         },
         "cgpa": 3.78,
-        "date_added": "2025-07-27T17:15:18.529447"
+        "date_added": "2025-07-27T18:18:54.018747"
       }
     },
     "cgpa_history": [
       {
         "semester": "Fall 2023",
         "cgpa": 3.67,
-        "date": "2025-07-27T17:15:18.529441"
+        "date": "2025-07-27T18:18:54.018742"
       },
       {
         "semester": "Spring 2024",
         "cgpa": 3.78,
-        "date": "2025-07-27T17:15:18.529450"
+        "date": "2025-07-27T18:18:54.018749"
       }
     ],
     "semester_data": {
@@ -101,7 +101,7 @@
           "ENG101": "A-"
         },
         "cgpa": 3.67,
-        "date_added": "2025-07-27T17:15:18.529467"
+        "date_added": "2025-07-27T18:18:54.018761"
       },
       "Spring 2024": {
         "courses_grades": {
@@ -110,19 +110,19 @@
           "PHYS101": "B"
         },
         "cgpa": 3.78,
-        "date_added": "2025-07-27T17:15:18.529477"
+        "date_added": "2025-07-27T18:18:54.018768"
       }
     },
     "cgpa_history": [
       {
         "semester": "Fall 2023",
         "cgpa": 3.67,
-        "date": "2025-07-27T17:15:18.529470"
+        "date": "2025-07-27T18:18:54.018763"
       },
       {
         "semester": "Spring 2024",
         "cgpa": 3.78,
-        "date": "2025-07-27T17:15:18.529480"
+        "date": "2025-07-27T18:18:54.018769"
       }
     ],
     "semester_data": {
@@ -168,7 +168,7 @@
           "ENG101": "A-"
         },
         "cgpa": 3.67,
-        "date_added": "2025-07-27T17:15:18.529493"
+        "date_added": "2025-07-27T18:18:54.018779"
       },
       "Spring 2024": {
         "courses_grades": {
@@ -177,19 +177,19 @@
           "PHYS101": "B"
         },
         "cgpa": 3.78,
-        "date_added": "2025-07-27T17:15:18.529499"
+        "date_added": "2025-07-27T18:18:54.018783"
       }
     },
     "cgpa_history": [
       {
         "semester": "Fall 2023",
         "cgpa": 3.67,
-        "date": "2025-07-27T17:15:18.529496"
+        "date": "2025-07-27T18:18:54.018780"
       },
       {
         "semester": "Spring 2024",
         "cgpa": 3.78,
-        "date": "2025-07-27T17:15:18.529501"
+        "date": "2025-07-27T18:18:54.018784"
       }
     ],
     "semester_data": {
@@ -235,7 +235,7 @@
           "ENG101": "A-"
         },
         "cgpa": 3.67,
-        "date_added": "2025-07-27T17:15:18.529513"
+        "date_added": "2025-07-27T18:18:54.018790"
       },
       "Spring 2024": {
         "courses_grades": {
@@ -244,19 +244,19 @@
           "PHYS101": "B"
         },
         "cgpa": 3.78,
-        "date_added": "2025-07-27T17:15:18.529518"
+        "date_added": "2025-07-27T18:18:54.018794"
       }
     },
     "cgpa_history": [
       {
         "semester": "Fall 2023",
         "cgpa": 3.67,
-        "date": "2025-07-27T17:15:18.529515"
+        "date": "2025-07-27T18:18:54.018792"
       },
       {
         "semester": "Spring 2024",
         "cgpa": 3.78,
-        "date": "2025-07-27T17:15:18.529521"
+        "date": "2025-07-27T18:18:54.018795"
       }
     ],
     "semester_data": {
@@ -302,7 +302,7 @@
           "ENG101": "A-"
         },
         "cgpa": 3.67,
-        "date_added": "2025-07-27T17:15:18.529531"
+        "date_added": "2025-07-27T18:18:54.018801"
       },
       "Spring 2024": {
         "courses_grades": {
@@ -311,19 +311,19 @@
           "PHYS101": "B"
         },
         "cgpa": 3.78,
-        "date_added": "2025-07-27T17:15:18.529540"
+        "date_added": "2025-07-27T18:18:54.018804"
       }
     },
     "cgpa_history": [
       {
         "semester": "Fall 2023",
         "cgpa": 3.67,
-        "date": "2025-07-27T17:15:18.529534"
+        "date": "2025-07-27T18:18:54.018802"
       },
       {
         "semester": "Spring 2024",
         "cgpa": 3.78,
-        "date": "2025-07-27T17:15:18.529543"
+        "date": "2025-07-27T18:18:54.018805"
       }
     ],
     "semester_data": {
@@ -490,37 +490,127 @@
   {
     "username": "teacher1",
     "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
-    "name": "Professor 1",
-    "email": "teacher1@portal.edu",
+    "name": "professor1",
+    "email": "teacher1@gmail.com",
     "user_id": "TCH001",
     "user_type": "Teacher",
     "last_login": null,
     "teacher_id": "TCH001",
-    "department": "Computer Science",
-    "qualification": "PhD",
-    "contact_info": {},
+    "department": "mathematics",
+    "qualification": "phd",
+    "contact_info": {
+      "office_building": "Science Building",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "office_room": "Room 201, Computer Building",
+      "office_phone": "1234-5678"
+    },
     "salary": 76000,
     "courses_taught": [],
-    "salary_slips": [
+    "salary_slips": [],
+    "profile_updates": [
       {
-        "slip_id": "PAYTCH001202507",
-        "teacher_id": "TCH001",
-        "month": "January",
-        "year": 2024,
-        "basic_salary": 76000,
-        "allowances": {
-          "Housing": 10000,
-          "Transport": 5000
+        "field": "name",
+        "old_value": "Professor 1",
+        "new_value": "Talha",
+        "timestamp": "2025-07-27T18:36:53.459185"
+      },
+      {
+        "field": "department",
+        "old_value": "Computer Science",
+        "new_value": "personal department",
+        "timestamp": "2025-07-27T18:37:24.087359"
+      },
+      {
+        "field": "qualification",
+        "old_value": "PhD",
+        "new_value": "chlo bhago",
+        "timestamp": "2025-07-27T18:37:46.071367"
+      },
+      {
+        "field": "email",
+        "old_value": "teacher1@portal.edu",
+        "new_value": "talhatalhatalhachlobhago@gmail.com",
+        "timestamp": "2025-07-27T18:38:27.882515"
+      },
+      {
+        "field": "name",
+        "old_value": "Talha",
+        "new_value": "professor1",
+        "timestamp": "2025-07-27T18:59:48.110301"
+      },
+      {
+        "field": "department",
+        "old_value": "personal department",
+        "new_value": "mathematics",
+        "timestamp": "2025-07-27T19:00:02.072531"
+      },
+      {
+        "field": "contact_info",
+        "old_value": {
+          "office_building": "Science Building",
+          "office_hours": "Mon-Wed 2-4 PM",
+          "personal_phone": "123456"
         },
-        "deductions": {
-          "Tax": 8000,
-          "Insurance": 2000
+        "new_value": {
+          "personal_phone": "123456"
         },
-        "net_salary": 81000,
-        "generated_date": "2025-07-27T17:15:18.529629"
+        "timestamp": "2025-07-27T19:52:43.704299"
+      },
+      {
+        "field": "qualification",
+        "old_value": "chlo bhago",
+        "new_value": "phd",
+        "timestamp": "2025-07-27T19:53:40.353899"
+      },
+      {
+        "field": "email",
+        "old_value": "talhatalhatalhachlobhago@gmail.com",
+        "new_value": "teacher1@gmail.com",
+        "timestamp": "2025-07-27T19:53:58.226599"
+      },
+      {
+        "field": "contact_info",
+        "old_value": {
+          "office_building": "Science Building",
+          "office_hours": "Mon-Wed 2-4 PM",
+          "personal_phone": "123456",
+          "office_room": "Room 201, Computer Building",
+          "office_phone": "1234-5678"
+        },
+        "new_value": {
+          "office_room": "Room 202, Computer Building"
+        },
+        "timestamp": "2025-07-27T20:13:44.219742"
+      },
+      {
+        "field": "contact_info",
+        "old_value": {
+          "office_building": "Science Building",
+          "office_hours": "Mon-Wed 2-4 PM",
+          "personal_phone": "123456",
+          "office_room": "Room 201, Computer Building",
+          "office_phone": "1234-5678"
+        },
+        "new_value": {
+          "office_phone": "1234-5678"
+        },
+        "timestamp": "2025-07-27T20:14:26.907408"
+      },
+      {
+        "field": "contact_info",
+        "old_value": {
+          "office_building": "Science Building",
+          "office_hours": "Mon-Wed 2-4 PM",
+          "personal_phone": "123456",
+          "office_room": "Room 201, Computer Building",
+          "office_phone": "1234-5678"
+        },
+        "new_value": {
+          "office_room": "Room 201, Computer Building"
+        },
+        "timestamp": "2025-07-27T20:20:29.550437"
       }
-    ],
-    "profile_updates": []
+    ]
   },
   {
     "username": "teacher2",
@@ -533,28 +623,15 @@
     "teacher_id": "TCH002",
     "department": "Mathematics",
     "qualification": "PhD",
-    "contact_info": {},
+    "contact_info": {
+      "office_room": "Room 102",
+      "office_building": "Math Building",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "555-1002"
+    },
     "salary": 77000,
     "courses_taught": [],
-    "salary_slips": [
-      {
-        "slip_id": "PAYTCH002202507",
-        "teacher_id": "TCH002",
-        "month": "January",
-        "year": 2024,
-        "basic_salary": 77000,
-        "allowances": {
-          "Housing": 10000,
-          "Transport": 5000
-        },
-        "deductions": {
-          "Tax": 8000,
-          "Insurance": 2000
-        },
-        "net_salary": 82000,
-        "generated_date": "2025-07-27T17:15:18.529664"
-      }
-    ],
+    "salary_slips": [],
     "profile_updates": []
   },
   {
@@ -568,28 +645,15 @@
     "teacher_id": "TCH003",
     "department": "Physics",
     "qualification": "PhD",
-    "contact_info": {},
+    "contact_info": {
+      "office_room": "Room 103",
+      "office_building": "Physics Lab",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "555-1003"
+    },
     "salary": 78000,
     "courses_taught": [],
-    "salary_slips": [
-      {
-        "slip_id": "PAYTCH003202507",
-        "teacher_id": "TCH003",
-        "month": "January",
-        "year": 2024,
-        "basic_salary": 78000,
-        "allowances": {
-          "Housing": 10000,
-          "Transport": 5000
-        },
-        "deductions": {
-          "Tax": 8000,
-          "Insurance": 2000
-        },
-        "net_salary": 83000,
-        "generated_date": "2025-07-27T17:15:18.529690"
-      }
-    ],
+    "salary_slips": [],
     "profile_updates": []
   },
   {
@@ -603,28 +667,15 @@
     "teacher_id": "TCH004",
     "department": "English",
     "qualification": "PhD",
-    "contact_info": {},
+    "contact_info": {
+      "office_room": "Room 104",
+      "office_building": "Liberal Arts",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "555-1004"
+    },
     "salary": 79000,
     "courses_taught": [],
-    "salary_slips": [
-      {
-        "slip_id": "PAYTCH004202507",
-        "teacher_id": "TCH004",
-        "month": "January",
-        "year": 2024,
-        "basic_salary": 79000,
-        "allowances": {
-          "Housing": 10000,
-          "Transport": 5000
-        },
-        "deductions": {
-          "Tax": 8000,
-          "Insurance": 2000
-        },
-        "net_salary": 84000,
-        "generated_date": "2025-07-27T17:15:18.529705"
-      }
-    ],
+    "salary_slips": [],
     "profile_updates": []
   },
   {
@@ -638,28 +689,15 @@
     "teacher_id": "TCH005",
     "department": "Business",
     "qualification": "PhD",
-    "contact_info": {},
+    "contact_info": {
+      "office_room": "Room 105",
+      "office_building": "Business Center",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "555-1005"
+    },
     "salary": 80000,
     "courses_taught": [],
-    "salary_slips": [
-      {
-        "slip_id": "PAYTCH005202507",
-        "teacher_id": "TCH005",
-        "month": "January",
-        "year": 2024,
-        "basic_salary": 80000,
-        "allowances": {
-          "Housing": 10000,
-          "Transport": 5000
-        },
-        "deductions": {
-          "Tax": 8000,
-          "Insurance": 2000
-        },
-        "net_salary": 85000,
-        "generated_date": "2025-07-27T17:15:18.529718"
-      }
-    ],
+    "salary_slips": [],
     "profile_updates": []
   },
   {
@@ -673,28 +711,15 @@
     "teacher_id": "TCH006",
     "department": "Computer Science",
     "qualification": "PhD",
-    "contact_info": {},
+    "contact_info": {
+      "office_room": "Room 106",
+      "office_building": "Science Building",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "555-1006"
+    },
     "salary": 81000,
     "courses_taught": [],
-    "salary_slips": [
-      {
-        "slip_id": "PAYTCH006202507",
-        "teacher_id": "TCH006",
-        "month": "January",
-        "year": 2024,
-        "basic_salary": 81000,
-        "allowances": {
-          "Housing": 10000,
-          "Transport": 5000
-        },
-        "deductions": {
-          "Tax": 8000,
-          "Insurance": 2000
-        },
-        "net_salary": 86000,
-        "generated_date": "2025-07-27T17:15:18.529729"
-      }
-    ],
+    "salary_slips": [],
     "profile_updates": []
   },
   {
@@ -708,28 +733,15 @@
     "teacher_id": "TCH007",
     "department": "Mathematics",
     "qualification": "PhD",
-    "contact_info": {},
+    "contact_info": {
+      "office_room": "Room 107",
+      "office_building": "Math Building",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "555-1007"
+    },
     "salary": 82000,
     "courses_taught": [],
-    "salary_slips": [
-      {
-        "slip_id": "PAYTCH007202507",
-        "teacher_id": "TCH007",
-        "month": "January",
-        "year": 2024,
-        "basic_salary": 82000,
-        "allowances": {
-          "Housing": 10000,
-          "Transport": 5000
-        },
-        "deductions": {
-          "Tax": 8000,
-          "Insurance": 2000
-        },
-        "net_salary": 87000,
-        "generated_date": "2025-07-27T17:15:18.529746"
-      }
-    ],
+    "salary_slips": [],
     "profile_updates": []
   },
   {
@@ -743,28 +755,15 @@
     "teacher_id": "TCH008",
     "department": "Physics",
     "qualification": "PhD",
-    "contact_info": {},
+    "contact_info": {
+      "office_room": "Room 108",
+      "office_building": "Physics Lab",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "555-1008"
+    },
     "salary": 83000,
     "courses_taught": [],
-    "salary_slips": [
-      {
-        "slip_id": "PAYTCH008202507",
-        "teacher_id": "TCH008",
-        "month": "January",
-        "year": 2024,
-        "basic_salary": 83000,
-        "allowances": {
-          "Housing": 10000,
-          "Transport": 5000
-        },
-        "deductions": {
-          "Tax": 8000,
-          "Insurance": 2000
-        },
-        "net_salary": 88000,
-        "generated_date": "2025-07-27T17:15:18.529758"
-      }
-    ],
+    "salary_slips": [],
     "profile_updates": []
   },
   {
@@ -778,28 +777,15 @@
     "teacher_id": "TCH009",
     "department": "English",
     "qualification": "PhD",
-    "contact_info": {},
+    "contact_info": {
+      "office_room": "Room 109",
+      "office_building": "Liberal Arts",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "555-1009"
+    },
     "salary": 84000,
     "courses_taught": [],
-    "salary_slips": [
-      {
-        "slip_id": "PAYTCH009202507",
-        "teacher_id": "TCH009",
-        "month": "January",
-        "year": 2024,
-        "basic_salary": 84000,
-        "allowances": {
-          "Housing": 10000,
-          "Transport": 5000
-        },
-        "deductions": {
-          "Tax": 8000,
-          "Insurance": 2000
-        },
-        "net_salary": 89000,
-        "generated_date": "2025-07-27T17:15:18.529769"
-      }
-    ],
+    "salary_slips": [],
     "profile_updates": []
   },
   {
@@ -813,28 +799,15 @@
     "teacher_id": "TCH010",
     "department": "Business",
     "qualification": "PhD",
-    "contact_info": {},
+    "contact_info": {
+      "office_room": "Room 110",
+      "office_building": "Business Center",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "555-1010"
+    },
     "salary": 85000,
     "courses_taught": [],
-    "salary_slips": [
-      {
-        "slip_id": "PAYTCH010202507",
-        "teacher_id": "TCH010",
-        "month": "January",
-        "year": 2024,
-        "basic_salary": 85000,
-        "allowances": {
-          "Housing": 10000,
-          "Transport": 5000
-        },
-        "deductions": {
-          "Tax": 8000,
-          "Insurance": 2000
-        },
-        "net_salary": 90000,
-        "generated_date": "2025-07-27T17:15:18.529781"
-      }
-    ],
+    "salary_slips": [],
     "profile_updates": []
   },
   {
@@ -848,28 +821,15 @@
     "teacher_id": "TCH011",
     "department": "Computer Science",
     "qualification": "PhD",
-    "contact_info": {},
+    "contact_info": {
+      "office_room": "Room 111",
+      "office_building": "Science Building",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "555-1011"
+    },
     "salary": 86000,
     "courses_taught": [],
-    "salary_slips": [
-      {
-        "slip_id": "PAYTCH011202507",
-        "teacher_id": "TCH011",
-        "month": "January",
-        "year": 2024,
-        "basic_salary": 86000,
-        "allowances": {
-          "Housing": 10000,
-          "Transport": 5000
-        },
-        "deductions": {
-          "Tax": 8000,
-          "Insurance": 2000
-        },
-        "net_salary": 91000,
-        "generated_date": "2025-07-27T17:15:18.529792"
-      }
-    ],
+    "salary_slips": [],
     "profile_updates": []
   },
   {
@@ -883,28 +843,15 @@
     "teacher_id": "TCH012",
     "department": "Mathematics",
     "qualification": "PhD",
-    "contact_info": {},
+    "contact_info": {
+      "office_room": "Room 112",
+      "office_building": "Math Building",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "555-1012"
+    },
     "salary": 87000,
     "courses_taught": [],
-    "salary_slips": [
-      {
-        "slip_id": "PAYTCH012202507",
-        "teacher_id": "TCH012",
-        "month": "January",
-        "year": 2024,
-        "basic_salary": 87000,
-        "allowances": {
-          "Housing": 10000,
-          "Transport": 5000
-        },
-        "deductions": {
-          "Tax": 8000,
-          "Insurance": 2000
-        },
-        "net_salary": 92000,
-        "generated_date": "2025-07-27T17:15:18.529803"
-      }
-    ],
+    "salary_slips": [],
     "profile_updates": []
   },
   {
@@ -918,28 +865,15 @@
     "teacher_id": "TCH013",
     "department": "Physics",
     "qualification": "PhD",
-    "contact_info": {},
+    "contact_info": {
+      "office_room": "Room 113",
+      "office_building": "Physics Lab",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "555-1013"
+    },
     "salary": 88000,
     "courses_taught": [],
-    "salary_slips": [
-      {
-        "slip_id": "PAYTCH013202507",
-        "teacher_id": "TCH013",
-        "month": "January",
-        "year": 2024,
-        "basic_salary": 88000,
-        "allowances": {
-          "Housing": 10000,
-          "Transport": 5000
-        },
-        "deductions": {
-          "Tax": 8000,
-          "Insurance": 2000
-        },
-        "net_salary": 93000,
-        "generated_date": "2025-07-27T17:15:18.529817"
-      }
-    ],
+    "salary_slips": [],
     "profile_updates": []
   },
   {
@@ -953,28 +887,15 @@
     "teacher_id": "TCH014",
     "department": "English",
     "qualification": "PhD",
-    "contact_info": {},
+    "contact_info": {
+      "office_room": "Room 114",
+      "office_building": "Liberal Arts",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "555-1014"
+    },
     "salary": 89000,
     "courses_taught": [],
-    "salary_slips": [
-      {
-        "slip_id": "PAYTCH014202507",
-        "teacher_id": "TCH014",
-        "month": "January",
-        "year": 2024,
-        "basic_salary": 89000,
-        "allowances": {
-          "Housing": 10000,
-          "Transport": 5000
-        },
-        "deductions": {
-          "Tax": 8000,
-          "Insurance": 2000
-        },
-        "net_salary": 94000,
-        "generated_date": "2025-07-27T17:15:18.529827"
-      }
-    ],
+    "salary_slips": [],
     "profile_updates": []
   },
   {
@@ -988,28 +909,15 @@
     "teacher_id": "TCH015",
     "department": "Business",
     "qualification": "PhD",
-    "contact_info": {},
+    "contact_info": {
+      "office_room": "Room 115",
+      "office_building": "Business Center",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "555-1015"
+    },
     "salary": 90000,
     "courses_taught": [],
-    "salary_slips": [
-      {
-        "slip_id": "PAYTCH015202507",
-        "teacher_id": "TCH015",
-        "month": "January",
-        "year": 2024,
-        "basic_salary": 90000,
-        "allowances": {
-          "Housing": 10000,
-          "Transport": 5000
-        },
-        "deductions": {
-          "Tax": 8000,
-          "Insurance": 2000
-        },
-        "net_salary": 95000,
-        "generated_date": "2025-07-27T17:15:18.529838"
-      }
-    ],
+    "salary_slips": [],
     "profile_updates": []
   }
 ]

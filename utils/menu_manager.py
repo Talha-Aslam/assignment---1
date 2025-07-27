@@ -299,9 +299,11 @@ class MenuManager:
         
         selected_course = courses[course_num - 1]
         
-        # Check if already enrolled
-        if selected_course.course_id in self.current_user.get_enrolled_courses():
-            print(f"❌ You are already enrolled in {selected_course.course_name}")
+        # Check if already enrolled in any section of this course
+        enrolled_section = self.system_manager.find_student_enrolled_section(
+            self.current_user.student_id, selected_course.course_id)
+        if enrolled_section:
+            print(f"❌ You are already enrolled in {selected_course.course_name} - Section {enrolled_section}")
             input("Press Enter to continue...")
             return
         
@@ -325,11 +327,11 @@ class MenuManager:
         elif confirm:
             print("\nProcessing enrollment...")
             success = self.system_manager.enroll_student_in_course(
-                self.current_user.student_id, selected_course.course_id)
+                self.current_user.student_id, selected_course.course_id, selected_course.section)
             
             if success:
                 print("✅ Enrollment successful!")
-                print(f"You have been enrolled in {selected_course.course_name}")
+                print(f"You have been enrolled in {selected_course.course_name} - Section {selected_course.section}")
             else:
                 print("❌ Enrollment failed. The course may be full or unavailable.")
         else:
@@ -342,34 +344,35 @@ class MenuManager:
         self.clear_screen()
         self.print_header("Course Unenrollment")
         
-        enrolled_courses = self.current_user.get_enrolled_courses()
+        # Get enrolled courses from system manager for accurate data
+        enrolled_courses = []
+        for course_key, course in self.system_manager.courses.items():
+            if self.current_user.student_id in course.enrolled_students:
+                enrolled_courses.append(course)
+        
         if not enrolled_courses:
             print("You are not enrolled in any courses.")
             input("Press Enter to continue...")
             return
         
         print("Your Enrolled Courses:")
-        course_details = []
-        for i, course_id in enumerate(enrolled_courses, 1):
-            course = self.system_manager.get_course_by_id(course_id)
-            if course:
-                course_details.append(course)
-                print(f"{i}. {course.course_name} ({course.course_id})")
-                print(f"   Instructor: {course.instructor}")
-                print(f"   Section: {course.section}")
-                print()
+        for i, course in enumerate(enrolled_courses, 1):
+            print(f"{i}. {course.course_name} ({course.course_id})")
+            print(f"   Instructor: {course.instructor}")
+            print(f"   Section: {course.section}")
+            print()
         
-        print(f"{len(course_details) + 1}. Cancel and return to main menu")
+        print(f"{len(enrolled_courses) + 1}. Cancel and return to main menu")
         
         course_num = self.get_user_input("Select course number to unenroll (or cancel)", int,
-                                       lambda x: 1 <= x <= len(course_details) + 1)
+                                       lambda x: 1 <= x <= len(enrolled_courses) + 1)
         
-        if course_num is None or course_num == len(course_details) + 1:
+        if course_num is None or course_num == len(enrolled_courses) + 1:
             print("Unenrollment cancelled. Returning to main menu...")
             input("Press Enter to continue...")
             return
         
-        selected_course = course_details[course_num - 1]
+        selected_course = enrolled_courses[course_num - 1]
         
         # Show course details and confirmation
         self.clear_screen()
@@ -400,7 +403,7 @@ class MenuManager:
             
             if success:
                 print("✅ Unenrollment successful!")
-                print(f"You have been removed from {selected_course.course_name}")
+                print(f"You have been removed from {selected_course.course_name} - Section {selected_course.section}")
             else:
                 print("❌ Unenrollment failed. Please try again or contact administration.")
         else:
@@ -472,14 +475,24 @@ class MenuManager:
         self.clear_screen()
         self.print_header("Your Enrolled Courses")
         
-        enrolled_courses = self.current_user.get_enrolled_courses()
+        # Get enrolled courses from system manager for accurate section data
+        enrolled_courses = []
+        for course_key, course in self.system_manager.courses.items():
+            if self.current_user.student_id in course.enrolled_students:
+                enrolled_courses.append(course)
+        
         if not enrolled_courses:
             print("You are not enrolled in any courses.")
         else:
-            for course_id in enrolled_courses:
-                course = self.system_manager.get_course_by_id(course_id)
-                if course:
-                    print(course.get_info())
+            print("Course Information:")
+            print("-" * 50)
+            for course in enrolled_courses:
+                print(f"Course Name: {course.course_name}")
+                print(f"Course ID: {course.course_id}")
+                print(f"Section: {course.section}")
+                print(f"Instructor: {course.instructor}")
+                print(f"Enrolled Students: {len(course.enrolled_students)}/{course.capacity}")
+                print("-" * 50)
         
         input("Press Enter to continue...")
     
@@ -765,11 +778,15 @@ class MenuManager:
         self.clear_screen()
         self.print_header("Your Courses")
         
-        if self.current_user.courses_taught:
-            for course_id in self.current_user.courses_taught:
-                course = self.system_manager.get_course_by_id(course_id)
-                if course:
-                    print(course.get_info())
+        teacher_courses = []
+        # Find all course sections taught by this teacher
+        for course_key, course in self.system_manager.courses.items():
+            if course.instructor == self.current_user.name:
+                teacher_courses.append(course)
+        
+        if teacher_courses:
+            for course in teacher_courses:
+                print(course.get_info())
         else:
             print("You are not assigned to any courses.")
         

@@ -120,7 +120,9 @@
     "instructor": "teacher12",
     "capacity": 28,
     "section": "B",
-    "enrolled_students": [],
+    "enrolled_students": [
+      "STU001"
+    ],
     "created_date": "2025-07-27T18:18:54.019078"
   },
   {
@@ -150,9 +152,7 @@
     "instructor": "teacher14",
     "capacity": 22,
     "section": "C",
-    "enrolled_students": [
-      "STU001"
-    ],
+    "enrolled_students": [],
     "created_date": "2025-07-27T18:18:54.019079"
   },
   {
