@@ -8,9 +8,10 @@
     "enrolled_students": [
       "STU001",
       "STU002",
-      "STU004"
+      "STU004",
+      "STU010"
     ],
-    "created_date": "2025-07-27T18:18:54.019072"
+    "created_date": "2025-07-27T17:15:18.529844"
   },
   {
     "course_id": "CS102",
@@ -21,7 +22,7 @@
     "enrolled_students": [
       "STU003"
     ],
-    "created_date": "2025-07-27T18:18:54.019075"
+    "created_date": "2025-07-27T17:15:18.529847"
   },
   {
     "course_id": "MATH101",
@@ -34,7 +35,7 @@
       "STU002",
       "STU005"
     ],
-    "created_date": "2025-07-27T18:18:54.019076"
+    "created_date": "2025-07-27T17:15:18.529848"
   },
   {
     "course_id": "MATH102",
@@ -45,7 +46,7 @@
     "enrolled_students": [
       "STU003"
     ],
-    "created_date": "2025-07-27T18:18:54.019077"
+    "created_date": "2025-07-27T17:15:18.529849"
   },
   {
     "course_id": "PHYS101",
@@ -57,7 +58,7 @@
       "STU002",
       "STU005"
     ],
-    "created_date": "2025-07-27T18:18:54.019078"
+    "created_date": "2025-07-27T17:15:18.529850"
   },
   {
     "course_id": "ENG101",
@@ -70,7 +71,7 @@
       "STU004",
       "STU005"
     ],
-    "created_date": "2025-07-27T18:18:54.019079"
+    "created_date": "2025-07-27T17:15:18.529851"
   },
   {
     "course_id": "BUS101",
@@ -80,8 +81,9 @@
     "section": "A",
     "enrolled_students": [
       "STU003",
-      "STU004"
+      "STU004",
+      "STU001"
     ],
-    "created_date": "2025-07-27T18:18:54.019080"
+    "created_date": "2025-07-27T17:15:18.529852"
   }
 ]

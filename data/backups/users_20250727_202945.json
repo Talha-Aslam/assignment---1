@@ -19,7 +19,7 @@
     "email": "student1@portal.edu",
     "user_id": "STU001",
     "user_type": "Student",
-    "last_login": "2025-07-27T20:36:16.180582",
+    "last_login": null,
     "student_id": "STU001",
     "enrolled_courses": [
       "CS101",
@@ -494,13 +494,14 @@
     "email": "teacher1@gmail.com",
     "user_id": "TCH001",
     "user_type": "Teacher",
-    "last_login": "2025-07-27T20:29:04.862484",
+    "last_login": "2025-07-27T20:13:02.179014",
     "teacher_id": "TCH001",
     "department": "mathematics",
     "qualification": "phd",
     "contact_info": {
       "office_building": "Science Building",
       "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "123456",
       "office_room": "Room 201, Computer Building",
       "office_phone": "1234-5678"
     },

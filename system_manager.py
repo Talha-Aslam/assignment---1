@@ -142,8 +142,11 @@ class SystemManager:
         
         # Create default teachers (10-15)
         departments = ["Computer Science", "Mathematics", "Physics", "English", "Business"]
+        office_buildings = ["Science Building", "Math Building", "Physics Lab", "Liberal Arts", "Business Center"]
+        
         for i in range(1, 16):
             teacher_id = f"TCH{i:03d}"
+            dept_index = (i-1) % len(departments)
             teacher = Teacher(
                 username=f"teacher{i}",
                 password="teach123",
@@ -151,9 +154,15 @@ class SystemManager:
                 email=f"teacher{i}@portal.edu",
                 user_id=teacher_id,
                 teacher_id=teacher_id,
-                department=departments[(i-1) % len(departments)],
+                department=departments[dept_index],
                 qualification="PhD",
-                salary=75000 + (i * 1000)
+                salary=75000 + (i * 1000),
+                contact_info={
+                    "office_room": f"Room {100 + i}",
+                    "office_building": office_buildings[dept_index],
+                    "office_hours": "Mon-Wed 2-4 PM",
+                    "personal_phone": f"555-{1000+i:04d}"  # This won't be shown to students
+                }
             )
             
             # Add sample salary slip

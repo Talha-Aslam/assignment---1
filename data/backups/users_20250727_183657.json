@@ -19,7 +19,7 @@
     "email": "student1@portal.edu",
     "user_id": "STU001",
     "user_type": "Student",
-    "last_login": "2025-07-27T20:36:16.180582",
+    "last_login": "2025-07-27T18:20:20.553580",
     "student_id": "STU001",
     "enrolled_courses": [
       "CS101",
@@ -490,127 +490,24 @@
   {
     "username": "teacher1",
     "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
-    "name": "professor1",
-    "email": "teacher1@gmail.com",
+    "name": "Professor 1",
+    "email": "teacher1@portal.edu",
     "user_id": "TCH001",
     "user_type": "Teacher",
-    "last_login": "2025-07-27T20:29:04.862484",
+    "last_login": null,
     "teacher_id": "TCH001",
-    "department": "mathematics",
-    "qualification": "phd",
+    "department": "Computer Science",
+    "qualification": "PhD",
     "contact_info": {
+      "office_room": "Room 101",
       "office_building": "Science Building",
       "office_hours": "Mon-Wed 2-4 PM",
-      "office_room": "Room 201, Computer Building",
-      "office_phone": "1234-5678"
+      "personal_phone": "555-1001"
     },
     "salary": 76000,
     "courses_taught": [],
     "salary_slips": [],
-    "profile_updates": [
-      {
-        "field": "name",
-        "old_value": "Professor 1",
-        "new_value": "Talha",
-        "timestamp": "2025-07-27T18:36:53.459185"
-      },
-      {
-        "field": "department",
-        "old_value": "Computer Science",
-        "new_value": "personal department",
-        "timestamp": "2025-07-27T18:37:24.087359"
-      },
-      {
-        "field": "qualification",
-        "old_value": "PhD",
-        "new_value": "chlo bhago",
-        "timestamp": "2025-07-27T18:37:46.071367"
-      },
-      {
-        "field": "email",
-        "old_value": "teacher1@portal.edu",
-        "new_value": "talhatalhatalhachlobhago@gmail.com",
-        "timestamp": "2025-07-27T18:38:27.882515"
-      },
-      {
-        "field": "name",
-        "old_value": "Talha",
-        "new_value": "professor1",
-        "timestamp": "2025-07-27T18:59:48.110301"
-      },
-      {
-        "field": "department",
-        "old_value": "personal department",
-        "new_value": "mathematics",
-        "timestamp": "2025-07-27T19:00:02.072531"
-      },
-      {
-        "field": "contact_info",
-        "old_value": {
-          "office_building": "Science Building",
-          "office_hours": "Mon-Wed 2-4 PM",
-          "personal_phone": "123456"
-        },
-        "new_value": {
-          "personal_phone": "123456"
-        },
-        "timestamp": "2025-07-27T19:52:43.704299"
-      },
-      {
-        "field": "qualification",
-        "old_value": "chlo bhago",
-        "new_value": "phd",
-        "timestamp": "2025-07-27T19:53:40.353899"
-      },
-      {
-        "field": "email",
-        "old_value": "talhatalhatalhachlobhago@gmail.com",
-        "new_value": "teacher1@gmail.com",
-        "timestamp": "2025-07-27T19:53:58.226599"
-      },
-      {
-        "field": "contact_info",
-        "old_value": {
-          "office_building": "Science Building",
-          "office_hours": "Mon-Wed 2-4 PM",
-          "personal_phone": "123456",
-          "office_room": "Room 201, Computer Building",
-          "office_phone": "1234-5678"
-        },
-        "new_value": {
-          "office_room": "Room 202, Computer Building"
-        },
-        "timestamp": "2025-07-27T20:13:44.219742"
-      },
-      {
-        "field": "contact_info",
-        "old_value": {
-          "office_building": "Science Building",
-          "office_hours": "Mon-Wed 2-4 PM",
-          "personal_phone": "123456",
-          "office_room": "Room 201, Computer Building",
-          "office_phone": "1234-5678"
-        },
-        "new_value": {
-          "office_phone": "1234-5678"
-        },
-        "timestamp": "2025-07-27T20:14:26.907408"
-      },
-      {
-        "field": "contact_info",
-        "old_value": {
-          "office_building": "Science Building",
-          "office_hours": "Mon-Wed 2-4 PM",
-          "personal_phone": "123456",
-          "office_room": "Room 201, Computer Building",
-          "office_phone": "1234-5678"
-        },
-        "new_value": {
-          "office_room": "Room 201, Computer Building"
-        },
-        "timestamp": "2025-07-27T20:20:29.550437"
-      }
-    ]
+    "profile_updates": []
   },
   {
     "username": "teacher2",

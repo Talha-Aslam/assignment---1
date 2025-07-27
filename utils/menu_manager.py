@@ -79,6 +79,37 @@ class MenuManager:
                 print("\nOperation cancelled.")
                 return None
     
+    def get_yes_no_input(self, prompt: str) -> bool:
+        """
+        Get validated yes/no input from user.
+        
+        Args:
+            prompt (str): Input prompt
+            
+        Returns:
+            bool: True for yes, False for no, None if cancelled
+        """
+        valid_yes = ['y', 'yes', 'yeah', 'yep', 'true', '1']
+        valid_no = ['n', 'no', 'nope', 'false', '0']
+        
+        while True:
+            try:
+                user_input = input(f"\n{prompt}: ").strip().lower()
+                
+                if user_input in valid_yes:
+                    return True
+                elif user_input in valid_no:
+                    return False
+                else:
+                    print("❌ Invalid input! Please enter:")
+                    print("   • For YES: y, yes, yeah, yep, true, 1")
+                    print("   • For NO: n, no, nope, false, 0")
+                    continue
+                    
+            except KeyboardInterrupt:
+                print("\nOperation cancelled.")
+                return None
+    
     def show_main_menu(self):
         """Display main login menu."""
         while True:
@@ -250,24 +281,59 @@ class MenuManager:
         
         print("Available Courses:")
         for i, course in enumerate(courses, 1):
-            print(f"{i}. {course.course_name} ({course.course_id}) - "
-                  f"Instructor: {course.instructor} - "
-                  f"Available: {course.get_available_spots()}/{course.capacity}")
+            print(f"{i}. {course.course_name} ({course.course_id})")
+            print(f"   Instructor: {course.instructor}")
+            print(f"   Section: {course.section}")
+            print(f"   Available: {course.get_available_spots()}/{course.capacity} spots")
+            print()
         
-        course_num = self.get_user_input("Select course number", int,
-                                       lambda x: 1 <= x <= len(courses))
+        print(f"{len(courses) + 1}. Cancel and return to main menu")
         
-        if course_num is None:
+        course_num = self.get_user_input("Select course number to enroll (or cancel)", int,
+                                       lambda x: 1 <= x <= len(courses) + 1)
+        
+        if course_num is None or course_num == len(courses) + 1:
+            print("Enrollment cancelled. Returning to main menu...")
+            input("Press Enter to continue...")
             return
         
         selected_course = courses[course_num - 1]
-        success = self.system_manager.enroll_student_in_course(
-            self.current_user.student_id, selected_course.course_id)
         
-        if success:
-            print("Enrollment successful!")
+        # Check if already enrolled
+        if selected_course.course_id in self.current_user.get_enrolled_courses():
+            print(f"❌ You are already enrolled in {selected_course.course_name}")
+            input("Press Enter to continue...")
+            return
+        
+        # Show course details and confirmation
+        self.clear_screen()
+        self.print_header("Confirm Enrollment")
+        print("Course Details:")
+        print(f"Course Name: {selected_course.course_name}")
+        print(f"Course ID: {selected_course.course_id}")
+        print(f"Instructor: {selected_course.instructor}")
+        print(f"Section: {selected_course.section}")
+        print(f"Available Spots: {selected_course.get_available_spots()}/{selected_course.capacity}")
+        print()
+        
+        confirm = self.get_yes_no_input("Do you want to enroll in this course? (y/n)")
+        
+        if confirm is None:
+            print("Enrollment cancelled.")
+            input("Press Enter to continue...")
+            return
+        elif confirm:
+            print("\nProcessing enrollment...")
+            success = self.system_manager.enroll_student_in_course(
+                self.current_user.student_id, selected_course.course_id)
+            
+            if success:
+                print("✅ Enrollment successful!")
+                print(f"You have been enrolled in {selected_course.course_name}")
+            else:
+                print("❌ Enrollment failed. The course may be full or unavailable.")
         else:
-            print("Enrollment failed.")
+            print("Enrollment cancelled.")
         
         input("Press Enter to continue...")
     
@@ -289,21 +355,56 @@ class MenuManager:
             if course:
                 course_details.append(course)
                 print(f"{i}. {course.course_name} ({course.course_id})")
+                print(f"   Instructor: {course.instructor}")
+                print(f"   Section: {course.section}")
+                print()
         
-        course_num = self.get_user_input("Select course number to unenroll", int,
-                                       lambda x: 1 <= x <= len(course_details))
+        print(f"{len(course_details) + 1}. Cancel and return to main menu")
         
-        if course_num is None:
+        course_num = self.get_user_input("Select course number to unenroll (or cancel)", int,
+                                       lambda x: 1 <= x <= len(course_details) + 1)
+        
+        if course_num is None or course_num == len(course_details) + 1:
+            print("Unenrollment cancelled. Returning to main menu...")
+            input("Press Enter to continue...")
             return
         
         selected_course = course_details[course_num - 1]
-        success = self.system_manager.unenroll_student_from_course(
-            self.current_user.student_id, selected_course.course_id)
         
-        if success:
-            print("Unenrollment successful!")
+        # Show course details and confirmation
+        self.clear_screen()
+        self.print_header("Confirm Unenrollment")
+        print("Course Details:")
+        print(f"Course Name: {selected_course.course_name}")
+        print(f"Course ID: {selected_course.course_id}")
+        print(f"Instructor: {selected_course.instructor}")
+        print(f"Section: {selected_course.section}")
+        print()
+        print("⚠️  WARNING: Unenrolling from this course will:")
+        print("   • Remove you from the course roster")
+        print("   • Make your spot available to other students")
+        print("   • You may need to re-enroll if the course becomes full")
+        print()
+        
+        # Final confirmation
+        confirm = self.get_yes_no_input("Are you sure you want to unenroll from this course? (y/n)")
+        
+        if confirm is None:
+            print("Unenrollment cancelled.")
+            input("Press Enter to continue...")
+            return
+        elif confirm:
+            print("\nProcessing unenrollment...")
+            success = self.system_manager.unenroll_student_from_course(
+                self.current_user.student_id, selected_course.course_id)
+            
+            if success:
+                print("✅ Unenrollment successful!")
+                print(f"You have been removed from {selected_course.course_name}")
+            else:
+                print("❌ Unenrollment failed. Please try again or contact administration.")
         else:
-            print("Unenrollment failed.")
+            print("Unenrollment cancelled. You remain enrolled in the course.")
         
         input("Press Enter to continue...")
     
@@ -340,14 +441,30 @@ class MenuManager:
         for i, teacher in enumerate(teachers, 1):
             print(f"{i}. {teacher.name} ({teacher.teacher_id}) - {teacher.department}")
         
-        teacher_num = self.get_user_input("Select teacher number to view profile", int,
-                                        lambda x: 1 <= x <= len(teachers))
+        print(f"{len(teachers) + 1}. Cancel and return to main menu")
         
-        if teacher_num is None:
+        teacher_num = self.get_user_input("Select teacher number to view profile (or cancel)", int,
+                                        lambda x: 1 <= x <= len(teachers) + 1)
+        
+        if teacher_num is None or teacher_num == len(teachers) + 1:
+            print("Cancelled. Returning to main menu...")
+            input("Press Enter to continue...")
             return
         
         selected_teacher = teachers[teacher_num - 1]
-        selected_teacher.view_profile()
+        self.clear_screen()
+        self.print_header(f"Teacher Profile - {selected_teacher.name}")
+        
+        # Use public profile method for students
+        selected_teacher.view_public_profile()
+        
+        print("\n" + "="*50)
+        print("Privacy Notice:")
+        print("• Salary and personal contact information are private")
+        print("• Only public professional information is shown")
+        print("• For course-related queries, use official channels")
+        print("="*50)
+        
         input("\nPress Enter to continue...")
     
     def handle_student_view_courses(self):
@@ -375,41 +492,266 @@ class MenuManager:
         input("\nPress Enter to continue...")
     
     def handle_teacher_update_info(self):
-        """Handle updating teacher information."""
-        self.clear_screen()
-        self.print_header("Update Personal Information")
+        """Handle updating teacher information with continuous editing."""
+        while True:
+            self.clear_screen()
+            self.print_header("Update Personal Information")
+            
+            # Show current information
+            print("Current Information:")
+            print(f"Name: {self.current_user.name}")
+            print(f"Department: {self.current_user.department}")
+            print(f"Qualification: {self.current_user.qualification}")
+            print(f"Email: {self.current_user.email}")
+            
+            if self.current_user.contact_info:
+                print("Contact Information:")
+                for key, value in self.current_user.contact_info.items():
+                    print(f"  {key.replace('_', ' ').title()}: {value}")
+            
+            print("\n" + "-" * 50)
+            print("What would you like to update?")
+            print("1. Name")
+            print("2. Department")
+            print("3. Qualification")
+            print("4. Email")
+            print("5. Manage Contact Information")
+            print("6. Save and Exit")
+            print("-" * 50)
+            
+            choice = self.get_user_input("Select option (1-6)", int, lambda x: 1 <= x <= 6)
+            
+            if choice is None:
+                continue
+            elif choice == 6:
+                print("Saving changes and returning to main menu...")
+                # Save all changes
+                self.system_manager.save_all_data()
+                input("Press Enter to continue...")
+                break
+            
+            # Handle the specific update
+            update_successful = False
+            
+            if choice == 1:
+                new_name = self.get_user_input("Enter new name")
+                if new_name:
+                    old_name = self.current_user.name
+                    if self.current_user.update_info('name', new_name):
+                        print(f"✅ Name updated from '{old_name}' to '{new_name}'")
+                        update_successful = True
+                    else:
+                        print("❌ Failed to update name")
+            
+            elif choice == 2:
+                new_dept = self.get_user_input("Enter new department")
+                if new_dept:
+                    old_dept = self.current_user.department
+                    if self.current_user.update_info('department', new_dept):
+                        print(f"✅ Department updated from '{old_dept}' to '{new_dept}'")
+                        update_successful = True
+                    else:
+                        print("❌ Failed to update department")
+            
+            elif choice == 3:
+                new_qual = self.get_user_input("Enter new qualification")
+                if new_qual:
+                    old_qual = self.current_user.qualification
+                    if self.current_user.update_info('qualification', new_qual):
+                        print(f"✅ Qualification updated from '{old_qual}' to '{new_qual}'")
+                        update_successful = True
+                    else:
+                        print("❌ Failed to update qualification")
+            
+            elif choice == 4:
+                new_email = self.get_user_input("Enter new email")
+                if new_email:
+                    old_email = self.current_user.email
+                    if self.current_user.update_info('email', new_email):
+                        print(f"✅ Email updated from '{old_email}' to '{new_email}'")
+                        update_successful = True
+                    else:
+                        print("❌ Failed to update email")
+            
+            elif choice == 5:
+                # Contact Information Management with its own continuous loop
+                while True:
+                    self.clear_screen()
+                    self.print_header("Contact Information Management")
+                    
+                    print("📞 CONTACT INFORMATION MANAGEMENT")
+                    print("="*60)
+                    print("Manage all your contact information in one place.")
+                    print("Add, update, or remove multiple contacts without exiting.")
+                    print()
+                    
+                    print("📋 AVAILABLE CONTACT TYPES:")
+                    contact_types = [
+                        ("office_phone", "(555) 123-4567"),
+                        ("personal_phone", "(555) 987-6543"),
+                        ("office_room", "Room 101, Science Building"),
+                        ("office_building", "Science Building, Floor 2"),
+                        ("office_hours", "Mon-Wed 9:00-11:00 AM, Fri 2:00-4:00 PM"),
+                        ("address", "123 Main St, City, State 12345"),
+                        ("emergency_contact", "Jane Doe - (555) 111-2222"),
+                        ("department_phone", "(555) 200-3000 ext. 1234"),
+                        ("email_secondary", "john.doe.backup@university.edu"),
+                        ("office_website", "https://university.edu/faculty/johndoe"),
+                        ("custom_contact", "Enter your own contact type")
+                    ]
+                    
+                    for i, (contact_type, example) in enumerate(contact_types, 1):
+                        if contact_type == "custom_contact":
+                            print(f"{i}. Custom Contact Type → {example}")
+                        else:
+                            print(f"{i}. {contact_type.replace('_', ' ').title()} → {example}")
+                    
+                    print(f"{len(contact_types) + 1}. Remove Contact Information")
+                    print(f"{len(contact_types) + 2}. Save and Return to Main Menu")
+                    print()
+                    
+                    print("📝 CURRENT CONTACT INFORMATION:")
+                    if self.current_user.contact_info:
+                        for i, (key, value) in enumerate(self.current_user.contact_info.items(), 1):
+                            print(f"   • {key.replace('_', ' ').title()}: {value}")
+                    else:
+                        print("   No contact information currently stored.")
+                    print()
+                    
+                    # Get contact management choice
+                    max_choice = len(contact_types) + 2
+                    contact_choice = self.get_user_input(f"Select option (1-{max_choice})", int,
+                                                       lambda x: 1 <= x <= max_choice)
+                    
+                    if contact_choice is None:
+                        continue
+                    elif contact_choice == max_choice:  # Save and Return
+                        print("\n💾 Saving contact information...")
+                        self.system_manager.save_all_data()
+                        print("✅ Contact information saved successfully!")
+                        input("Press Enter to return to main update menu...")
+                        break
+                    elif contact_choice == max_choice - 1:  # Remove Contact
+                        self._handle_contact_removal()
+                        continue
+                    else:  # Add/Update contact
+                        contact_operation_successful = self._handle_contact_addition_update(contact_types, contact_choice)
+                        if contact_operation_successful:
+                            update_successful = True
+                        
+                        # Ask if user wants to continue managing contacts
+                        continue_contacts = self.get_yes_no_input("\nWould you like to manage another contact? (y/n)")
+                        if not continue_contacts:
+                            print("\n💾 Saving contact information...")
+                            self.system_manager.save_all_data()
+                            print("✅ Contact information saved successfully!")
+                            input("Press Enter to return to main update menu...")
+                            break
+                        else:
+                            print("\n🔄 Continuing with contact management...")
+            
+            # For choices 1-4, add the continuation logic
+            if choice in [1, 2, 3, 4] and 'update_successful' in locals() and update_successful:
+                print("\n🔄 Update completed successfully!")
+                print("💡 You can continue updating other information or save and exit when done.")
+                
+                # Ask if user wants to continue or go back to menu
+                continue_choice = self.get_yes_no_input("\nWould you like to update something else? (y/n)")
+                if continue_choice is None or not continue_choice:
+                    print("\n💾 Saving all changes...")
+                    self.system_manager.save_all_data()
+                    print("✅ All changes saved successfully!")
+                    input("Press Enter to return to main menu...")
+                    break
+                else:
+                    print("\n🔄 Continuing with updates...")
+    
+    def _handle_contact_addition_update(self, contact_types, choice):
+        """Handle adding or updating a specific contact."""
+        if choice == len(contact_types):  # Custom contact type
+            print("\n➕ CUSTOM CONTACT TYPE:")
+            contact_type = self.get_user_input("Enter custom contact type (use underscores for spaces)")
+            if not contact_type:
+                print("❌ Contact type is required.")
+                return False
+            example_format = "Enter your custom format"
+        else:
+            contact_type, example_format = contact_types[choice - 1]
         
-        print("What would you like to update?")
-        print("1. Name")
-        print("2. Department")
-        print("3. Qualification")
-        print("4. Contact Information")
-        print("5. Cancel")
+        # Show current value if updating
+        current_value = self.current_user.contact_info.get(contact_type, "")
+        if current_value:
+            print(f"\n🔄 UPDATING EXISTING CONTACT:")
+            print(f"Contact Type: {contact_type.replace('_', ' ').title()}")
+            print(f"Current Value: {current_value}")
+            print(f"Suggested Format: {example_format}")
+        else:
+            print(f"\n➕ ADDING NEW CONTACT:")
+            print(f"Contact Type: {contact_type.replace('_', ' ').title()}")
+            print(f"Suggested Format: {example_format}")
         
-        choice = self.get_user_input("Select option", int, lambda x: 1 <= x <= 5)
+        contact_value = self.get_user_input(f"Enter value for {contact_type.replace('_', ' ').title()}")
         
-        if choice is None or choice == 5:
+        if contact_value:
+            # Update contact information
+            is_update = contact_type in self.current_user.contact_info
+            old_value = self.current_user.contact_info.get(contact_type, "")
+            
+            if self.current_user.update_info('contact_info', {contact_type: contact_value}):
+                if is_update:
+                    print(f"\n✅ CONTACT UPDATED SUCCESSFULLY!")
+                    print(f"   Type: {contact_type.replace('_', ' ').title()}")
+                    print(f"   Old Value: {old_value}")
+                    print(f"   New Value: {contact_value}")
+                else:
+                    print(f"\n✅ CONTACT ADDED SUCCESSFULLY!")
+                    print(f"   Type: {contact_type.replace('_', ' ').title()}")
+                    print(f"   Value: {contact_value}")
+                return True
+            else:
+                print("❌ Failed to update contact information")
+                return False
+        else:
+            print("❌ Contact value is required.")
+            return False
+    
+    def _handle_contact_removal(self):
+        """Handle removal of contact information."""
+        if not self.current_user.contact_info:
+            print("\n❌ No contact information to remove.")
+            input("Press Enter to continue...")
             return
         
-        if choice == 1:
-            new_name = self.get_user_input("Enter new name")
-            if new_name:
-                self.current_user.update_info('name', new_name)
-        elif choice == 2:
-            new_dept = self.get_user_input("Enter new department")
-            if new_dept:
-                self.current_user.update_info('department', new_dept)
-        elif choice == 3:
-            new_qual = self.get_user_input("Enter new qualification")
-            if new_qual:
-                self.current_user.update_info('qualification', new_qual)
-        elif choice == 4:
-            contact_type = self.get_user_input("Contact type (phone/address/etc.)")
-            contact_value = self.get_user_input("Contact value")
-            if contact_type and contact_value:
-                self.current_user.update_info('contact_info', {contact_type: contact_value})
+        print("\n📝 CURRENT CONTACT INFORMATION:")
+        contact_items = list(self.current_user.contact_info.items())
+        for i, (key, value) in enumerate(contact_items, 1):
+            print(f"{i}. {key.replace('_', ' ').title()}: {value}")
+        print(f"{len(contact_items) + 1}. Cancel (Go back without changes)")
         
-        input("Press Enter to continue...")
+        remove_choice = self.get_user_input("Select contact to remove or cancel", int,
+                                          lambda x: 1 <= x <= len(contact_items) + 1)
+        
+        if remove_choice and remove_choice <= len(contact_items):
+            # Confirm removal
+            key_to_remove = contact_items[remove_choice - 1][0]
+            contact_value = contact_items[remove_choice - 1][1]
+            
+            print(f"\nYou are about to remove:")
+            print(f"Contact: {key_to_remove.replace('_', ' ').title()}")
+            print(f"Value: {contact_value}")
+            
+            confirm = self.get_yes_no_input("Are you sure you want to remove this contact? (y/n)")
+            if confirm is None:
+                print("❌ Contact removal cancelled.")
+            elif confirm:
+                del self.current_user.contact_info[key_to_remove]
+                print(f"✅ Removed contact information: {key_to_remove.replace('_', ' ').title()}")
+            else:
+                print("❌ Contact removal cancelled.")
+        elif remove_choice == len(contact_items) + 1:
+            print("❌ Contact removal cancelled. No changes made.")
+        
+        input("\nPress Enter to continue...")
     
     def handle_teacher_view_salary(self):
         """Handle viewing salary information."""
@@ -478,8 +820,10 @@ class MenuManager:
         
         user_id = self.get_user_input("Enter User ID to delete")
         if user_id:
-            confirm = self.get_user_input(f"Are you sure you want to delete user {user_id}? (yes/no)")
-            if confirm.lower() == 'yes':
+            confirm = self.get_yes_no_input(f"Are you sure you want to delete user {user_id}? (y/n)")
+            if confirm is None:
+                print("Deletion cancelled.")
+            elif confirm:
                 success = self.current_user.delete_user(user_id, self.system_manager)
                 if not success:
                     print("Failed to delete user.")

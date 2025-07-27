@@ -165,17 +165,21 @@ class Student(User):
     
     def view_teacher_profile(self, teacher_id, teacher_manager):
         """
-        View a teacher's profile.
+        View a teacher's public profile (without sensitive information).
         
         Args:
             teacher_id (str): Teacher ID to view
             teacher_manager: Teacher manager object
         """
-        teacher_info = teacher_manager.get_teacher_profile(teacher_id)
-        if teacher_info:
-            print(f"\n=== Teacher Profile ===")
-            for key, value in teacher_info.items():
-                print(f"{key.replace('_', ' ').title()}: {value}")
+        # Find teacher by ID
+        teacher = None
+        for user in teacher_manager.users.values():
+            if hasattr(user, 'teacher_id') and user.teacher_id == teacher_id:
+                teacher = user
+                break
+        
+        if teacher:
+            teacher.view_public_profile()
         else:
             print(f"Teacher with ID {teacher_id} not found.")
     
@@ -193,7 +197,7 @@ class Student(User):
         """Display student-specific menu."""
         print(f"\n=== Student Menu - {self.name} ===")
         print("1. Enroll in Course")
-        print("2. Unenroll from Course")
+        print("2. Unenroll from Course (with confirmation)")
         print("3. View Academic Records")
         print("4. Plot CGPA Graph")
         print("5. View Teacher Profile")

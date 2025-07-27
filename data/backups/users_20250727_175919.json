@@ -19,7 +19,7 @@
     "email": "student1@portal.edu",
     "user_id": "STU001",
     "user_type": "Student",
-    "last_login": "2025-07-27T20:36:16.180582",
+    "last_login": "2025-07-27T17:56:58.645475",
     "student_id": "STU001",
     "enrolled_courses": [
       "CS101",
@@ -34,7 +34,7 @@
           "ENG101": "A-"
         },
         "cgpa": 3.67,
-        "date_added": "2025-07-27T18:18:54.018736"
+        "date_added": "2025-07-27T17:15:18.529434"
       },
       "Spring 2024": {
         "courses_grades": {
@@ -43,19 +43,19 @@
           "PHYS101": "B"
         },
         "cgpa": 3.78,
-        "date_added": "2025-07-27T18:18:54.018747"
+        "date_added": "2025-07-27T17:15:18.529447"
       }
     },
     "cgpa_history": [
       {
         "semester": "Fall 2023",
         "cgpa": 3.67,
-        "date": "2025-07-27T18:18:54.018742"
+        "date": "2025-07-27T17:15:18.529441"
       },
       {
         "semester": "Spring 2024",
         "cgpa": 3.78,
-        "date": "2025-07-27T18:18:54.018749"
+        "date": "2025-07-27T17:15:18.529450"
       }
     ],
     "semester_data": {
@@ -101,7 +101,7 @@
           "ENG101": "A-"
         },
         "cgpa": 3.67,
-        "date_added": "2025-07-27T18:18:54.018761"
+        "date_added": "2025-07-27T17:15:18.529467"
       },
       "Spring 2024": {
         "courses_grades": {
@@ -110,19 +110,19 @@
           "PHYS101": "B"
         },
         "cgpa": 3.78,
-        "date_added": "2025-07-27T18:18:54.018768"
+        "date_added": "2025-07-27T17:15:18.529477"
       }
     },
     "cgpa_history": [
       {
         "semester": "Fall 2023",
         "cgpa": 3.67,
-        "date": "2025-07-27T18:18:54.018763"
+        "date": "2025-07-27T17:15:18.529470"
       },
       {
         "semester": "Spring 2024",
         "cgpa": 3.78,
-        "date": "2025-07-27T18:18:54.018769"
+        "date": "2025-07-27T17:15:18.529480"
       }
     ],
     "semester_data": {
@@ -168,7 +168,7 @@
           "ENG101": "A-"
         },
         "cgpa": 3.67,
-        "date_added": "2025-07-27T18:18:54.018779"
+        "date_added": "2025-07-27T17:15:18.529493"
       },
       "Spring 2024": {
         "courses_grades": {
@@ -177,19 +177,19 @@
           "PHYS101": "B"
         },
         "cgpa": 3.78,
-        "date_added": "2025-07-27T18:18:54.018783"
+        "date_added": "2025-07-27T17:15:18.529499"
       }
     },
     "cgpa_history": [
       {
         "semester": "Fall 2023",
         "cgpa": 3.67,
-        "date": "2025-07-27T18:18:54.018780"
+        "date": "2025-07-27T17:15:18.529496"
       },
       {
         "semester": "Spring 2024",
         "cgpa": 3.78,
-        "date": "2025-07-27T18:18:54.018784"
+        "date": "2025-07-27T17:15:18.529501"
       }
     ],
     "semester_data": {
@@ -235,7 +235,7 @@
           "ENG101": "A-"
         },
         "cgpa": 3.67,
-        "date_added": "2025-07-27T18:18:54.018790"
+        "date_added": "2025-07-27T17:15:18.529513"
       },
       "Spring 2024": {
         "courses_grades": {
@@ -244,19 +244,19 @@
           "PHYS101": "B"
         },
         "cgpa": 3.78,
-        "date_added": "2025-07-27T18:18:54.018794"
+        "date_added": "2025-07-27T17:15:18.529518"
       }
     },
     "cgpa_history": [
       {
         "semester": "Fall 2023",
         "cgpa": 3.67,
-        "date": "2025-07-27T18:18:54.018792"
+        "date": "2025-07-27T17:15:18.529515"
       },
       {
         "semester": "Spring 2024",
         "cgpa": 3.78,
-        "date": "2025-07-27T18:18:54.018795"
+        "date": "2025-07-27T17:15:18.529521"
       }
     ],
     "semester_data": {
@@ -302,7 +302,7 @@
           "ENG101": "A-"
         },
         "cgpa": 3.67,
-        "date_added": "2025-07-27T18:18:54.018801"
+        "date_added": "2025-07-27T17:15:18.529531"
       },
       "Spring 2024": {
         "courses_grades": {
@@ -311,19 +311,19 @@
           "PHYS101": "B"
         },
         "cgpa": 3.78,
-        "date_added": "2025-07-27T18:18:54.018804"
+        "date_added": "2025-07-27T17:15:18.529540"
       }
     },
     "cgpa_history": [
       {
         "semester": "Fall 2023",
         "cgpa": 3.67,
-        "date": "2025-07-27T18:18:54.018802"
+        "date": "2025-07-27T17:15:18.529534"
       },
       {
         "semester": "Spring 2024",
         "cgpa": 3.78,
-        "date": "2025-07-27T18:18:54.018805"
+        "date": "2025-07-27T17:15:18.529543"
       }
     ],
     "semester_data": {
@@ -412,7 +412,9 @@
     "user_type": "Student",
     "last_login": null,
     "student_id": "STU010",
-    "enrolled_courses": [],
+    "enrolled_courses": [
+      "CS101"
+    ],
     "academic_records": {},
     "cgpa_history": [],
     "semester_data": {}
@@ -490,127 +492,19 @@
   {
     "username": "teacher1",
     "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
-    "name": "professor1",
-    "email": "teacher1@gmail.com",
+    "name": "Professor 1",
+    "email": "teacher1@portal.edu",
     "user_id": "TCH001",
     "user_type": "Teacher",
-    "last_login": "2025-07-27T20:29:04.862484",
+    "last_login": null,
     "teacher_id": "TCH001",
-    "department": "mathematics",
-    "qualification": "phd",
-    "contact_info": {
-      "office_building": "Science Building",
-      "office_hours": "Mon-Wed 2-4 PM",
-      "office_room": "Room 201, Computer Building",
-      "office_phone": "1234-5678"
-    },
+    "department": "Computer Science",
+    "qualification": "PhD",
+    "contact_info": {},
     "salary": 76000,
     "courses_taught": [],
     "salary_slips": [],
-    "profile_updates": [
-      {
-        "field": "name",
-        "old_value": "Professor 1",
-        "new_value": "Talha",
-        "timestamp": "2025-07-27T18:36:53.459185"
-      },
-      {
-        "field": "department",
-        "old_value": "Computer Science",
-        "new_value": "personal department",
-        "timestamp": "2025-07-27T18:37:24.087359"
-      },
-      {
-        "field": "qualification",
-        "old_value": "PhD",
-        "new_value": "chlo bhago",
-        "timestamp": "2025-07-27T18:37:46.071367"
-      },
-      {
-        "field": "email",
-        "old_value": "teacher1@portal.edu",
-        "new_value": "talhatalhatalhachlobhago@gmail.com",
-        "timestamp": "2025-07-27T18:38:27.882515"
-      },
-      {
-        "field": "name",
-        "old_value": "Talha",
-        "new_value": "professor1",
-        "timestamp": "2025-07-27T18:59:48.110301"
-      },
-      {
-        "field": "department",
-        "old_value": "personal department",
-        "new_value": "mathematics",
-        "timestamp": "2025-07-27T19:00:02.072531"
-      },
-      {
-        "field": "contact_info",
-        "old_value": {
-          "office_building": "Science Building",
-          "office_hours": "Mon-Wed 2-4 PM",
-          "personal_phone": "123456"
-        },
-        "new_value": {
-          "personal_phone": "123456"
-        },
-        "timestamp": "2025-07-27T19:52:43.704299"
-      },
-      {
-        "field": "qualification",
-        "old_value": "chlo bhago",
-        "new_value": "phd",
-        "timestamp": "2025-07-27T19:53:40.353899"
-      },
-      {
-        "field": "email",
-        "old_value": "talhatalhatalhachlobhago@gmail.com",
-        "new_value": "teacher1@gmail.com",
-        "timestamp": "2025-07-27T19:53:58.226599"
-      },
-      {
-        "field": "contact_info",
-        "old_value": {
-          "office_building": "Science Building",
-          "office_hours": "Mon-Wed 2-4 PM",
-          "personal_phone": "123456",
-          "office_room": "Room 201, Computer Building",
-          "office_phone": "1234-5678"
-        },
-        "new_value": {
-          "office_room": "Room 202, Computer Building"
-        },
-        "timestamp": "2025-07-27T20:13:44.219742"
-      },
-      {
-        "field": "contact_info",
-        "old_value": {
-          "office_building": "Science Building",
-          "office_hours": "Mon-Wed 2-4 PM",
-          "personal_phone": "123456",
-          "office_room": "Room 201, Computer Building",
-          "office_phone": "1234-5678"
-        },
-        "new_value": {
-          "office_phone": "1234-5678"
-        },
-        "timestamp": "2025-07-27T20:14:26.907408"
-      },
-      {
-        "field": "contact_info",
-        "old_value": {
-          "office_building": "Science Building",
-          "office_hours": "Mon-Wed 2-4 PM",
-          "personal_phone": "123456",
-          "office_room": "Room 201, Computer Building",
-          "office_phone": "1234-5678"
-        },
-        "new_value": {
-          "office_room": "Room 201, Computer Building"
-        },
-        "timestamp": "2025-07-27T20:20:29.550437"
-      }
-    ]
+    "profile_updates": []
   },
   {
     "username": "teacher2",
@@ -623,12 +517,7 @@
     "teacher_id": "TCH002",
     "department": "Mathematics",
     "qualification": "PhD",
-    "contact_info": {
-      "office_room": "Room 102",
-      "office_building": "Math Building",
-      "office_hours": "Mon-Wed 2-4 PM",
-      "personal_phone": "555-1002"
-    },
+    "contact_info": {},
     "salary": 77000,
     "courses_taught": [],
     "salary_slips": [],
@@ -645,12 +534,7 @@
     "teacher_id": "TCH003",
     "department": "Physics",
     "qualification": "PhD",
-    "contact_info": {
-      "office_room": "Room 103",
-      "office_building": "Physics Lab",
-      "office_hours": "Mon-Wed 2-4 PM",
-      "personal_phone": "555-1003"
-    },
+    "contact_info": {},
     "salary": 78000,
     "courses_taught": [],
     "salary_slips": [],
@@ -667,12 +551,7 @@
     "teacher_id": "TCH004",
     "department": "English",
     "qualification": "PhD",
-    "contact_info": {
-      "office_room": "Room 104",
-      "office_building": "Liberal Arts",
-      "office_hours": "Mon-Wed 2-4 PM",
-      "personal_phone": "555-1004"
-    },
+    "contact_info": {},
     "salary": 79000,
     "courses_taught": [],
     "salary_slips": [],
@@ -689,12 +568,7 @@
     "teacher_id": "TCH005",
     "department": "Business",
     "qualification": "PhD",
-    "contact_info": {
-      "office_room": "Room 105",
-      "office_building": "Business Center",
-      "office_hours": "Mon-Wed 2-4 PM",
-      "personal_phone": "555-1005"
-    },
+    "contact_info": {},
     "salary": 80000,
     "courses_taught": [],
     "salary_slips": [],
@@ -711,12 +585,7 @@
     "teacher_id": "TCH006",
     "department": "Computer Science",
     "qualification": "PhD",
-    "contact_info": {
-      "office_room": "Room 106",
-      "office_building": "Science Building",
-      "office_hours": "Mon-Wed 2-4 PM",
-      "personal_phone": "555-1006"
-    },
+    "contact_info": {},
     "salary": 81000,
     "courses_taught": [],
     "salary_slips": [],
@@ -733,12 +602,7 @@
     "teacher_id": "TCH007",
     "department": "Mathematics",
     "qualification": "PhD",
-    "contact_info": {
-      "office_room": "Room 107",
-      "office_building": "Math Building",
-      "office_hours": "Mon-Wed 2-4 PM",
-      "personal_phone": "555-1007"
-    },
+    "contact_info": {},
     "salary": 82000,
     "courses_taught": [],
     "salary_slips": [],
@@ -755,12 +619,7 @@
     "teacher_id": "TCH008",
     "department": "Physics",
     "qualification": "PhD",
-    "contact_info": {
-      "office_room": "Room 108",
-      "office_building": "Physics Lab",
-      "office_hours": "Mon-Wed 2-4 PM",
-      "personal_phone": "555-1008"
-    },
+    "contact_info": {},
     "salary": 83000,
     "courses_taught": [],
     "salary_slips": [],
@@ -777,12 +636,7 @@
     "teacher_id": "TCH009",
     "department": "English",
     "qualification": "PhD",
-    "contact_info": {
-      "office_room": "Room 109",
-      "office_building": "Liberal Arts",
-      "office_hours": "Mon-Wed 2-4 PM",
-      "personal_phone": "555-1009"
-    },
+    "contact_info": {},
     "salary": 84000,
     "courses_taught": [],
     "salary_slips": [],
@@ -799,12 +653,7 @@
     "teacher_id": "TCH010",
     "department": "Business",
     "qualification": "PhD",
-    "contact_info": {
-      "office_room": "Room 110",
-      "office_building": "Business Center",
-      "office_hours": "Mon-Wed 2-4 PM",
-      "personal_phone": "555-1010"
-    },
+    "contact_info": {},
     "salary": 85000,
     "courses_taught": [],
     "salary_slips": [],
@@ -821,12 +670,7 @@
     "teacher_id": "TCH011",
     "department": "Computer Science",
     "qualification": "PhD",
-    "contact_info": {
-      "office_room": "Room 111",
-      "office_building": "Science Building",
-      "office_hours": "Mon-Wed 2-4 PM",
-      "personal_phone": "555-1011"
-    },
+    "contact_info": {},
     "salary": 86000,
     "courses_taught": [],
     "salary_slips": [],
@@ -843,12 +687,7 @@
     "teacher_id": "TCH012",
     "department": "Mathematics",
     "qualification": "PhD",
-    "contact_info": {
-      "office_room": "Room 112",
-      "office_building": "Math Building",
-      "office_hours": "Mon-Wed 2-4 PM",
-      "personal_phone": "555-1012"
-    },
+    "contact_info": {},
     "salary": 87000,
     "courses_taught": [],
     "salary_slips": [],
@@ -865,12 +704,7 @@
     "teacher_id": "TCH013",
     "department": "Physics",
     "qualification": "PhD",
-    "contact_info": {
-      "office_room": "Room 113",
-      "office_building": "Physics Lab",
-      "office_hours": "Mon-Wed 2-4 PM",
-      "personal_phone": "555-1013"
-    },
+    "contact_info": {},
     "salary": 88000,
     "courses_taught": [],
     "salary_slips": [],
@@ -887,12 +721,7 @@
     "teacher_id": "TCH014",
     "department": "English",
     "qualification": "PhD",
-    "contact_info": {
-      "office_room": "Room 114",
-      "office_building": "Liberal Arts",
-      "office_hours": "Mon-Wed 2-4 PM",
-      "personal_phone": "555-1014"
-    },
+    "contact_info": {},
     "salary": 89000,
     "courses_taught": [],
     "salary_slips": [],
@@ -909,12 +738,7 @@
     "teacher_id": "TCH015",
     "department": "Business",
     "qualification": "PhD",
-    "contact_info": {
-      "office_room": "Room 115",
-      "office_building": "Business Center",
-      "office_hours": "Mon-Wed 2-4 PM",
-      "personal_phone": "555-1015"
-    },
+    "contact_info": {},
     "salary": 90000,
     "courses_taught": [],
     "salary_slips": [],

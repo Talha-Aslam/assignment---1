@@ -143,6 +143,33 @@ class Teacher(User):
         
         print(f"Last Login: {self.last_login}")
     
+    def view_public_profile(self):
+        """Display public teacher profile information (for students)."""
+        print(f"\n=== Teacher Profile ===")
+        print(f"Name: {self.name}")
+        print(f"Teacher ID: {self.teacher_id}")
+        print(f"Email: {self.email}")
+        print(f"Department: {self.department}")
+        print(f"Qualification: {self.qualification}")
+        
+        # Only show public contact information (if any)
+        if self.contact_info:
+            public_contact = {}
+            # Only show office-related contact info, not personal
+            for key, value in self.contact_info.items():
+                if 'office' in key.lower() or 'room' in key.lower():
+                    public_contact[key] = value
+            
+            if public_contact:
+                print("\nOffice Contact Information:")
+                for key, value in public_contact.items():
+                    print(f"  {key.replace('_', ' ').title()}: {value}")
+        
+        if self.courses_taught:
+            print(f"\nCourses Taught: {', '.join(self.courses_taught)}")
+        
+        print("\nNote: For detailed information, please contact the teacher directly.")
+    
     def add_course(self, course_id):
         """
         Add a course to taught courses list.

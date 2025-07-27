@@ -5,18 +5,31 @@ A comprehensive Python OOP-based portal system supporting three user roles: Stud
 ## Features
 
 ### Student Features
-- Enroll in course sections (with capacity restrictions)
+- Enroll in course sections (with capacity restrictions and confirmation)
+- **Enhanced unenrollment process with multi-step confirmation**
+  - View detailed course information before unenrolling
+  - Warning messages about consequences
+  - Multiple cancellation points for user safety
+  - Explicit confirmation required
 - View academic records and CGPA per semester
 - Plot academic performance graphs using matplotlib
 - Unenroll from courses
 - Change passwords
-- View teacher profiles
+- **View teacher profiles with privacy protection**
+  - Only public professional information displayed
+  - Salary and personal contact details hidden
+  - Office hours and location visible for academic purposes
 
 ### Teacher Features
 - View salary slips
-- Add, update, and delete personal information
+- **Seamless Continuous Editing**: Update unlimited information fields in one uninterrupted session
+- **Integrated Update Flow**: All updates (personal info, contacts, etc.) use the same continuous workflow
+- **Numbered Contact Management**: Easy-to-use numbered selection system (1-11) for contact types with format examples and custom option
+- **Smart Batch Saving**: All changes saved together at session end for data integrity
+- **Safe Contact Management**: Add/update/remove specific contacts with cancel options and confirmation dialogs
+- View update history with timestamps for all profile changes
 - Change passwords
-- Manage profile and qualification details
+- Manage profile and qualification details with immediate feedback
 
 ### Admin Features
 - Full access to all student and teacher data
@@ -24,6 +37,22 @@ A comprehensive Python OOP-based portal system supporting three user roles: Stud
 - View all updates made by teachers
 - Manage enrollments and user accounts
 - View system statistics and logs
+
+## Input Validation & User Experience
+
+### Enhanced Y/N Validation
+- **Multiple Valid Formats**: Accepts y, yes, yeah, yep, true, 1 for YES; n, no, nope, false, 0 for NO
+- **Case-Insensitive**: Works with any combination of uppercase/lowercase
+- **Clear Error Messages**: Shows all valid options when invalid input is entered
+- **Graceful Error Handling**: Handles Ctrl+C and unexpected input safely
+- **Consistent Behavior**: Same validation logic across all y/n prompts throughout the system
+
+### Validation Applied To:
+- System startup prompts (show features, create backup)
+- Course enrollment/unenrollment confirmations
+- Teacher contact removal confirmations
+- Admin user deletion confirmations
+- Profile editing continuation prompts
 
 ## Technical Implementation
 
@@ -112,6 +141,18 @@ python UML_Class_Diagram.py
 ### Admin
 - Username: admin
 - Password: admin123
+
+## Security Considerations
+
+- Passwords are hashed using SHA-256
+- Input validation and sanitization implemented
+- Role-based access control enforced
+- Sensitive data encapsulated in private attributes
+- **Teacher profile privacy protection**:
+  - Students cannot view teacher salaries
+  - Personal contact information hidden from students
+  - Last login timestamps not visible to students
+  - Only professional information accessible
 
 ## System Requirements
 

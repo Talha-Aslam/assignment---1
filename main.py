@@ -14,6 +14,38 @@ from system_manager import SystemManager
 from utils.menu_manager import MenuManager
 
 
+def get_yes_no_input(prompt: str) -> bool:
+    """
+    Get validated yes/no input from user.
+    
+    Args:
+        prompt (str): Input prompt
+        
+    Returns:
+        bool: True for yes, False for no
+    """
+    valid_yes = ['y', 'yes', 'yeah', 'yep', 'true', '1']
+    valid_no = ['n', 'no', 'nope', 'false', '0']
+    
+    while True:
+        try:
+            user_input = input(f"{prompt}: ").strip().lower()
+            
+            if user_input in valid_yes:
+                return True
+            elif user_input in valid_no:
+                return False
+            else:
+                print("❌ Invalid input! Please enter:")
+                print("   • For YES: y, yes, yeah, yep, true, 1")
+                print("   • For NO: n, no, nope, false, 0")
+                continue
+                
+        except KeyboardInterrupt:
+            print("\nOperation cancelled.")
+            return False
+
+
 def display_welcome_message():
     """Display welcome message and system information."""
     print("\n" + "="*80)
@@ -40,10 +72,11 @@ def display_system_info():
     print("• Password management")
     print()
     print("TEACHER FEATURES:")
-    print("• Profile management")
+    print("• Profile management with continuous editing")
     print("• Salary slip viewing")
-    print("• Personal information updates")
+    print("• Personal information updates with cancel options")
     print("• Course assignments")
+    print("• Contact management with safe removal")
     print("• Password management")
     print()
     print("ADMIN FEATURES:")
@@ -81,8 +114,8 @@ def main():
         display_welcome_message()
         
         # Ask if user wants to see system info
-        show_info = input("\nWould you like to see system features and default credentials? (y/n): ").lower()
-        if show_info == 'y':
+        show_info = get_yes_no_input("\nWould you like to see system features and default credentials? (y/n)")
+        if show_info:
             display_system_info()
             display_default_credentials()
             input("\nPress Enter to continue to login...")
@@ -111,8 +144,8 @@ def main():
         system_manager.save_all_data()
         
         # Create backup
-        backup_choice = input("Would you like to create a backup before exit? (y/n): ").lower()
-        if backup_choice == 'y':
+        backup_choice = get_yes_no_input("Would you like to create a backup before exit? (y/n)")
+        if backup_choice:
             print("Creating system backup...")
             if system_manager.backup_system():
                 print("Backup created successfully!")

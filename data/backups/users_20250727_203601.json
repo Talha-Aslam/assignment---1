@@ -19,7 +19,7 @@
     "email": "student1@portal.edu",
     "user_id": "STU001",
     "user_type": "Student",
-    "last_login": "2025-07-27T20:36:16.180582",
+    "last_login": null,
     "student_id": "STU001",
     "enrolled_courses": [
       "CS101",
