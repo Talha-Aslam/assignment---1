@@ -170,23 +170,23 @@ class Admin(User):
         # Return the user data with plain password for display in menu
         return user_data
     
-    def delete_user(self, user_id, user_manager):
+    def delete_user(self, username, user_manager):
         """
         Delete a user from the system.
         
         Args:
-            user_id (str): User ID to delete
+            username (str): Username of the user to delete
             user_manager: User manager object
             
         Returns:
             bool: True if deletion successful, False otherwise
         """
-        if user_manager.delete_user(user_id):
-            self.log_action("delete_user", f"Deleted user account: {user_id}")
-            print(f"User {user_id} deleted successfully.")
+        if user_manager.delete_user_by_username(username):
+            self.log_action("delete_user", f"Deleted user account: {username}")
+            print(f"User '{username}' deleted successfully.")
             return True
         else:
-            print(f"Failed to delete user {user_id}.")
+            print(f"Failed to delete user '{username}'.")
             return False
     
     def view_all_data(self, data_manager):

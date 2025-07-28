@@ -934,15 +934,15 @@ class MenuManager:
         self.clear_screen()
         self.print_header("Delete User")
         
-        user_id = self.get_user_input("Enter User ID to delete")
-        if user_id:
-            confirm = self.get_yes_no_input(f"Are you sure you want to delete user {user_id}? (y/n)")
+        username = self.get_user_input("Enter username to delete")
+        if username:
+            confirm = self.get_yes_no_input(f"Are you sure you want to delete user '{username}'? (y/n)")
             if confirm is None:
                 print("Deletion cancelled.")
             elif confirm:
-                success = self.current_user.delete_user(user_id, self.system_manager)
+                success = self.current_user.delete_user(username, self.system_manager)
                 if not success:
-                    print("Failed to delete user.")
+                    print(f"Failed to delete user. Username '{username}' not found.")
             else:
                 print("Deletion cancelled.")
         

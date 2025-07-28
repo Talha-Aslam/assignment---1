@@ -53,22 +53,25 @@ class Course:
         print(f"Student {student_id} successfully enrolled in {self.course_name}")
         return True
     
-    def remove_student(self, student_id):
+    def remove_student(self, student_id, silent=False):
         """
         Remove a student from the course.
         
         Args:
             student_id (str): Student ID to remove
+            silent (bool): If True, suppresses console output messages
             
         Returns:
             bool: True if student removed successfully, False if not found
         """
         if student_id in self.enrolled_students:
             self.enrolled_students.remove(student_id)
-            print(f"Student {student_id} unenrolled from {self.course_name}")
+            if not silent:
+                print(f"Student {student_id} unenrolled from {self.course_name}")
             return True
         else:
-            print(f"Student {student_id} is not enrolled in this course.")
+            if not silent:
+                print(f"Student {student_id} is not enrolled in this course.")
             return False
     
     def is_full(self):

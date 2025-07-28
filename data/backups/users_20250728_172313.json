@@ -192,55 +192,6 @@
         "action": "delete_user",
         "details": "Deleted user account: student275199",
         "timestamp": "2025-07-28T17:22:32.786513"
-      },
-      {
-        "log_id": "LOG20250728172252514",
-        "user_id": "ADM001",
-        "action": "delete_user",
-        "details": "Deleted user account: teacher275948",
-        "timestamp": "2025-07-28T17:22:52.024117"
-      },
-      {
-        "log_id": "LOG20250728172313692",
-        "user_id": "ADM001",
-        "action": "delete_user",
-        "details": "Deleted user account: teacher270464",
-        "timestamp": "2025-07-28T17:23:13.126766"
-      },
-      {
-        "log_id": "LOG20250728172339569",
-        "user_id": "ADM001",
-        "action": "delete_user",
-        "details": "Deleted user account: teacher286402",
-        "timestamp": "2025-07-28T17:23:39.249457"
-      },
-      {
-        "log_id": "LOG20250728172429556",
-        "user_id": "ADM001",
-        "action": "delete_user",
-        "details": "Deleted user account: student35",
-        "timestamp": "2025-07-28T17:24:29.405545"
-      },
-      {
-        "log_id": "LOG20250728172443537",
-        "user_id": "ADM001",
-        "action": "delete_user",
-        "details": "Deleted user account: student36",
-        "timestamp": "2025-07-28T17:24:43.466115"
-      },
-      {
-        "log_id": "LOG20250728172455929",
-        "user_id": "ADM001",
-        "action": "delete_user",
-        "details": "Deleted user account: student37",
-        "timestamp": "2025-07-28T17:24:55.122677"
-      },
-      {
-        "log_id": "LOG20250728172509110",
-        "user_id": "ADM001",
-        "action": "delete_user",
-        "details": "Deleted user account: teacher20",
-        "timestamp": "2025-07-28T17:25:09.739547"
       }
     ],
     "created_users": [
@@ -2594,6 +2545,123 @@
         "generated_date": "2025-07-27T22:02:03.458482"
       }
     ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher270464",
+    "password": "osHVw9ie",
+    "name": "teacher19",
+    "email": "teacher19@gmail.com",
+    "user_id": "TEA202507270464",
+    "user_type": "Teacher",
+    "last_login": null,
+    "first_login": false,
+    "teacher_id": "TEA202507270464",
+    "department": "bio",
+    "qualification": "",
+    "contact_info": {},
+    "salary": 500000.0,
+    "courses_taught": [],
+    "salary_slips": [],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher286402",
+    "password": "VbsNnz50",
+    "name": "teacher20",
+    "email": "teacher20@gmail.com",
+    "user_id": "TEA202507286402",
+    "user_type": "Teacher",
+    "last_login": null,
+    "first_login": false,
+    "teacher_id": "TEA202507286402",
+    "department": "cs",
+    "qualification": "",
+    "contact_info": {},
+    "salary": 10.0,
+    "courses_taught": [],
+    "salary_slips": [],
+    "profile_updates": []
+  },
+  {
+    "username": "student35",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "student35",
+    "email": "student35@gmail.com",
+    "user_id": "STU202507283691",
+    "user_type": "Student",
+    "last_login": null,
+    "first_login": true,
+    "student_id": "STU202507283691",
+    "enrolled_courses": [],
+    "academic_records": {},
+    "cgpa_history": [],
+    "semester_data": {}
+  },
+  {
+    "username": "student36",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "student36",
+    "email": "student36@gmail.com",
+    "user_id": "STU202507283504",
+    "user_type": "Student",
+    "last_login": null,
+    "first_login": true,
+    "student_id": "STU202507283504",
+    "enrolled_courses": [],
+    "academic_records": {},
+    "cgpa_history": [],
+    "semester_data": {}
+  },
+  {
+    "username": "student37",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "student37",
+    "email": "student37@gmail.com",
+    "user_id": "STU202507285498",
+    "user_type": "Student",
+    "last_login": null,
+    "first_login": true,
+    "student_id": "STU202507285498",
+    "enrolled_courses": [],
+    "academic_records": {},
+    "cgpa_history": [],
+    "semester_data": {}
+  },
+  {
+    "username": "teacher20",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "teacher20",
+    "email": "teacher20@uol.edu.pk",
+    "user_id": "TEA202507281318",
+    "user_type": "Teacher",
+    "last_login": null,
+    "first_login": true,
+    "teacher_id": "TEA202507281318",
+    "department": "computer",
+    "qualification": "",
+    "contact_info": {},
+    "salary": -40000.0,
+    "courses_taught": [],
+    "salary_slips": [],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher26",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "teacher26",
+    "email": "teacher26@gmail.com",
+    "user_id": "TEA202507283152",
+    "user_type": "Teacher",
+    "last_login": null,
+    "first_login": true,
+    "teacher_id": "TEA202507283152",
+    "department": "computer",
+    "qualification": "",
+    "contact_info": {},
+    "salary": 33333.0,
+    "courses_taught": [],
+    "salary_slips": [],
     "profile_updates": []
   }
 ]

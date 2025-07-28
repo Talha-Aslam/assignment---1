@@ -537,10 +537,45 @@ class SystemManager:
             if username_to_delete in self.logged_in_users:
                 del self.logged_in_users[username_to_delete]
             
-            # If student, remove from all course enrollments
+            # If student, remove from all course enrollments (silently)
             if isinstance(user_to_delete, Student):
                 for course in self.courses.values():
-                    course.remove_student(user_to_delete.student_id)
+                    course.remove_student(user_to_delete.student_id, silent=True)
+            
+            self.save_all_data()
+            return True
+            
+        except Exception as e:
+            print(f"Error deleting user: {e}")
+            return False
+            
+    def delete_user_by_username(self, username: str) -> bool:
+        """
+        Delete user from system by username.
+        
+        Args:
+            username (str): Username to delete
+            
+        Returns:
+            bool: True if deletion successful
+        """
+        try:
+            if username not in self.users:
+                return False
+                
+            user_to_delete = self.users[username]
+            
+            # Remove user from system
+            del self.users[username]
+            
+            # Remove user from logged in users if present
+            if username in self.logged_in_users:
+                del self.logged_in_users[username]
+            
+            # If student, remove from all course enrollments (silently)
+            if isinstance(user_to_delete, Student):
+                for course in self.courses.values():
+                    course.remove_student(user_to_delete.student_id, silent=True)
             
             self.save_all_data()
             return True

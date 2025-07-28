@@ -234,13 +234,6 @@
         "action": "delete_user",
         "details": "Deleted user account: student37",
         "timestamp": "2025-07-28T17:24:55.122677"
-      },
-      {
-        "log_id": "LOG20250728172509110",
-        "user_id": "ADM001",
-        "action": "delete_user",
-        "details": "Deleted user account: teacher20",
-        "timestamp": "2025-07-28T17:25:09.739547"
       }
     ],
     "created_users": [
@@ -2594,6 +2587,24 @@
         "generated_date": "2025-07-27T22:02:03.458482"
       }
     ],
+    "profile_updates": []
+  },
+  {
+    "username": "teacher26",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "teacher26",
+    "email": "teacher26@gmail.com",
+    "user_id": "TEA202507283152",
+    "user_type": "Teacher",
+    "last_login": null,
+    "first_login": true,
+    "teacher_id": "TEA202507283152",
+    "department": "computer",
+    "qualification": "",
+    "contact_info": {},
+    "salary": 33333.0,
+    "courses_taught": [],
+    "salary_slips": [],
     "profile_updates": []
   }
 ]
