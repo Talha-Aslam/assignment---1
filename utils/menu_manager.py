@@ -287,11 +287,12 @@ class MenuManager:
             self.current_user.display_menu()
             
             choice = self.get_user_input("Select an option", int,
-                                       lambda x: 1 <= x <= 8)
+                                       lambda x: 1 <= x <= 10)
             
             if choice is None:
                 continue
             
+            # Admin functions
             if choice == 1:
                 self.handle_admin_create_user()
             elif choice == 2:
@@ -307,6 +308,10 @@ class MenuManager:
             elif choice == 7:
                 self.handle_change_password()
             elif choice == 8:
+                self.handle_admin_view_student_data()
+            elif choice == 9:
+                self.handle_admin_view_teacher_data()
+            elif choice == 10:
                 self.handle_logout()
                 break
     
@@ -982,6 +987,136 @@ class MenuManager:
         self.print_header("System Logs")
         self.current_user.view_logs()
         input("\nPress Enter to continue...")
+        
+    def handle_admin_view_student_data(self):
+        """Handle viewing student data."""
+        self.clear_screen()
+        self.print_header("Student Data")
+        
+        # Ask for student username
+        username = self.get_user_input("\nEnter student username (or leave blank to cancel)")
+        if not username:
+            return
+            
+        # Find student by username
+        student = None
+        for user in self.system_manager.users.values():
+            if user.__class__.__name__ == "Student" and user.username == username:
+                student = user
+                break
+        
+        if not student:
+            print(f"No student found with username '{username}'.")
+            input("\nPress Enter to continue...")
+            return
+        
+        while True:
+            self.clear_screen()
+            self.print_header(f"Student: {student.name}")
+            print(f"Username: {student.username}")
+            print(f"Email: {student.email}")
+            print(f"Student ID: {student.student_id}")
+            
+            # Display student options
+            print("\nOptions:")
+            print("1. View Academic Records")
+            print("2. Plot CGPA Graph")
+            print("3. View Enrolled Courses")
+            print("4. Return to student list")
+            
+            sub_choice = self.get_user_input("\nSelect an option", int,
+                                          lambda x: 1 <= x <= 4)
+            
+            if sub_choice is None:
+                continue
+            
+            # Save current user temporarily
+            original_user = self.current_user
+            
+            try:
+                # Temporarily set the selected student as current user
+                self.current_user = student
+                
+                if sub_choice == 1:
+                    self.handle_student_view_records()
+                elif sub_choice == 2:
+                    self.handle_student_plot_cgpa()
+                elif sub_choice == 3:
+                    self.handle_student_view_courses()
+                elif sub_choice == 4:
+                    break
+            finally:
+                # Restore original admin user
+                self.current_user = original_user
+        
+        # Return to student list or go back to admin menu
+        self.handle_admin_view_student_data()
+        
+    def handle_admin_view_teacher_data(self):
+        """Handle viewing teacher data."""
+        self.clear_screen()
+        self.print_header("Teacher Data")
+        
+        # Ask for teacher username
+        username = self.get_user_input("\nEnter teacher username (or leave blank to cancel)")
+        if not username:
+            return
+            
+        # Find teacher by username
+        teacher = None
+        for user in self.system_manager.users.values():
+            if user.__class__.__name__ == "Teacher" and user.username == username:
+                teacher = user
+                break
+        
+        if not teacher:
+            print(f"No teacher found with username '{username}'.")
+            input("\nPress Enter to continue...")
+            return
+        
+        while True:
+            self.clear_screen()
+            self.print_header(f"Teacher: {teacher.name}")
+            print(f"Username: {teacher.username}")
+            print(f"Email: {teacher.email}")
+            print(f"Teacher ID: {teacher.teacher_id}")
+            print(f"Department: {teacher.department}")
+            print(f"Salary: ${teacher.salary:.2f}")
+            
+            # Display teacher options
+            print("\nOptions:")
+            print("1. View Profile")
+            print("2. View Salary Slips")
+            print("3. View Courses Taught")
+            print("4. Return to teacher list")
+            
+            sub_choice = self.get_user_input("\nSelect an option", int,
+                                          lambda x: 1 <= x <= 4)
+            
+            if sub_choice is None:
+                continue
+            
+            # Save current user temporarily
+            original_user = self.current_user
+            
+            try:
+                # Temporarily set the selected teacher as current user
+                self.current_user = teacher
+                
+                if sub_choice == 1:
+                    self.handle_teacher_view_profile()
+                elif sub_choice == 2:
+                    self.handle_teacher_view_salary()
+                elif sub_choice == 3:
+                    self.handle_teacher_view_courses()
+                elif sub_choice == 4:
+                    break
+            finally:
+                # Restore original admin user
+                self.current_user = original_user
+        
+        # Return to teacher list or go back to admin menu
+        self.handle_admin_view_teacher_data()
         
     def handle_admin_export_users(self):
         """Handle exporting all user data."""

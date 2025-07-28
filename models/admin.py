@@ -375,6 +375,7 @@ class Admin(User):
     def display_menu(self):
         """Display admin-specific menu."""
         print(f"\n=== Admin Menu - {self.name} ===")
+        # Admin functions
         print("1. Create New User")
         print("2. Delete User")
         print("3. View All System Data")
@@ -382,8 +383,10 @@ class Admin(User):
         print("5. View System Statistics")
         print("6. View System Logs")
         print("7. Change Password")
-        print("8. Logout")
-        print("-" * 30)
+        print("8. View Student Data")
+        print("9. View Teacher Data")
+        print("10. Logout")
+        print("-" * 60)
     
     def get_user_type(self):
         """Return user type."""
