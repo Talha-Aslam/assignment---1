@@ -128,8 +128,7 @@ def main():
         menu_manager = MenuManager(system_manager)
         
         print("System initialized successfully!")
-        # Remove this prompt as it might be causing double prompts with the menu system
-        # input("Press Enter to start...")
+        input("Press Enter to start...")
         
         # Start the main menu loop
         try:

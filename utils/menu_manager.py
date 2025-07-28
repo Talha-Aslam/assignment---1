@@ -287,7 +287,7 @@ class MenuManager:
             self.current_user.display_menu()
             
             choice = self.get_user_input("Select an option", int,
-                                       lambda x: 1 <= x <= 9)
+                                       lambda x: 1 <= x <= 8)
             
             if choice is None:
                 continue
@@ -307,8 +307,6 @@ class MenuManager:
             elif choice == 7:
                 self.handle_change_password()
             elif choice == 8:
-                self.handle_admin_export_users()
-            elif choice == 9:
                 self.handle_logout()
                 break
     

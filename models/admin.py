@@ -67,6 +67,7 @@ class Admin(User):
         self.access_level = access_level
         self.system_logs = []
         self.created_users = []  # Track users created by this admin
+        self.deleted_users = []  # Track users deleted by this admin
     
     def generate_user_id(self, user_type):
         """
@@ -181,8 +182,43 @@ class Admin(User):
         Returns:
             bool: True if deletion successful, False otherwise
         """
+        # Get user data before deletion to store in deleted_users
+        user_obj = user_manager.get_user_by_username(username)
+        
         if user_manager.delete_user_by_username(username):
             self.log_action("delete_user", f"Deleted user account: {username}")
+            
+            # Track deleted user with timestamp
+            if user_obj:
+                # Handle different user object types safely
+                try:
+                    # If user_obj is a dictionary
+                    if isinstance(user_obj, dict):
+                        user_type = user_obj.get('user_type', 'Unknown')
+                        name = user_obj.get('name', 'Unknown')
+                    # If user_obj is a User object
+                    else:
+                        user_type = getattr(user_obj, 'user_type', getattr(user_obj, '__class__.__name__', 'Unknown'))
+                        name = getattr(user_obj, 'name', 'Unknown')
+                    
+                    deletion_record = {
+                        "username": username,
+                        "user_type": user_type,
+                        "name": name,
+                        "deleted_at": datetime.now().isoformat()
+                    }
+                    self.deleted_users.append(deletion_record)
+                except Exception as e:
+                    # If there's an error, just log without the details
+                    deletion_record = {
+                        "username": username,
+                        "user_type": "Unknown",
+                        "name": "Unknown",
+                        "deleted_at": datetime.now().isoformat()
+                    }
+                    self.deleted_users.append(deletion_record)
+                    print(f"Warning: Could not record full details of deleted user: {e}")
+            
             return True
         else:
             return False
@@ -274,6 +310,24 @@ class Admin(User):
         # Users created by admins
         admin_created = len(self.created_users)
         print(f"Users Created by This Admin: {admin_created}")
+        
+        # Users deleted by this admin
+        admin_deleted = len(self.deleted_users)
+        print(f"Users Deleted by This Admin: {admin_deleted}")
+        
+        # Show deleted users details if any
+        if self.deleted_users:
+            print("\n--- Recently Deleted Users ---")
+            # Sort by deletion time, most recent first
+            recent_deletions = sorted(
+                self.deleted_users, 
+                key=lambda x: x.get('deleted_at', ''), 
+                reverse=True
+            )
+            # Show up to 10 most recent deletions
+            for i, user in enumerate(recent_deletions[:10], 1):
+                deleted_at = datetime.fromisoformat(user['deleted_at']).strftime('%Y-%m-%d %H:%M:%S')
+                print(f"{i}. {user['name']} ({user['username']}) - {user['user_type']} - Deleted on {deleted_at}")
     
     def log_action(self, action, details):
         """
@@ -328,8 +382,7 @@ class Admin(User):
         print("5. View System Statistics")
         print("6. View System Logs")
         print("7. Change Password")
-        print("8. Export Users Data")
-        print("9. Logout")
+        print("8. Logout")
         print("-" * 30)
     
     def get_user_type(self):
@@ -419,7 +472,8 @@ class Admin(User):
             'admin_id': self.admin_id,
             'access_level': self.access_level,
             'system_logs': [log.to_dict() for log in self.system_logs],
-            'created_users': self.created_users
+            'created_users': self.created_users,
+            'deleted_users': self.deleted_users
         })
         return data
     
@@ -438,6 +492,7 @@ class Admin(User):
         )
         admin._password = data['password']  # Use hashed password
         admin.created_users = data.get('created_users', [])
+        admin.deleted_users = data.get('deleted_users', [])
         
         # Load system logs
         admin.system_logs = [SystemLog.from_dict(log_data) 

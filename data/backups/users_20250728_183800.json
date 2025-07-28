@@ -6,7 +6,7 @@
     "email": "admin@portal.edu",
     "user_id": "ADM001",
     "user_type": "Admin",
-    "last_login": "2025-07-28T20:47:12.796153",
+    "last_login": "2025-07-28T18:03:47.105158",
     "first_login": false,
     "admin_id": "ADM001",
     "access_level": "full",
@@ -248,27 +248,6 @@
         "action": "delete_user",
         "details": "Deleted user account: teacher2",
         "timestamp": "2025-07-28T18:04:08.942835"
-      },
-      {
-        "log_id": "LOG20250728183800753",
-        "user_id": "ADM001",
-        "action": "create_user_Student",
-        "details": "Created Student account for student1 (ID: STU202507283343)",
-        "timestamp": "2025-07-28T18:38:00.576012"
-      },
-      {
-        "log_id": "LOG20250728183815451",
-        "user_id": "ADM001",
-        "action": "delete_user",
-        "details": "Deleted user account: student1",
-        "timestamp": "2025-07-28T18:38:15.964245"
-      },
-      {
-        "log_id": "LOG20250728204751272",
-        "user_id": "ADM001",
-        "action": "create_user_Student",
-        "details": "Created Student account for student222 (ID: STU202507283202)",
-        "timestamp": "2025-07-28T20:47:51.415154"
       }
     ],
     "created_users": [
@@ -475,35 +454,8 @@
         "department": "computer",
         "salary": 33333.0,
         "courses_teaching": []
-      },
-      {
-        "user_id": "STU202507283343",
-        "username": "student1",
-        "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
-        "name": "student1",
-        "email": "student1@gmail.com",
-        "user_type": "Student",
-        "created_by": "ADM001",
-        "created_date": "2025-07-28T18:38:00.575987",
-        "first_login": true,
-        "student_id": "STU202507283343",
-        "enrolled_courses": []
-      },
-      {
-        "user_id": "STU202507283202",
-        "username": "student222",
-        "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
-        "name": "student222",
-        "email": "student222@gmail.com",
-        "user_type": "Student",
-        "created_by": "ADM001",
-        "created_date": "2025-07-28T20:47:51.415128",
-        "first_login": true,
-        "student_id": "STU202507283202",
-        "enrolled_courses": []
       }
-    ],
-    "deleted_users": []
+    ]
   },
   {
     "username": "student2",

@@ -549,6 +549,25 @@ class SystemManager:
             print(f"Error deleting user: {e}")
             return False
             
+    def get_user_by_username(self, username: str) -> dict:
+        """
+        Get user data by username.
+        
+        Args:
+            username (str): Username to retrieve
+            
+        Returns:
+            dict: User data as dictionary if found, None otherwise
+        """
+        if username in self.users:
+            try:
+                # Return as dictionary for consistency
+                return self.users[username].to_dict()
+            except Exception:
+                # If to_dict() fails, just return the user object
+                return self.users[username]
+        return None
+            
     def delete_user_by_username(self, username: str) -> bool:
         """
         Delete user from system by username.

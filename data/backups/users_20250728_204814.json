@@ -2229,5 +2229,20 @@
       }
     ],
     "profile_updates": []
+  },
+  {
+    "username": "student222",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "student222",
+    "email": "student222@gmail.com",
+    "user_id": "STU202507283202",
+    "user_type": "Student",
+    "last_login": null,
+    "first_login": true,
+    "student_id": "STU202507283202",
+    "enrolled_courses": [],
+    "academic_records": {},
+    "cgpa_history": [],
+    "semester_data": {}
   }
 ]
