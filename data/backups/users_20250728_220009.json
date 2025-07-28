@@ -6,7 +6,7 @@
     "email": "admin@portal.edu",
     "user_id": "ADM001",
     "user_type": "Admin",
-    "last_login": "2025-07-28T22:01:11.689597",
+    "last_login": "2025-07-28T21:53:11.843458",
     "first_login": false,
     "admin_id": "ADM001",
     "access_level": "full",
@@ -937,7 +937,7 @@
     "email": "teacher3@portal.edu",
     "user_id": "TCH003",
     "user_type": "Teacher",
-    "last_login": "2025-07-28T22:01:00.396619",
+    "last_login": null,
     "first_login": false,
     "teacher_id": "TCH003",
     "department": "Physics",
@@ -948,7 +948,7 @@
       "office_hours": "Mon-Wed 2-4 PM",
       "personal_phone": "555-1003"
     },
-    "salary": 88000.0,
+    "salary": 78000,
     "courses_taught": [],
     "salary_slips": [
       {

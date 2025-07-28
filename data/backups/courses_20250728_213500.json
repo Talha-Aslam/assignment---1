@@ -2,7 +2,7 @@
   {
     "course_id": "CS101",
     "course_name": "Introduction to Programming",
-    "instructor": "Professor 3",
+    "instructor": "teacher1",
     "capacity": 30,
     "section": "A",
     "enrolled_students": [
@@ -14,7 +14,7 @@
   {
     "course_id": "CS101",
     "course_name": "Introduction to Programming",
-    "instructor": "Professor 3",
+    "instructor": "teacher6",
     "capacity": 30,
     "section": "B",
     "enrolled_students": [],

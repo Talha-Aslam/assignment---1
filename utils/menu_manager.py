@@ -1137,8 +1137,6 @@ class MenuManager:
                     self.handle_teacher_view_profile()
                 elif sub_choice == 2:
                     self.handle_teacher_update_info()
-                    print(f"\nAdmin action: Updated information for teacher {teacher.username}")
-                    input("Press Enter to continue...")
                 elif sub_choice == 3:
                     self.handle_teacher_view_salary()
                 elif sub_choice == 4:
@@ -1166,7 +1164,7 @@ class MenuManager:
                             selected_course.instructor = teacher.name
                             selected_course.teacher_id = teacher.teacher_id
                             print(f"Course '{selected_course.course_name}' assigned to {teacher.name}.")
-                            self.system_manager.save_course_data()
+                            self.system_manager.save_all_data()
                             
                     input("Press Enter to continue...")
                 elif sub_choice == 6:
