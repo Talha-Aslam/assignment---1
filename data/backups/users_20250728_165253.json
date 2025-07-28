@@ -6,7 +6,7 @@
     "email": "admin@portal.edu",
     "user_id": "ADM001",
     "user_type": "Admin",
-    "last_login": "2025-07-28T16:58:48.648297",
+    "last_login": "2025-07-28T16:39:43.619961",
     "first_login": false,
     "admin_id": "ADM001",
     "access_level": "full",
@@ -108,41 +108,6 @@
         "action": "create_user_Student",
         "details": "Created Student account for student37 (ID: STU202507285498)",
         "timestamp": "2025-07-28T16:40:32.855073"
-      },
-      {
-        "log_id": "LOG20250728164901819",
-        "user_id": "ADM001",
-        "action": "export_users",
-        "details": "Exported users data to c:\\Users\\ReaperOG\\Downloads\\assignment # 1\\exports\\users_export_20250728_164901.csv",
-        "timestamp": "2025-07-28T16:49:01.711828"
-      },
-      {
-        "log_id": "LOG20250728164919622",
-        "user_id": "ADM001",
-        "action": "export_users",
-        "details": "Exported users data to c:\\Users\\ReaperOG\\Downloads\\assignment # 1\\exports\\users_export_20250728_164919.csv",
-        "timestamp": "2025-07-28T16:49:19.186819"
-      },
-      {
-        "log_id": "LOG20250728164931500",
-        "user_id": "ADM001",
-        "action": "export_users",
-        "details": "Exported users data to c:\\Users\\ReaperOG\\Downloads\\assignment # 1\\exports\\users_export_20250728_164931.csv",
-        "timestamp": "2025-07-28T16:49:31.212546"
-      },
-      {
-        "log_id": "LOG20250728165253566",
-        "user_id": "ADM001",
-        "action": "create_user_Teacher",
-        "details": "Created Teacher account for teacher20 (ID: TEA202507281318)",
-        "timestamp": "2025-07-28T16:52:53.608045"
-      },
-      {
-        "log_id": "LOG20250728165925658",
-        "user_id": "ADM001",
-        "action": "create_user_Teacher",
-        "details": "Created Teacher account for teacher26 (ID: TEA202507283152)",
-        "timestamp": "2025-07-28T16:59:25.429342"
       }
     ],
     "created_users": [
@@ -319,36 +284,6 @@
         "first_login": true,
         "student_id": "STU202507285498",
         "enrolled_courses": []
-      },
-      {
-        "user_id": "TEA202507281318",
-        "username": "teacher20",
-        "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
-        "name": "teacher20",
-        "email": "teacher20@uol.edu.pk",
-        "user_type": "Teacher",
-        "created_by": "ADM001",
-        "created_date": "2025-07-28T16:52:53.608019",
-        "first_login": true,
-        "teacher_id": "TEA202507281318",
-        "department": "computer",
-        "salary": -40000.0,
-        "courses_teaching": []
-      },
-      {
-        "user_id": "TEA202507283152",
-        "username": "teacher26",
-        "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
-        "name": "teacher26",
-        "email": "teacher26@gmail.com",
-        "user_type": "Teacher",
-        "created_by": "ADM001",
-        "created_date": "2025-07-28T16:59:25.429304",
-        "first_login": true,
-        "teacher_id": "TEA202507283152",
-        "department": "computer",
-        "salary": 33333.0,
-        "courses_teaching": []
       }
     ]
   },
@@ -2722,41 +2657,5 @@
     "academic_records": {},
     "cgpa_history": [],
     "semester_data": {}
-  },
-  {
-    "username": "teacher20",
-    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
-    "name": "teacher20",
-    "email": "teacher20@uol.edu.pk",
-    "user_id": "TEA202507281318",
-    "user_type": "Teacher",
-    "last_login": null,
-    "first_login": true,
-    "teacher_id": "TEA202507281318",
-    "department": "computer",
-    "qualification": "",
-    "contact_info": {},
-    "salary": -40000.0,
-    "courses_taught": [],
-    "salary_slips": [],
-    "profile_updates": []
-  },
-  {
-    "username": "teacher26",
-    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
-    "name": "teacher26",
-    "email": "teacher26@gmail.com",
-    "user_id": "TEA202507283152",
-    "user_type": "Teacher",
-    "last_login": null,
-    "first_login": true,
-    "teacher_id": "TEA202507283152",
-    "department": "computer",
-    "qualification": "",
-    "contact_info": {},
-    "salary": 33333.0,
-    "courses_taught": [],
-    "salary_slips": [],
-    "profile_updates": []
   }
 ]

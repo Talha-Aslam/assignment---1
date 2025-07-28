@@ -1,0 +1,46 @@
+User ID,Username,Name,Email,User Type,Creation Date,Role-specific ID,Additional Info
+ADM001,admin,System Administrator,admin@portal.edu,Admin,,ADM001,Access: full
+STU001,student1,Student 1,student1@portal.edu,Student,,STU001,Enrolled in 3 courses
+STU002,student2,Student 2,student2@portal.edu,Student,,STU002,Enrolled in 3 courses
+STU003,student3,Student 3,student3@portal.edu,Student,,STU003,Enrolled in 3 courses
+STU004,student4,Student 4,student4@portal.edu,Student,,STU004,Enrolled in 3 courses
+STU005,student5,Student 5,student5@portal.edu,Student,,STU005,Enrolled in 3 courses
+STU006,student6,Student 6,student6@portal.edu,Student,,STU006,Enrolled in 0 courses
+STU007,student7,Student 7,student7@portal.edu,Student,,STU007,Enrolled in 0 courses
+STU008,student8,Student 8,student8@portal.edu,Student,,STU008,Enrolled in 0 courses
+STU009,student9,Student 9,student9@portal.edu,Student,,STU009,Enrolled in 2 courses
+STU010,student10,Student 10,student10@portal.edu,Student,,STU010,Enrolled in 0 courses
+STU011,student11,Student 11,student11@portal.edu,Student,,STU011,Enrolled in 0 courses
+STU012,student12,Student 12,student12@portal.edu,Student,,STU012,Enrolled in 0 courses
+STU013,student13,Student 13,student13@portal.edu,Student,,STU013,Enrolled in 0 courses
+STU014,student14,Student 14,student14@portal.edu,Student,,STU014,Enrolled in 0 courses
+STU015,student15,Student 15,student15@portal.edu,Student,,STU015,Enrolled in 0 courses
+TCH001,teacher1,teacher1,teacher1@gmail.com,Teacher,,TCH001,"Dept: computer science, Salary: 76000"
+TCH002,teacher2,Professor 2,teacher2@portal.edu,Teacher,,TCH002,"Dept: Mathematics, Salary: 77000"
+TCH003,teacher3,Professor 3,teacher3@portal.edu,Teacher,,TCH003,"Dept: Physics, Salary: 78000"
+TCH004,teacher4,Professor 4,teacher4@portal.edu,Teacher,,TCH004,"Dept: English, Salary: 79000"
+TCH005,teacher5,Professor 5,teacher5@portal.edu,Teacher,,TCH005,"Dept: Business, Salary: 80000"
+TCH006,teacher6,Professor 6,teacher6@portal.edu,Teacher,,TCH006,"Dept: Computer Science, Salary: 81000"
+TCH007,teacher7,Professor 7,teacher7@portal.edu,Teacher,,TCH007,"Dept: Mathematics, Salary: 82000"
+TCH008,teacher8,Professor 8,teacher8@portal.edu,Teacher,,TCH008,"Dept: Physics, Salary: 83000"
+TCH009,teacher9,Professor 9,teacher9@portal.edu,Teacher,,TCH009,"Dept: English, Salary: 84000"
+TCH010,teacher10,Professor 10,teacher10@portal.edu,Teacher,,TCH010,"Dept: Business, Salary: 85000"
+TCH011,teacher11,Professor 11,teacher11@portal.edu,Teacher,,TCH011,"Dept: Computer Science, Salary: 86000"
+TCH012,teacher12,Professor 12,teacher12@portal.edu,Teacher,,TCH012,"Dept: Mathematics, Salary: 87000"
+TCH013,teacher13,Professor 13,teacher13@portal.edu,Teacher,,TCH013,"Dept: Physics, Salary: 88000"
+TCH014,teacher14,Professor 14,teacher14@portal.edu,Teacher,,TCH014,"Dept: English, Salary: 89000"
+TCH015,teacher15,Professor 15,teacher15@portal.edu,Teacher,,TCH015,"Dept: Business, Salary: 90000"
+STU202507275650,student275650,studentt,studentt@uol.pk,Student,,STU202507275650,Enrolled in 0 courses
+TEA202507270705,teacher270705,teacher16,teacher16@gmail.com,Teacher,,TEA202507270705,"Dept: english, Salary: 84000.0"
+TEA202507277218,teacher277218,teacher17,teacher17@gmail.com,Teacher,,TEA202507277218,"Dept: computer, Salary: -24000.0"
+STU202507272843,student272843,1,1,Student,,STU202507272843,Enrolled in 0 courses
+STU202507275199,student275199,Test Student,teststudent@example.com,Student,,STU202507275199,Enrolled in 0 courses
+TEA202507275948,teacher275948,teacher18,teacher18@gmail.com,Teacher,,TEA202507275948,"Dept: arts, Salary: 10000000.0"
+TEA202507270464,teacher270464,teacher19,teacher19@gmail.com,Teacher,,TEA202507270464,"Dept: bio, Salary: 500000.0"
+TEA202507286402,teacher286402,teacher20,teacher20@gmail.com,Teacher,,TEA202507286402,"Dept: cs, Salary: 10.0"
+STU202507286515,student286515,student20,student20@gmail.com,Student,,STU202507286515,Enrolled in 0 courses
+STU202507289043,student21,student21,student21@student.uol.edu.pk,Student,,STU202507289043,Enrolled in 0 courses
+STU202507287135,student287135,student31,student31@student.uol.edu.pk,Student,,STU202507287135,Enrolled in 0 courses
+STU202507283691,student35,student35,student35@gmail.com,Student,,STU202507283691,Enrolled in 0 courses
+STU202507283504,student36,student36,student36@gmail.com,Student,,STU202507283504,Enrolled in 0 courses
+STU202507285498,student37,student37,student37@gmail.com,Student,,STU202507285498,Enrolled in 0 courses

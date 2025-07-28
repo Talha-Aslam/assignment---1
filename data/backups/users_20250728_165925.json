@@ -6,7 +6,7 @@
     "email": "admin@portal.edu",
     "user_id": "ADM001",
     "user_type": "Admin",
-    "last_login": "2025-07-28T16:58:48.648297",
+    "last_login": "2025-07-28T16:48:22.439617",
     "first_login": false,
     "admin_id": "ADM001",
     "access_level": "full",
@@ -136,13 +136,6 @@
         "action": "create_user_Teacher",
         "details": "Created Teacher account for teacher20 (ID: TEA202507281318)",
         "timestamp": "2025-07-28T16:52:53.608045"
-      },
-      {
-        "log_id": "LOG20250728165925658",
-        "user_id": "ADM001",
-        "action": "create_user_Teacher",
-        "details": "Created Teacher account for teacher26 (ID: TEA202507283152)",
-        "timestamp": "2025-07-28T16:59:25.429342"
       }
     ],
     "created_users": [
@@ -333,21 +326,6 @@
         "teacher_id": "TEA202507281318",
         "department": "computer",
         "salary": -40000.0,
-        "courses_teaching": []
-      },
-      {
-        "user_id": "TEA202507283152",
-        "username": "teacher26",
-        "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
-        "name": "teacher26",
-        "email": "teacher26@gmail.com",
-        "user_type": "Teacher",
-        "created_by": "ADM001",
-        "created_date": "2025-07-28T16:59:25.429304",
-        "first_login": true,
-        "teacher_id": "TEA202507283152",
-        "department": "computer",
-        "salary": 33333.0,
         "courses_teaching": []
       }
     ]
@@ -2737,24 +2715,6 @@
     "qualification": "",
     "contact_info": {},
     "salary": -40000.0,
-    "courses_taught": [],
-    "salary_slips": [],
-    "profile_updates": []
-  },
-  {
-    "username": "teacher26",
-    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
-    "name": "teacher26",
-    "email": "teacher26@gmail.com",
-    "user_id": "TEA202507283152",
-    "user_type": "Teacher",
-    "last_login": null,
-    "first_login": true,
-    "teacher_id": "TEA202507283152",
-    "department": "computer",
-    "qualification": "",
-    "contact_info": {},
-    "salary": 33333.0,
     "courses_taught": [],
     "salary_slips": [],
     "profile_updates": []

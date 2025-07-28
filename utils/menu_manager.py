@@ -894,7 +894,18 @@ class MenuManager:
         kwargs = {}
         if user_type == "Teacher":
             department = self.get_user_input("Enter department")
-            salary = self.get_user_input("Enter salary", float)
+            
+            # Get salary with validation to ensure it's not negative
+            while True:
+                salary = self.get_user_input("Enter salary", float)
+                if salary is None:  # User cancelled
+                    return
+                    
+                if salary < 0:
+                    print("❌ Error: Salary cannot be negative. Please enter a valid amount.")
+                    continue
+                break
+                
             kwargs = {"department": department, "salary": salary}
         
         user_data = self.current_user.create_user(
