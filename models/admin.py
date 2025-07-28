@@ -183,10 +183,8 @@ class Admin(User):
         """
         if user_manager.delete_user_by_username(username):
             self.log_action("delete_user", f"Deleted user account: {username}")
-            print(f"User '{username}' deleted successfully.")
             return True
         else:
-            print(f"Failed to delete user '{username}'.")
             return False
     
     def view_all_data(self, data_manager):

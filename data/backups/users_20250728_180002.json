@@ -6,7 +6,7 @@
     "email": "admin@portal.edu",
     "user_id": "ADM001",
     "user_type": "Admin",
-    "last_login": "2025-07-28T18:03:47.105158",
+    "last_login": "2025-07-28T17:20:01.647173",
     "first_login": false,
     "admin_id": "ADM001",
     "access_level": "full",
@@ -241,13 +241,6 @@
         "action": "delete_user",
         "details": "Deleted user account: teacher20",
         "timestamp": "2025-07-28T17:25:09.739547"
-      },
-      {
-        "log_id": "LOG20250728180408430",
-        "user_id": "ADM001",
-        "action": "delete_user",
-        "details": "Deleted user account: teacher2",
-        "timestamp": "2025-07-28T18:04:08.942835"
       }
     ],
     "created_users": [
@@ -456,6 +449,74 @@
         "courses_teaching": []
       }
     ]
+  },
+  {
+    "username": "student1",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 1",
+    "email": "student1@portal.edu",
+    "user_id": "STU001",
+    "user_type": "Student",
+    "last_login": null,
+    "first_login": false,
+    "student_id": "STU001",
+    "enrolled_courses": [
+      "MATH101",
+      "CS102",
+      "ENG101"
+    ],
+    "academic_records": {
+      "Fall 2023": {
+        "courses_grades": {
+          "CS101": "A",
+          "MATH101": "B+",
+          "ENG101": "A-"
+        },
+        "cgpa": 3.67,
+        "date_added": "2025-07-27T18:18:54.018736"
+      },
+      "Spring 2024": {
+        "courses_grades": {
+          "CS102": "A-",
+          "MATH102": "A",
+          "PHYS101": "B"
+        },
+        "cgpa": 3.78,
+        "date_added": "2025-07-27T18:18:54.018747"
+      }
+    },
+    "cgpa_history": [
+      {
+        "semester": "Fall 2023",
+        "cgpa": 3.67,
+        "date": "2025-07-27T18:18:54.018742"
+      },
+      {
+        "semester": "Spring 2024",
+        "cgpa": 3.78,
+        "date": "2025-07-27T18:18:54.018749"
+      }
+    ],
+    "semester_data": {
+      "Fall 2023": {
+        "total_courses": 3,
+        "grades": {
+          "CS101": "A",
+          "MATH101": "B+",
+          "ENG101": "A-"
+        },
+        "cgpa": 3.67
+      },
+      "Spring 2024": {
+        "total_courses": 3,
+        "grades": {
+          "CS102": "A-",
+          "MATH102": "A",
+          "PHYS101": "B"
+        },
+        "cgpa": 3.78
+      }
+    }
   },
   {
     "username": "student2",
@@ -881,6 +942,359 @@
     "academic_records": {},
     "cgpa_history": [],
     "semester_data": {}
+  },
+  {
+    "username": "teacher1",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "teacher1",
+    "email": "teacher1@gmail.com",
+    "user_id": "TCH001",
+    "user_type": "Teacher",
+    "last_login": null,
+    "first_login": false,
+    "teacher_id": "TCH001",
+    "department": "computer science",
+    "qualification": "ms",
+    "contact_info": {
+      "office_building": "Science Building",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "office_room": "Room 203, Computer Building",
+      "office_phone": "1234-5678"
+    },
+    "salary": 76000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "SS202501TCH001",
+        "teacher_id": "TCH001",
+        "month": "January",
+        "year": 2025,
+        "basic_salary": 76000,
+        "allowances": {
+          "Housing Allowance": 11400.0,
+          "Transport Allowance": 500.0,
+          "Medical Allowance": 300.0
+        },
+        "deductions": {
+          "Tax": 9120.0,
+          "Insurance": 150.0,
+          "Pension": 3800.0
+        },
+        "net_salary": 75130.0,
+        "generated_date": "2025-07-27T22:02:03.457676"
+      },
+      {
+        "slip_id": "SS202502TCH001",
+        "teacher_id": "TCH001",
+        "month": "February",
+        "year": 2025,
+        "basic_salary": 76000,
+        "allowances": {
+          "Housing Allowance": 11400.0,
+          "Transport Allowance": 500.0,
+          "Medical Allowance": 300.0
+        },
+        "deductions": {
+          "Tax": 9120.0,
+          "Insurance": 150.0,
+          "Pension": 3800.0
+        },
+        "net_salary": 75130.0,
+        "generated_date": "2025-07-27T22:02:03.457686"
+      },
+      {
+        "slip_id": "SS202503TCH001",
+        "teacher_id": "TCH001",
+        "month": "March",
+        "year": 2025,
+        "basic_salary": 76000,
+        "allowances": {
+          "Housing Allowance": 11400.0,
+          "Transport Allowance": 500.0,
+          "Medical Allowance": 300.0
+        },
+        "deductions": {
+          "Tax": 9120.0,
+          "Insurance": 150.0,
+          "Pension": 3800.0
+        },
+        "net_salary": 75130.0,
+        "generated_date": "2025-07-27T22:02:03.457691"
+      },
+      {
+        "slip_id": "SS202504TCH001",
+        "teacher_id": "TCH001",
+        "month": "April",
+        "year": 2025,
+        "basic_salary": 76000,
+        "allowances": {
+          "Housing Allowance": 11400.0,
+          "Transport Allowance": 500.0,
+          "Medical Allowance": 300.0
+        },
+        "deductions": {
+          "Tax": 9120.0,
+          "Insurance": 150.0,
+          "Pension": 3800.0
+        },
+        "net_salary": 75130.0,
+        "generated_date": "2025-07-27T22:02:03.457694"
+      }
+    ],
+    "profile_updates": [
+      {
+        "field": "name",
+        "old_value": "Professor 1",
+        "new_value": "Talha",
+        "timestamp": "2025-07-27T18:36:53.459185"
+      },
+      {
+        "field": "department",
+        "old_value": "Computer Science",
+        "new_value": "personal department",
+        "timestamp": "2025-07-27T18:37:24.087359"
+      },
+      {
+        "field": "qualification",
+        "old_value": "PhD",
+        "new_value": "chlo bhago",
+        "timestamp": "2025-07-27T18:37:46.071367"
+      },
+      {
+        "field": "email",
+        "old_value": "teacher1@portal.edu",
+        "new_value": "talhatalhatalhachlobhago@gmail.com",
+        "timestamp": "2025-07-27T18:38:27.882515"
+      },
+      {
+        "field": "name",
+        "old_value": "Talha",
+        "new_value": "professor1",
+        "timestamp": "2025-07-27T18:59:48.110301"
+      },
+      {
+        "field": "department",
+        "old_value": "personal department",
+        "new_value": "mathematics",
+        "timestamp": "2025-07-27T19:00:02.072531"
+      },
+      {
+        "field": "contact_info",
+        "old_value": {
+          "office_building": "Science Building",
+          "office_hours": "Mon-Wed 2-4 PM",
+          "personal_phone": "123456"
+        },
+        "new_value": {
+          "personal_phone": "123456"
+        },
+        "timestamp": "2025-07-27T19:52:43.704299"
+      },
+      {
+        "field": "qualification",
+        "old_value": "chlo bhago",
+        "new_value": "phd",
+        "timestamp": "2025-07-27T19:53:40.353899"
+      },
+      {
+        "field": "email",
+        "old_value": "talhatalhatalhachlobhago@gmail.com",
+        "new_value": "teacher1@gmail.com",
+        "timestamp": "2025-07-27T19:53:58.226599"
+      },
+      {
+        "field": "contact_info",
+        "old_value": {
+          "office_building": "Science Building",
+          "office_hours": "Mon-Wed 2-4 PM",
+          "personal_phone": "123456",
+          "office_room": "Room 201, Computer Building",
+          "office_phone": "1234-5678"
+        },
+        "new_value": {
+          "office_room": "Room 202, Computer Building"
+        },
+        "timestamp": "2025-07-27T20:13:44.219742"
+      },
+      {
+        "field": "contact_info",
+        "old_value": {
+          "office_building": "Science Building",
+          "office_hours": "Mon-Wed 2-4 PM",
+          "personal_phone": "123456",
+          "office_room": "Room 201, Computer Building",
+          "office_phone": "1234-5678"
+        },
+        "new_value": {
+          "office_phone": "1234-5678"
+        },
+        "timestamp": "2025-07-27T20:14:26.907408"
+      },
+      {
+        "field": "contact_info",
+        "old_value": {
+          "office_building": "Science Building",
+          "office_hours": "Mon-Wed 2-4 PM",
+          "personal_phone": "123456",
+          "office_room": "Room 201, Computer Building",
+          "office_phone": "1234-5678"
+        },
+        "new_value": {
+          "office_room": "Room 201, Computer Building"
+        },
+        "timestamp": "2025-07-27T20:20:29.550437"
+      },
+      {
+        "field": "name",
+        "old_value": "professor1",
+        "new_value": "teacher1",
+        "timestamp": "2025-07-27T21:53:20.532816"
+      },
+      {
+        "field": "department",
+        "old_value": "mathematics",
+        "new_value": "computer science",
+        "timestamp": "2025-07-27T21:53:33.771993"
+      },
+      {
+        "field": "qualification",
+        "old_value": "phd",
+        "new_value": "ms",
+        "timestamp": "2025-07-27T21:53:58.962214"
+      },
+      {
+        "field": "email",
+        "old_value": "teacher1@gmail.com",
+        "new_value": "teacher1@gmail.com",
+        "timestamp": "2025-07-27T21:54:35.439564"
+      },
+      {
+        "field": "contact_info",
+        "old_value": {
+          "office_building": "Science Building",
+          "office_hours": "Mon-Wed 2-4 PM",
+          "office_room": "Room 203, Computer Building",
+          "office_phone": "1234-5678"
+        },
+        "new_value": {
+          "years": "2 years"
+        },
+        "timestamp": "2025-07-27T21:56:08.474581"
+      },
+      {
+        "field": "contact_info",
+        "old_value": {
+          "office_building": "Science Building",
+          "office_hours": "Mon-Wed 2-4 PM",
+          "office_room": "Room 203, Computer Building",
+          "office_phone": "1234-5678"
+        },
+        "new_value": {
+          "office_room": "Room 203, Computer Building"
+        },
+        "timestamp": "2025-07-27T21:57:20.102131"
+      }
+    ]
+  },
+  {
+    "username": "teacher2",
+    "password": "63cb9c6fa2d65784658539a93ad47f2274a02ddff344537beb97bd399938ad22",
+    "name": "Professor 2",
+    "email": "teacher2@portal.edu",
+    "user_id": "TCH002",
+    "user_type": "Teacher",
+    "last_login": null,
+    "first_login": false,
+    "teacher_id": "TCH002",
+    "department": "Mathematics",
+    "qualification": "PhD",
+    "contact_info": {
+      "office_room": "Room 102",
+      "office_building": "Math Building",
+      "office_hours": "Mon-Wed 2-4 PM",
+      "personal_phone": "555-1002"
+    },
+    "salary": 77000,
+    "courses_taught": [],
+    "salary_slips": [
+      {
+        "slip_id": "SS202501TCH002",
+        "teacher_id": "TCH002",
+        "month": "January",
+        "year": 2025,
+        "basic_salary": 77000,
+        "allowances": {
+          "Housing Allowance": 11550.0,
+          "Transport Allowance": 500.0,
+          "Medical Allowance": 300.0
+        },
+        "deductions": {
+          "Tax": 9240.0,
+          "Insurance": 150.0,
+          "Pension": 3850.0
+        },
+        "net_salary": 76110.0,
+        "generated_date": "2025-07-27T22:02:03.457735"
+      },
+      {
+        "slip_id": "SS202502TCH002",
+        "teacher_id": "TCH002",
+        "month": "February",
+        "year": 2025,
+        "basic_salary": 77000,
+        "allowances": {
+          "Housing Allowance": 11550.0,
+          "Transport Allowance": 500.0,
+          "Medical Allowance": 300.0
+        },
+        "deductions": {
+          "Tax": 9240.0,
+          "Insurance": 150.0,
+          "Pension": 3850.0
+        },
+        "net_salary": 76110.0,
+        "generated_date": "2025-07-27T22:02:03.457742"
+      },
+      {
+        "slip_id": "SS202503TCH002",
+        "teacher_id": "TCH002",
+        "month": "March",
+        "year": 2025,
+        "basic_salary": 77000,
+        "allowances": {
+          "Housing Allowance": 11550.0,
+          "Transport Allowance": 500.0,
+          "Medical Allowance": 300.0
+        },
+        "deductions": {
+          "Tax": 9240.0,
+          "Insurance": 150.0,
+          "Pension": 3850.0
+        },
+        "net_salary": 76110.0,
+        "generated_date": "2025-07-27T22:02:03.457749"
+      },
+      {
+        "slip_id": "SS202504TCH002",
+        "teacher_id": "TCH002",
+        "month": "April",
+        "year": 2025,
+        "basic_salary": 77000,
+        "allowances": {
+          "Housing Allowance": 11550.0,
+          "Transport Allowance": 500.0,
+          "Medical Allowance": 300.0
+        },
+        "deductions": {
+          "Tax": 9240.0,
+          "Insurance": 150.0,
+          "Pension": 3850.0
+        },
+        "net_salary": 76110.0,
+        "generated_date": "2025-07-27T22:02:03.457751"
+      }
+    ],
+    "profile_updates": []
   },
   {
     "username": "teacher3",

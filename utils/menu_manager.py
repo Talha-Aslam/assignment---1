@@ -931,22 +931,31 @@ class MenuManager:
     
     def handle_admin_delete_user(self):
         """Handle deleting users."""
-        self.clear_screen()
-        self.print_header("Delete User")
-        
-        username = self.get_user_input("Enter username to delete")
-        if username:
+        while True:
+            self.clear_screen()
+            self.print_header("Delete User")
+            
+            username = self.get_user_input("Enter username to delete (leave blank to cancel)")
+            if not username:
+                print("Operation cancelled.")
+                break
+                
             confirm = self.get_yes_no_input(f"Are you sure you want to delete user '{username}'? (y/n)")
-            if confirm is None:
+            if confirm is None or not confirm:
                 print("Deletion cancelled.")
-            elif confirm:
-                success = self.current_user.delete_user(username, self.system_manager)
-                if not success:
-                    print(f"Failed to delete user. Username '{username}' not found.")
             else:
-                print("Deletion cancelled.")
+                success = self.current_user.delete_user(username, self.system_manager)
+                if success:
+                    print(f"User '{username}' deleted successfully.")
+                else:
+                    print(f"Failed to delete user. Username '{username}' not found.")
+            
+            # Ask if admin wants to delete more users
+            delete_more = self.get_yes_no_input("\nDo you want to delete more users? (y/n)")
+            if not delete_more:
+                break
         
-        input("Press Enter to continue...")
+        input("Press Enter to return to the admin menu...")
     
     def handle_admin_view_data(self):
         """Handle viewing all system data."""

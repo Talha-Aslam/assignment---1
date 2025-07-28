@@ -46,7 +46,9 @@
     "instructor": "teacher8",
     "capacity": 28,
     "section": "B",
-    "enrolled_students": [],
+    "enrolled_students": [
+      "STU001"
+    ],
     "created_date": "2025-07-27T18:18:54.019075"
   },
   {
@@ -56,6 +58,7 @@
     "capacity": 40,
     "section": "A",
     "enrolled_students": [
+      "STU001",
       "STU002",
       "STU005"
     ],
@@ -149,6 +152,7 @@
     "capacity": 22,
     "section": "C",
     "enrolled_students": [
+      "STU001",
       "STU009"
     ],
     "created_date": "2025-07-27T18:18:54.019079"

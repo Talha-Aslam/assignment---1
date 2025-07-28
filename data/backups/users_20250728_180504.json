@@ -241,13 +241,6 @@
         "action": "delete_user",
         "details": "Deleted user account: teacher20",
         "timestamp": "2025-07-28T17:25:09.739547"
-      },
-      {
-        "log_id": "LOG20250728180408430",
-        "user_id": "ADM001",
-        "action": "delete_user",
-        "details": "Deleted user account: teacher2",
-        "timestamp": "2025-07-28T18:04:08.942835"
       }
     ],
     "created_users": [
@@ -456,6 +449,74 @@
         "courses_teaching": []
       }
     ]
+  },
+  {
+    "username": "student1",
+    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "name": "Student 1",
+    "email": "student1@portal.edu",
+    "user_id": "STU001",
+    "user_type": "Student",
+    "last_login": null,
+    "first_login": false,
+    "student_id": "STU001",
+    "enrolled_courses": [
+      "MATH101",
+      "CS102",
+      "ENG101"
+    ],
+    "academic_records": {
+      "Fall 2023": {
+        "courses_grades": {
+          "CS101": "A",
+          "MATH101": "B+",
+          "ENG101": "A-"
+        },
+        "cgpa": 3.67,
+        "date_added": "2025-07-27T18:18:54.018736"
+      },
+      "Spring 2024": {
+        "courses_grades": {
+          "CS102": "A-",
+          "MATH102": "A",
+          "PHYS101": "B"
+        },
+        "cgpa": 3.78,
+        "date_added": "2025-07-27T18:18:54.018747"
+      }
+    },
+    "cgpa_history": [
+      {
+        "semester": "Fall 2023",
+        "cgpa": 3.67,
+        "date": "2025-07-27T18:18:54.018742"
+      },
+      {
+        "semester": "Spring 2024",
+        "cgpa": 3.78,
+        "date": "2025-07-27T18:18:54.018749"
+      }
+    ],
+    "semester_data": {
+      "Fall 2023": {
+        "total_courses": 3,
+        "grades": {
+          "CS101": "A",
+          "MATH101": "B+",
+          "ENG101": "A-"
+        },
+        "cgpa": 3.67
+      },
+      "Spring 2024": {
+        "total_courses": 3,
+        "grades": {
+          "CS102": "A-",
+          "MATH102": "A",
+          "PHYS101": "B"
+        },
+        "cgpa": 3.78
+      }
+    }
   },
   {
     "username": "student2",
