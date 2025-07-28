@@ -6,7 +6,7 @@
     "email": "admin@portal.edu",
     "user_id": "ADM001",
     "user_type": "Admin",
-    "last_login": "2025-07-28T21:29:18.780960",
+    "last_login": "2025-07-28T21:28:07.832624",
     "first_login": false,
     "admin_id": "ADM001",
     "access_level": "full",
@@ -507,12 +507,12 @@
   },
   {
     "username": "student2",
-    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+    "password": "bd94dcda26fccb4e68d6a31f9b5aac0b571ae266d822620e901ef7ebe3a11d4f",
     "name": "Student 2",
     "email": "student2@portal.edu",
     "user_id": "STU002",
     "user_type": "Student",
-    "last_login": "2025-07-28T21:29:02.446544",
+    "last_login": null,
     "first_login": false,
     "student_id": "STU002",
     "enrolled_courses": [

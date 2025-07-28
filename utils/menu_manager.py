@@ -1022,10 +1022,13 @@ class MenuManager:
             print("1. View Academic Records")
             print("2. Plot CGPA Graph")
             print("3. View Enrolled Courses")
-            print("4. Return to student list")
+            print("4. Enroll Student in Course")
+            print("5. Unenroll Student from Course")
+            print("6. Change Student Password")
+            print("7. Return to Admin Menu")
             
             sub_choice = self.get_user_input("\nSelect an option", int,
-                                          lambda x: 1 <= x <= 4)
+                                          lambda x: 1 <= x <= 7)
             
             if sub_choice is None:
                 continue
@@ -1044,13 +1047,36 @@ class MenuManager:
                 elif sub_choice == 3:
                     self.handle_student_view_courses()
                 elif sub_choice == 4:
+                    self.handle_student_enroll_course()
+                elif sub_choice == 5:
+                    self.handle_student_unenroll_course()
+                elif sub_choice == 6:
+                    # Special admin password change function
+                    self.clear_screen()
+                    self.print_header(f"Change Password for {student.username}")
+                    new_password = self.get_user_input("Enter new password")
+                    confirm_password = self.get_user_input("Confirm new password")
+                    
+                    if new_password != confirm_password:
+                        print("Passwords do not match.")
+                    elif not new_password:
+                        print("Password cannot be empty.")
+                    else:
+                        # Admin can bypass old password check - directly set the hashed password
+                        student._password = student._hash_password(new_password)
+                        student.first_login = False
+                        print(f"Password changed successfully for {student.username}.")
+                        self.system_manager.save_user_data()
+                        
+                    input("Press Enter to continue...")
+                elif sub_choice == 7:
                     break
             finally:
                 # Restore original admin user
                 self.current_user = original_user
         
-        # Return to student list or go back to admin menu
-        self.handle_admin_view_student_data()
+        # Go back to admin menu
+        return
         
     def handle_admin_view_teacher_data(self):
         """Handle viewing teacher data."""
@@ -1086,12 +1112,16 @@ class MenuManager:
             # Display teacher options
             print("\nOptions:")
             print("1. View Profile")
-            print("2. View Salary Slips")
-            print("3. View Courses Taught")
-            print("4. Return to teacher list")
+            print("2. Update Teacher Information")
+            print("3. View Salary Slips")
+            print("4. View Courses Taught")
+            print("5. Assign Course to Teacher")
+            print("6. Change Teacher Password")
+            print("7. Adjust Salary")
+            print("8. Return to Admin Menu")
             
             sub_choice = self.get_user_input("\nSelect an option", int,
-                                          lambda x: 1 <= x <= 4)
+                                          lambda x: 1 <= x <= 8)
             
             if sub_choice is None:
                 continue
@@ -1106,17 +1136,83 @@ class MenuManager:
                 if sub_choice == 1:
                     self.handle_teacher_view_profile()
                 elif sub_choice == 2:
-                    self.handle_teacher_view_salary()
+                    self.handle_teacher_update_info()
+                    print(f"\nAdmin action: Updated information for teacher {teacher.username}")
+                    input("Press Enter to continue...")
                 elif sub_choice == 3:
-                    self.handle_teacher_view_courses()
+                    self.handle_teacher_view_salary()
                 elif sub_choice == 4:
+                    self.handle_teacher_view_courses()
+                elif sub_choice == 5:
+                    # Admin assigns a course to teacher
+                    self.clear_screen()
+                    self.print_header(f"Assign Course to {teacher.name}")
+                    
+                    # Get all courses
+                    courses = self.system_manager.get_all_courses()
+                    if not courses:
+                        print("No courses available in the system.")
+                    else:
+                        print("\nAvailable Courses:")
+                        for i, course in enumerate(courses, 1):
+                            print(f"{i}. {course.course_name} ({course.course_id}) - Section: {course.section}")
+                        
+                        course_num = self.get_user_input("\nSelect course number to assign (or 0 to cancel)", int,
+                                                      lambda x: 0 <= x <= len(courses))
+                        
+                        if course_num and course_num > 0:
+                            selected_course = courses[course_num - 1]
+                            # Update course instructor
+                            selected_course.instructor = teacher.name
+                            selected_course.teacher_id = teacher.teacher_id
+                            print(f"Course '{selected_course.course_name}' assigned to {teacher.name}.")
+                            self.system_manager.save_course_data()
+                            
+                    input("Press Enter to continue...")
+                elif sub_choice == 6:
+                    # Special admin password change function
+                    self.clear_screen()
+                    self.print_header(f"Change Password for {teacher.username}")
+                    new_password = self.get_user_input("Enter new password")
+                    confirm_password = self.get_user_input("Confirm new password")
+                    
+                    if new_password != confirm_password:
+                        print("Passwords do not match.")
+                    elif not new_password:
+                        print("Password cannot be empty.")
+                    else:
+                        # Admin can bypass old password check - directly set the hashed password
+                        teacher._password = teacher._hash_password(new_password)
+                        teacher.first_login = False
+                        print(f"Password changed successfully for {teacher.username}.")
+                        self.system_manager.save_user_data()
+                        
+                    input("Press Enter to continue...")
+                elif sub_choice == 7:
+                    # Adjust teacher salary
+                    self.clear_screen()
+                    self.print_header(f"Adjust Salary for {teacher.name}")
+                    print(f"Current Salary: ${teacher.salary:.2f}")
+                    
+                    new_salary = self.get_user_input("Enter new salary amount", float, 
+                                                  lambda x: x >= 0)  # Ensuring non-negative salary
+                    
+                    if new_salary is not None:
+                        teacher.salary = new_salary
+                        print(f"Salary updated to ${teacher.salary:.2f}")
+                        self.system_manager.save_user_data()
+                    else:
+                        print("Invalid salary amount. Salary not updated.")
+                    
+                    input("Press Enter to continue...")
+                elif sub_choice == 8:
                     break
             finally:
                 # Restore original admin user
                 self.current_user = original_user
         
-        # Return to teacher list or go back to admin menu
-        self.handle_admin_view_teacher_data()
+        # Go back to admin menu
+        return
         
     def handle_admin_export_users(self):
         """Handle exporting all user data."""
