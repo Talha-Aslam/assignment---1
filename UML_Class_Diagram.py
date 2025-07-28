@@ -34,13 +34,13 @@ and detailed class specifications for the portal system.
                 │ - student_id    │ │ - teacher_id    │ │ - admin_id      │
                 │ - enrolled_courses │ │ - department  │ │ - access_level  │
                 │ - academic_records │ │ - salary      │ │ - system_logs   │
-                │ - cgpa_history  │ │ - qualification │ │                 │
-                │ - semester_data │ │ - contact_info  │ │                 │
+                │ - cgpa_history  │ │ - qualification │ │ - created_users │
+                │ - semester_data │ │ - contact_info  │ │ - deleted_users │
                 ├─────────────────┤ ├─────────────────┤ ├─────────────────┤
                 │ + enroll_course()│ │ + view_salary() │ │ + create_user() │
                 │ + unenroll_course()│ │ + update_info()│ │ + delete_user() │
                 │ + view_records()│ │ + view_profile()│ │ + view_all_data()│
-                │ + plot_cgpa()   │ │ + display_menu()│ │ + manage_enrollments()│
+                │ + plot_cgpa()   │ │ + display_menu()│ │ + show_enrollments()│
                 │ + view_teacher_profile()│ │ + change_password()│ │ + view_statistics()│
                 │ + display_menu()│ │                 │ │ + view_logs()   │
                 └─────────────────┘ └─────────────────┘ │ + display_menu()│
@@ -87,7 +87,7 @@ and detailed class specifications for the portal system.
 2. COMPOSITION:
    - Student HAS-A list of Course objects (enrolled_courses)
    - Teacher HAS-A list of SalarySlip objects
-   - Admin HAS-A list of SystemLog objects
+   - Admin HAS-A list of SystemLog objects, created_users, and deleted_users
 
 3. AGGREGATION:
    - Course contains references to Student objects (enrolled_students)
