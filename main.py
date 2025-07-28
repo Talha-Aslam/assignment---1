@@ -36,9 +36,9 @@ def get_yes_no_input(prompt: str) -> bool:
             elif user_input in valid_no:
                 return False
             else:
-                print("❌ Invalid input! Please enter:")
-                print("   • For YES: y, yes, yeah, yep, true, 1")
-                print("   • For NO: n, no, nope, false, 0")
+                print("[X] Invalid input! Please enter:")
+                print("   - For YES: y, yes, yeah, yep, true, 1")
+                print("   - For NO: n, no, nope, false, 0")
                 continue
 
         except KeyboardInterrupt:
@@ -174,40 +174,40 @@ def check_dependencies(verbose=False):
     try:
         import json
         if verbose:
-            print("✓ json module available")
+            print("[√] json module available")
     except ImportError:
         missing_deps.append("json (built-in)")
     
     try:
         import os
         if verbose:
-            print("✓ os module available")
+            print("[√] os module available")
     except ImportError:
         missing_deps.append("os (built-in)")
     
     try:
         import datetime
         if verbose:
-            print("✓ datetime module available")
+            print("[√] datetime module available")
     except ImportError:
         missing_deps.append("datetime (built-in)")
     
     try:
         import matplotlib
         if verbose:
-            print("✓ matplotlib available")
+            print("[√] matplotlib available")
     except ImportError:
         if verbose:
-            print("⚠ matplotlib not available (CGPA graphs will not work)")
+            print("[!] matplotlib not available (CGPA graphs will not work)")
             print("  Install with: pip install matplotlib")
     
     if missing_deps:
-        print(f"\n❌ Missing critical dependencies: {', '.join(missing_deps)}")
+        print(f"\n[X] Missing critical dependencies: {', '.join(missing_deps)}")
         print("Please install missing dependencies and try again.")
         return False
     
     if verbose:
-        print("✓ All critical dependencies satisfied")
+        print("[√] All critical dependencies satisfied")
     return True
 
 
@@ -218,12 +218,12 @@ def setup_data_directory(verbose=False):
         try:
             os.makedirs(data_dir)
             if verbose:
-                print(f"✓ Created data directory: {data_dir}")
+                print(f"[√] Created data directory: {data_dir}")
         except Exception as e:
-            print(f"❌ Failed to create data directory: {e}")
+            print(f"[X] Failed to create data directory: {e}")
             return False
     elif verbose:
-        print(f"✓ Data directory exists: {data_dir}")
+        print(f"[√] Data directory exists: {data_dir}")
     
     return True
 
@@ -242,9 +242,9 @@ def run_system_diagnostics(verbose=False):
     
     if python_version.major < 3 or (python_version.major == 3 and python_version.minor < 7):
         if verbose:
-            print("⚠ Warning: Python 3.7+ recommended for optimal performance")
+            print("[!] Warning: Python 3.7+ recommended for optimal performance")
     elif verbose:
-        print("✓ Python version compatible")
+        print("[√] Python version compatible")
     
     # Check dependencies
     if not check_dependencies(verbose):
@@ -255,7 +255,7 @@ def run_system_diagnostics(verbose=False):
         return False
     
     if verbose:
-        print("\n✓ All system checks passed")
+        print("\n[√] All system checks passed")
         print("="*50)
     return True
 
