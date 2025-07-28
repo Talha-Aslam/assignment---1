@@ -48,7 +48,7 @@ class Admin(User):
     user creation, and monitoring.
     """
     
-    def __init__(self, username, password, name, email, user_id, admin_id=None, access_level="full"):
+    def __init__(self, username, password, name, email, user_id, admin_id=None, access_level="full", first_login=False):
         """
         Initialize an Admin object.
         
@@ -60,8 +60,9 @@ class Admin(User):
             user_id (str): Unique user identifier
             admin_id (str): Unique admin identifier
             access_level (str): Admin access level
+            first_login (bool): Flag indicating if this is the user's first login
         """
-        super().__init__(username, password, name, email, user_id)
+        super().__init__(username, password, name, email, user_id, first_login)
         self.admin_id = admin_id or user_id
         self.access_level = access_level
         self.system_logs = []
@@ -136,7 +137,8 @@ class Admin(User):
             'email': email,
             'user_type': user_type,
             'created_by': self.admin_id,
-            'created_date': datetime.now().isoformat()
+            'created_date': datetime.now().isoformat(),
+            'first_login': True           # Flag to indicate this is a new user's first login
         }
         
         # Add user-specific data
@@ -356,7 +358,8 @@ class Admin(User):
             data['email'],
             data['user_id'],
             data.get('admin_id'),
-            data.get('access_level', 'full')
+            data.get('access_level', 'full'),
+            data.get('first_login', False)  # Add first_login flag
         )
         admin._password = data['password']  # Use hashed password
         admin.created_users = data.get('created_users', [])

@@ -16,7 +16,7 @@ class Teacher(User):
     """
     
     def __init__(self, username, password, name, email, user_id, teacher_id=None, 
-                 department="", qualification="", contact_info=None, salary=0.0):
+                 department="", qualification="", contact_info=None, salary=0.0, first_login=False):
         """
         Initialize a Teacher object.
         
@@ -31,8 +31,9 @@ class Teacher(User):
             qualification (str): Educational qualifications
             contact_info (dict): Contact information
             salary (float): Base salary
+            first_login (bool): Flag indicating if this is the user's first login
         """
-        super().__init__(username, password, name, email, user_id)
+        super().__init__(username, password, name, email, user_id, first_login)
         self.teacher_id = teacher_id or user_id
         self.department = department
         self.qualification = qualification
@@ -249,7 +250,8 @@ class Teacher(User):
             data.get('department', ''),
             data.get('qualification', ''),
             data.get('contact_info', {}),
-            data.get('salary', 0.0)
+            data.get('salary', 0.0),
+            data.get('first_login', False)  # Add first_login flag
         )
         teacher._password = data['password']  # Use hashed password
         teacher.courses_taught = data.get('courses_taught', [])

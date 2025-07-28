@@ -15,7 +15,7 @@ class User(ABC):
     Implements common functionality and defines interface for subclasses.
     """
     
-    def __init__(self, username, password, name, email, user_id):
+    def __init__(self, username, password, name, email, user_id, first_login=False):
         """
         Initialize a User object.
         
@@ -25,6 +25,7 @@ class User(ABC):
             name (str): Full name of the user
             email (str): Email address
             user_id (str): Unique user identifier
+            first_login (bool): Flag indicating if this is the user's first login
         """
         self._username = username
         self._password = self._hash_password(password)
@@ -33,6 +34,7 @@ class User(ABC):
         self._user_id = user_id
         self._last_login = None
         self._is_logged_in = False
+        self._first_login = first_login
     
     def _hash_password(self, password):
         """
@@ -107,6 +109,43 @@ class User(ABC):
             print("Incorrect current password.")
             return False
     
+    def change_username(self, new_username):
+        """
+        Change username.
+        
+        Args:
+            new_username (str): New username to set
+            
+        Returns:
+            bool: True if username changed successfully
+        """
+        self._username = new_username
+        print("Username changed successfully!")
+        return True
+    
+    def set_credentials(self, new_username, new_password):
+        """
+        Set new credentials for first-time users.
+        
+        Args:
+            new_username (str): New username
+            new_password (str): New password
+            
+        Returns:
+            bool: True if credentials were updated
+        """
+        # Change username
+        self._username = new_username
+        
+        # Change password (directly without verification)
+        self._password = self._hash_password(new_password)
+        
+        # Mark first login complete
+        self._first_login = False
+        
+        print("Your credentials have been updated successfully!")
+        return True
+    
     @abstractmethod
     def display_menu(self):
         """
@@ -147,6 +186,14 @@ class User(ABC):
     @property
     def last_login(self):
         return self._last_login
+        
+    @property
+    def first_login(self):
+        return self._first_login
+    
+    @first_login.setter
+    def first_login(self, value):
+        self._first_login = value
     
     # Setter methods with validation
     @name.setter
@@ -178,7 +225,8 @@ class User(ABC):
             'email': self._email,
             'user_id': self._user_id,
             'user_type': self.get_user_type(),
-            'last_login': self._last_login.isoformat() if self._last_login else None
+            'last_login': self._last_login.isoformat() if self._last_login else None,
+            'first_login': self._first_login
         }
     
     @classmethod

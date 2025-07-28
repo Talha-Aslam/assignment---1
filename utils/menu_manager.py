@@ -160,11 +160,105 @@ class MenuManager:
         if user and user.get_user_type().lower() == user_type.lower():
             self.current_user = user
             print(f"\nLogin successful! Welcome, {user.name}")
-            input("Press Enter to continue...")
+            
+            # Check if this is the user's first login
+            if user.first_login:
+                self.handle_first_time_login()
+            else:
+                input("Press Enter to continue...")
+                
             self.show_user_menu()
         else:
             print(f"\nInvalid credentials or incorrect user type.")
             input("Press Enter to continue...")
+    
+    def handle_first_time_login(self):
+        """Handle first-time login process for new users."""
+        self.clear_screen()
+        self.print_header("First-Time Login Setup")
+        
+        print("Welcome to the Portal System! This appears to be your first login.")
+        print("For security, we recommend that you set up your own credentials.")
+        
+        change_creds = self.get_yes_no_input("\nWould you like to set a custom username and password? (y/n)")
+        if not change_creds:
+            print("\nYou can change your credentials later from your account settings.")
+            input("Press Enter to continue...")
+            return
+        
+        # Get new username
+        while True:
+            new_username = self.get_user_input("\nEnter new username (or leave blank to keep current)")
+            if not new_username:
+                new_username = self.current_user.username
+                break
+                
+            # Check if username already exists
+            if new_username != self.current_user.username and new_username in self.system_manager.users:
+                print("This username is already taken. Please choose a different one.")
+                continue
+            break
+        
+        # Get new password
+        while True:
+            new_password = self.get_user_input("Enter new password (or leave blank to keep current)")
+            if not new_password:
+                # Keep current password
+                break
+                
+            confirm_password = self.get_user_input("Confirm new password")
+            if new_password != confirm_password:
+                print("Passwords don't match. Please try again.")
+                continue
+            break
+        
+        # Update credentials if changed
+        if (new_username != self.current_user.username or new_password):
+            # If only username changed
+            if new_username != self.current_user.username and not new_password:
+                # Store old username before changing it
+                old_username = self.current_user.username
+                # Change the username in the user object
+                self.current_user.change_username(new_username)
+                # Update the system_manager dictionaries
+                self.system_manager.users[new_username] = self.current_user
+                del self.system_manager.users[old_username]
+                if old_username in self.system_manager.logged_in_users:
+                    self.system_manager.logged_in_users[new_username] = self.current_user
+                    del self.system_manager.logged_in_users[old_username]
+            
+            # If only password changed
+            elif new_password and new_username == self.current_user.username:
+                # Direct password change without old password verification for first login
+                self.current_user._password = self.current_user._hash_password(new_password)
+            
+            # If both changed
+            elif new_username != self.current_user.username and new_password:
+                # Store old username before changing it
+                old_username = self.current_user.username
+                # Update both username and password
+                self.current_user.set_credentials(new_username, new_password)
+                # Update the system_manager dictionaries
+                self.system_manager.users[new_username] = self.current_user
+                del self.system_manager.users[old_username]
+                if old_username in self.system_manager.logged_in_users:
+                    self.system_manager.logged_in_users[new_username] = self.current_user
+                    del self.system_manager.logged_in_users[old_username]
+            
+            # Mark first login as complete
+            self.current_user.first_login = False
+            
+            # Save the changes
+            self.system_manager.save_all_data()
+            
+            print("\nYour credentials have been updated successfully!")
+        else:
+            # Even if no changes, mark first login as complete
+            self.current_user.first_login = False
+            self.system_manager.save_all_data()
+            print("\nYou've kept your original credentials.")
+        
+        input("Press Enter to continue to your account...")
     
     def show_user_menu(self):
         """Display user-specific menu based on user type."""

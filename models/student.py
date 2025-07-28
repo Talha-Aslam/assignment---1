@@ -16,7 +16,7 @@ class Student(User):
     academic records, and CGPA tracking.
     """
     
-    def __init__(self, username, password, name, email, user_id, student_id=None):
+    def __init__(self, username, password, name, email, user_id, student_id=None, first_login=False):
         """
         Initialize a Student object.
         
@@ -27,8 +27,9 @@ class Student(User):
             email (str): Email address
             user_id (str): Unique user identifier
             student_id (str): Unique student identifier
+            first_login (bool): Flag indicating if this is the user's first login
         """
-        super().__init__(username, password, name, email, user_id)
+        super().__init__(username, password, name, email, user_id, first_login)
         self.student_id = student_id or user_id
         self.enrolled_courses = []  # List of course IDs
         self.academic_records = {}  # Semester-wise records
@@ -231,7 +232,8 @@ class Student(User):
             data['name'],
             data['email'],
             data['user_id'],
-            data.get('student_id')
+            data.get('student_id'),
+            data.get('first_login', False)  # Add first_login flag
         )
         student._password = data['password']  # Use hashed password
         student.enrolled_courses = data.get('enrolled_courses', [])
