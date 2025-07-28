@@ -24,8 +24,8 @@ def get_yes_no_input(prompt: str) -> bool:
     Returns:
         bool: True for yes, False for no
     """
-    valid_yes = ['y', 'yes', 'yeah', 'yep', 'true', '1']
-    valid_no = ['n', 'no', 'nope', 'false', '0']
+    valid_yes = ['y']
+    valid_no = ['n']
     
     while True:
         try:
@@ -37,8 +37,8 @@ def get_yes_no_input(prompt: str) -> bool:
                 return False
             else:
                 print("[X] Invalid input! Please enter:")
-                print("   - For YES: y, yes, yeah, yep, true, 1")
-                print("   - For NO: n, no, nope, false, 0")
+                print("   - For YES: y")
+                print("   - For NO: n")
                 continue
 
         except KeyboardInterrupt:
@@ -46,80 +46,10 @@ def get_yes_no_input(prompt: str) -> bool:
             return False
 
 
-def display_welcome_message():
-    """Display welcome message and system information."""
-    print("\n" + "="*80)
-    print("                    WELCOME TO PORTAL SYSTEM")
-    print("                  Console-Based Education Portal")
-    print("="*80)
-    print("                    Developed using Python OOP")
-    print("                   Supports Students, Teachers & Admins")
-    print("="*80)
-    print(f"                    System Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print("="*80)
-
-
-def display_system_info():
-    """Display system information and features."""
-    print("\n" + "="*60)
-    print("                    SYSTEM FEATURES")
-    print("="*60)
-    print("STUDENT FEATURES:")
-    print("• Course enrollment and unenrollment")
-    print("• Academic records and CGPA tracking")
-    print("• CGPA trend visualization (matplotlib)")
-    print("• Teacher profile viewing")
-    print("• Password management")
-    print()
-    print("TEACHER FEATURES:")
-    print("• Profile management with continuous editing")
-    print("• Salary slip viewing")
-    print("• Personal information updates with cancel options")
-    print("• Course assignments")
-    print("• Contact management with safe removal")
-    print("• Password management")
-    print()
-    print("ADMIN FEATURES:")
-    print("• User creation and management")
-    print("• System-wide data access")
-    print("• Enrollment management")
-    print("• System statistics and logs")
-    print("• Auto-generated user credentials")
-    print("="*60)
-
-
-def display_default_credentials():
-    """Display default login credentials."""
-    print("\n" + "="*60)
-    print("                DEFAULT LOGIN CREDENTIALS")
-    print("="*60)
-    print("ADMIN ACCESS:")
-    print("  Username: admin")
-    print("  Password: admin123")
-    print()
-    print("STUDENT ACCESS (Examples):")
-    print("  Username: student1, student2, ..., student15")
-    print("  Password: pass123 (for all students)")
-    print()
-    print("TEACHER ACCESS (Examples):")
-    print("  Username: teacher1, teacher2, ..., teacher15")
-    print("  Password: teach123 (for all teachers)")
-    print("="*60)
-
-
 def main():
     """Main application function."""
     try:
-        # Display welcome information
-        display_welcome_message()
-        
-        # Ask if user wants to see system info
-        show_info = get_yes_no_input("\nWould you like to see system features and default credentials? (y/n)")
-        if show_info:
-            display_system_info()
-            display_default_credentials()
-            input("\nPress Enter to continue to login...")
-        
+                
         # Initialize system manager
         print("\nInitializing Portal System...")
         system_manager = SystemManager()

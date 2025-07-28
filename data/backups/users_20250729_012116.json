@@ -6,7 +6,7 @@
     "email": "admin@portal.edu",
     "user_id": "ADM001",
     "user_type": "Admin",
-    "last_login": null,
+    "last_login": "2025-07-28T22:53:33.159646",
     "first_login": false,
     "admin_id": "ADM001",
     "access_level": "full",
@@ -2258,11 +2258,9 @@
     "user_id": "STU202507287998",
     "user_type": "Student",
     "last_login": null,
-    "first_login": false,
+    "first_login": true,
     "student_id": "STU202507287998",
-    "enrolled_courses": [
-      "ENG101"
-    ],
+    "enrolled_courses": [],
     "academic_records": {},
     "cgpa_history": [],
     "semester_data": {}
