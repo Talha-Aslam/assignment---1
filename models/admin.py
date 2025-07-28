@@ -253,12 +253,12 @@ class Admin(User):
     
     def manage_enrollments(self, course_manager):
         """
-        Manage course enrollments.
+        Show course enrollments.
         
         Args:
             course_manager: Course manager object
         """
-        print(f"\n=== Enrollment Management ===")
+        print(f"\n=== Enrollment Information ===")
         courses = course_manager.get_all_courses()
         
         for course in courses:
@@ -379,7 +379,7 @@ class Admin(User):
         print("1. Create New User")
         print("2. Delete User")
         print("3. View All System Data")
-        print("4. Manage Enrollments")
+        print("4. Show Enrollments")
         print("5. View System Statistics")
         print("6. View System Logs")
         print("7. Change Password")

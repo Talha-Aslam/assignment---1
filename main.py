@@ -164,96 +164,107 @@ def main():
         sys.exit(1)
 
 
-def check_dependencies():
+def check_dependencies(verbose=False):
     """Check if required dependencies are available."""
-    print("Checking system dependencies...")
+    if verbose:
+        print("Checking system dependencies...")
     
     missing_deps = []
     
     try:
         import json
-        print("✓ json module available")
+        if verbose:
+            print("✓ json module available")
     except ImportError:
         missing_deps.append("json (built-in)")
     
     try:
         import os
-        print("✓ os module available")
+        if verbose:
+            print("✓ os module available")
     except ImportError:
         missing_deps.append("os (built-in)")
     
     try:
         import datetime
-        print("✓ datetime module available")
+        if verbose:
+            print("✓ datetime module available")
     except ImportError:
         missing_deps.append("datetime (built-in)")
     
     try:
         import matplotlib
-        print("✓ matplotlib available")
+        if verbose:
+            print("✓ matplotlib available")
     except ImportError:
-        print("⚠ matplotlib not available (CGPA graphs will not work)")
-        print("  Install with: pip install matplotlib")
+        if verbose:
+            print("⚠ matplotlib not available (CGPA graphs will not work)")
+            print("  Install with: pip install matplotlib")
     
     if missing_deps:
         print(f"\n❌ Missing critical dependencies: {', '.join(missing_deps)}")
         print("Please install missing dependencies and try again.")
         return False
     
-    print("✓ All critical dependencies satisfied")
+    if verbose:
+        print("✓ All critical dependencies satisfied")
     return True
 
 
-def setup_data_directory():
+def setup_data_directory(verbose=False):
     """Ensure data directory exists."""
     data_dir = os.path.join(os.path.dirname(__file__), 'data')
     if not os.path.exists(data_dir):
         try:
             os.makedirs(data_dir)
-            print(f"✓ Created data directory: {data_dir}")
+            if verbose:
+                print(f"✓ Created data directory: {data_dir}")
         except Exception as e:
             print(f"❌ Failed to create data directory: {e}")
             return False
-    else:
+    elif verbose:
         print(f"✓ Data directory exists: {data_dir}")
     
     return True
 
 
-def run_system_diagnostics():
+def run_system_diagnostics(verbose=False):
     """Run basic system diagnostics."""
-    print("\n" + "="*50)
-    print("           SYSTEM DIAGNOSTICS")
-    print("="*50)
+    if verbose:
+        print("\n" + "="*50)
+        print("           SYSTEM DIAGNOSTICS")
+        print("="*50)
     
     # Check Python version
     python_version = sys.version_info
-    print(f"Python Version: {python_version.major}.{python_version.minor}.{python_version.micro}")
+    if verbose:
+        print(f"Python Version: {python_version.major}.{python_version.minor}.{python_version.micro}")
     
     if python_version.major < 3 or (python_version.major == 3 and python_version.minor < 7):
-        print("⚠ Warning: Python 3.7+ recommended for optimal performance")
-    else:
+        if verbose:
+            print("⚠ Warning: Python 3.7+ recommended for optimal performance")
+    elif verbose:
         print("✓ Python version compatible")
     
     # Check dependencies
-    if not check_dependencies():
+    if not check_dependencies(verbose):
         return False
     
     # Setup data directory
-    if not setup_data_directory():
+    if not setup_data_directory(verbose):
         return False
     
-    print("\n✓ All system checks passed")
-    print("="*50)
+    if verbose:
+        print("\n✓ All system checks passed")
+        print("="*50)
     return True
 
 
 if __name__ == "__main__":
     """Application entry point."""
-    print("Starting Portal System...")
     
-    # Run diagnostics first
-    if not run_system_diagnostics():
+    # Run diagnostics silently (no verbose output)
+    if not run_system_diagnostics(verbose=False):
         print("System diagnostics failed. Please resolve issues and try again.")
         sys.exit(1)
     

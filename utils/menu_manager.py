@@ -968,9 +968,9 @@ class MenuManager:
         input("\nPress Enter to continue...")
     
     def handle_admin_manage_enrollments(self):
-        """Handle managing enrollments."""
+        """Handle showing enrollments."""
         self.clear_screen()
-        self.print_header("Enrollment Management")
+        self.print_header("Enrollment Information")
         self.current_user.manage_enrollments(self.system_manager)
         input("\nPress Enter to continue...")
     
