@@ -6,7 +6,7 @@
     "email": "admin@portal.edu",
     "user_id": "ADM001",
     "user_type": "Admin",
-    "last_login": "2025-07-28T15:11:36.603138",
+    "last_login": "2025-07-28T00:02:06.753583",
     "admin_id": "ADM001",
     "access_level": "full",
     "system_logs": [
@@ -65,13 +65,6 @@
         "action": "create_user_Teacher",
         "details": "Created Teacher account for teacher20 (ID: TEA202507286402)",
         "timestamp": "2025-07-28T00:04:21.989866"
-      },
-      {
-        "log_id": "LOG20250728151157487",
-        "user_id": "ADM001",
-        "action": "create_user_Student",
-        "details": "Created Student account for student20 (ID: STU202507286515)",
-        "timestamp": "2025-07-28T15:11:57.612946"
       }
     ],
     "created_users": [
@@ -172,17 +165,6 @@
         "teacher_id": "TEA202507286402",
         "department": "cs",
         "salary": 10.0
-      },
-      {
-        "user_id": "STU202507286515",
-        "username": "student286515",
-        "password": "JgTm1xAY",
-        "name": "student20",
-        "email": "student20@gmail.com",
-        "user_type": "Student",
-        "created_by": "ADM001",
-        "created_date": "2025-07-28T15:11:57.612919",
-        "student_id": "STU202507286515"
       }
     ]
   },
@@ -2428,19 +2410,5 @@
     "courses_taught": [],
     "salary_slips": [],
     "profile_updates": []
-  },
-  {
-    "username": "student286515",
-    "password": "JgTm1xAY",
-    "name": "student20",
-    "email": "student20@gmail.com",
-    "user_id": "STU202507286515",
-    "user_type": "Student",
-    "last_login": null,
-    "student_id": "STU202507286515",
-    "enrolled_courses": [],
-    "academic_records": {},
-    "cgpa_history": [],
-    "semester_data": {}
   }
 ]

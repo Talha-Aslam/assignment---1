@@ -40,7 +40,7 @@ class SystemManager:
     
     def load_all_data(self):
         """Load all data from files."""
-        print("Loading system data...")
+        # Debug print removed
         
         # Load users
         users_data = self.file_manager.load_data('users')
@@ -57,11 +57,11 @@ class SystemManager:
             course_key = f"{course.course_id}-{course.section}"
             self.courses[course_key] = course
         
-        print(f"Loaded {len(self.users)} users and {len(self.courses)} course sections.")
+        # Debug print removed
     
     def save_all_data(self):
         """Save all data to files."""
-        print("Saving system data...")
+        # Debug print removed
         
         # Save users
         users_data = [user.to_dict() for user in self.users.values()]
@@ -71,7 +71,7 @@ class SystemManager:
         courses_data = [course.to_dict() for course in self.courses.values()]
         self.file_manager.save_data('courses', courses_data)
         
-        print("Data saved successfully.")
+        # Debug print removed
     
     def create_user_from_data(self, user_data: Dict[str, Any]) -> Optional[User]:
         """
@@ -85,8 +85,7 @@ class SystemManager:
         """
         try:
             user_type = user_data.get('user_type', '').lower()
-            print(f"Creating user of type: {user_type}")
-            print(f"User data: {user_data}")
+            # Debug prints removed
             
             if user_type == 'student':
                 return Student.from_dict(user_data)
@@ -95,18 +94,16 @@ class SystemManager:
             elif user_type == 'admin':
                 return Admin.from_dict(user_data)
             else:
-                print(f"Unknown user type: {user_type}")
+                # Debug print removed
                 return None
                 
         except Exception as e:
-            print(f"Error creating user from data: {e}")
-            import traceback
-            traceback.print_exc()
+            # Debug prints and traceback removed
             return None
     
     def initialize_default_data(self):
         """Initialize system with default users and courses."""
-        print("Initializing default data...")
+        # Debug print removed
         
         # Create default admin
         admin = Admin(
@@ -220,7 +217,7 @@ class SystemManager:
         
         # Save the initialized data
         self.save_all_data()
-        print("Default data initialized successfully.")
+        # Debug print removed
     
     def authenticate_user(self, username: str, password: str) -> Optional[User]:
         """
@@ -359,13 +356,13 @@ class SystemManager:
                 break
         
         if not student:
-            print(f"Student {student_id} not found.")
+            # Debug print removed
             return False
         
         # Check if student is already enrolled in any section of this course
         existing_section = self.find_student_enrolled_section(student_id, course_id)
         if existing_section:
-            print(f"Student {student_id} is already enrolled in {course_id} Section {existing_section.section}")
+            # Debug print removed
             return False
         
         # Find the target course section
@@ -374,7 +371,7 @@ class SystemManager:
             # Specific section requested
             target_course = self.get_course_by_id_and_section(course_id, section)
             if not target_course:
-                print(f"Course {course_id} Section {section} not found.")
+                # Debug print removed
                 return False
         else:
             # Find first available section
@@ -385,7 +382,7 @@ class SystemManager:
                     break
             
             if not target_course:
-                print(f"No available sections found for course {course_id}")
+                # Debug print removed
                 return False
         
         # Attempt enrollment
@@ -417,13 +414,13 @@ class SystemManager:
                 break
         
         if not student:
-            print(f"Student {student_id} not found.")
+            # Debug print removed
             return False
         
         # Find which section the student is enrolled in
         enrolled_section = self.find_student_enrolled_section(student_id, course_id)
         if not enrolled_section:
-            print(f"Student {student_id} is not enrolled in course {course_id}")
+            # Debug print removed
             return False
         
         # Remove student from the section
@@ -477,21 +474,26 @@ class SystemManager:
             # Check if user already exists to avoid duplicates
             username = user_data.get('username')
             if username in self.users:
-                print(f"User with username {username} already exists!")
+                # Debug print removed
                 return False
+            
+            # Remove plain password before saving to ensure it's not stored
+            user_data_for_saving = user_data.copy()
+            if 'plain_password' in user_data_for_saving:
+                del user_data_for_saving['plain_password']
                 
             # Create a User object from the data
-            user = self.create_user_from_data(user_data)
+            user = self.create_user_from_data(user_data_for_saving)
             if user:
                 # Add to users dictionary with username as key
                 self.users[user.username] = user
                 # Save all data to files
                 self.save_all_data()
-                print(f"User {username} saved successfully!")
+                # Debug print removed
                 return True
             return False
         except Exception as e:
-            print(f"Error saving user: {e}")
+            # Debug print removed
             return False
     
     def delete_user(self, user_id: str) -> bool:
@@ -516,7 +518,7 @@ class SystemManager:
                     break
             
             if not user_to_delete:
-                print(f"User with ID {user_id} not found.")
+                # Debug print removed
                 return False
             
             # Remove user from system

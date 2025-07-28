@@ -95,27 +95,43 @@ class Admin(User):
         characters = string.ascii_letters + string.digits
         return ''.join(random.choices(characters, k=length))
     
-    def create_user(self, user_type, name, email, **kwargs):
+    def create_user(self, user_type, name, email, custom_username=None, custom_password=None, **kwargs):
         """
-        Create a new user with auto-generated credentials.
+        Create a new user with admin-provided or auto-generated credentials.
         
         Args:
             user_type (str): Type of user to create
             name (str): User's full name
             email (str): User's email
+            custom_username (str, optional): Admin-provided username
+            custom_password (str, optional): Admin-provided password
             **kwargs: Additional user-specific parameters
             
         Returns:
             dict: User credentials and information
         """
         user_id = self.generate_user_id(user_type)
-        username = f"{user_type.lower()}{user_id[-6:]}"  # Last 6 chars of ID
-        password = self.generate_password()
+        
+        # Use custom username if provided, otherwise generate one
+        if custom_username:
+            username = custom_username
+        else:
+            username = f"{user_type.lower()}{user_id[-6:]}"  # Last 6 chars of ID
+        
+        # Use custom password if provided, otherwise generate one
+        if custom_password:
+            password = custom_password
+        else:
+            password = self.generate_password()
+        
+        # Hash the password for storage
+        hashed_password = self._hash_password(password)
         
         user_data = {
             'user_id': user_id,
             'username': username,
-            'password': password,
+            'password': hashed_password,  # Store hashed password
+            'plain_password': password,   # Keep plain password for display only
             'name': name,
             'email': email,
             'user_type': user_type,
@@ -126,15 +142,22 @@ class Admin(User):
         # Add user-specific data
         if user_type.lower() == 'student':
             user_data['student_id'] = user_id
+            user_data['enrolled_courses'] = []  # Initialize empty list for enrolled courses
         elif user_type.lower() == 'teacher':
             user_data['teacher_id'] = user_id
             user_data['department'] = kwargs.get('department', '')
             user_data['salary'] = kwargs.get('salary', 0.0)
+            user_data['courses_teaching'] = []  # Initialize empty list for taught courses
         elif user_type.lower() == 'admin':
             user_data['admin_id'] = user_id
             user_data['access_level'] = kwargs.get('access_level', 'limited')
         
-        self.created_users.append(user_data)
+        # Remove plain_password before adding to created_users to avoid storing plain passwords
+        user_data_for_storage = user_data.copy()
+        if 'plain_password' in user_data_for_storage:
+            del user_data_for_storage['plain_password']
+        
+        self.created_users.append(user_data_for_storage)
         
         # Log the action
         self.log_action(
@@ -142,11 +165,7 @@ class Admin(User):
             f"Created {user_type} account for {name} (ID: {user_id})"
         )
         
-        print(f"User created successfully!")
-        print(f"Username: {username}")
-        print(f"Password: {password}")
-        print(f"User ID: {user_id}")
-        
+        # Return the user data with plain password for display in menu
         return user_data
     
     def delete_user(self, user_id, user_manager):

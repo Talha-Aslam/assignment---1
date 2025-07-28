@@ -819,14 +819,48 @@ class MenuManager:
             input("Press Enter to continue...")
             return
         
+        # Ask if admin wants to set a custom username and password
+        print("\nWould you like to set a custom username and password?")
+        print("(If no, system will generate them automatically)")
+        custom_creds = self.get_yes_no_input("Set custom credentials (y/n)")
+        
+        custom_username = None
+        custom_password = None
+        if custom_creds:
+            custom_username = self.get_user_input("Enter username")
+            custom_password = self.get_user_input("Enter password")
+            
+            if not custom_username or not custom_password:
+                print("Username and password cannot be empty.")
+                input("Press Enter to continue...")
+                return
+        
         kwargs = {}
         if user_type == "Teacher":
             department = self.get_user_input("Enter department")
             salary = self.get_user_input("Enter salary", float)
             kwargs = {"department": department, "salary": salary}
         
-        user_data = self.current_user.create_user(user_type, name, email, **kwargs)
-        self.system_manager.save_user(user_data)
+        user_data = self.current_user.create_user(
+            user_type, name, email, 
+            custom_username=custom_username, 
+            custom_password=custom_password, 
+            **kwargs
+        )
+        
+        # Store the plain password before saving (as save_user might remove it)
+        plain_password = user_data.get('plain_password', user_data['password'])
+        
+        if self.system_manager.save_user(user_data):
+            print("\nUser created and saved successfully!")
+            print(f"User information has been added to the system.")
+            print(f"The user can now log in with:")
+            print(f"  Username: {user_data['username']}")
+            print(f"  Password: {plain_password}")
+        else:
+            print("\nFailed to save user. Username might already exist.")
+            
+        input("\nPress Enter to continue...")
         
         input("Press Enter to continue...")
     
