@@ -164,9 +164,8 @@ class MenuManager:
             # Check if this is the user's first login
             if user.first_login:
                 self.handle_first_time_login()
-            else:
-                input("Press Enter to continue...")
-                
+            
+            # Show user menu after login or first-time setup
             self.show_user_menu()
         else:
             print(f"\nInvalid credentials or incorrect user type.")
@@ -178,33 +177,20 @@ class MenuManager:
         self.print_header("First-Time Login Setup")
         
         print("Welcome to the Portal System! This appears to be your first login.")
-        print("For security, we recommend that you set up your own credentials.")
+        print("For security, please set a password of your choice.")
         
-        change_creds = self.get_yes_no_input("\nWould you like to set a custom username and password? (y/n)")
-        if not change_creds:
-            print("\nYou can change your credentials later from your account settings.")
-            input("Press Enter to continue...")
-            return
+        # Password setup is mandatory for first login
+        print("\nPlease set your password:")
         
-        # Get new username
-        while True:
-            new_username = self.get_user_input("\nEnter new username (or leave blank to keep current)")
-            if not new_username:
-                new_username = self.current_user.username
-                break
-                
-            # Check if username already exists
-            if new_username != self.current_user.username and new_username in self.system_manager.users:
-                print("This username is already taken. Please choose a different one.")
-                continue
-            break
+        # Username will remain the one set by the admin
+        new_username = self.current_user.username
         
         # Get new password
         while True:
-            new_password = self.get_user_input("Enter new password (or leave blank to keep current)")
+            new_password = self.get_user_input("Enter new password")
             if not new_password:
-                # Keep current password
-                break
+                print("Password cannot be empty.")
+                continue
                 
             confirm_password = self.get_user_input("Confirm new password")
             if new_password != confirm_password:
@@ -212,53 +198,17 @@ class MenuManager:
                 continue
             break
         
-        # Update credentials if changed
-        if (new_username != self.current_user.username or new_password):
-            # If only username changed
-            if new_username != self.current_user.username and not new_password:
-                # Store old username before changing it
-                old_username = self.current_user.username
-                # Change the username in the user object
-                self.current_user.change_username(new_username)
-                # Update the system_manager dictionaries
-                self.system_manager.users[new_username] = self.current_user
-                del self.system_manager.users[old_username]
-                if old_username in self.system_manager.logged_in_users:
-                    self.system_manager.logged_in_users[new_username] = self.current_user
-                    del self.system_manager.logged_in_users[old_username]
+        # Update only the password
+        # Direct password change without old password verification for first login
+        self.current_user._password = self.current_user._hash_password(new_password)
             
-            # If only password changed
-            elif new_password and new_username == self.current_user.username:
-                # Direct password change without old password verification for first login
-                self.current_user._password = self.current_user._hash_password(new_password)
-            
-            # If both changed
-            elif new_username != self.current_user.username and new_password:
-                # Store old username before changing it
-                old_username = self.current_user.username
-                # Update both username and password
-                self.current_user.set_credentials(new_username, new_password)
-                # Update the system_manager dictionaries
-                self.system_manager.users[new_username] = self.current_user
-                del self.system_manager.users[old_username]
-                if old_username in self.system_manager.logged_in_users:
-                    self.system_manager.logged_in_users[new_username] = self.current_user
-                    del self.system_manager.logged_in_users[old_username]
-            
-            # Mark first login as complete
-            self.current_user.first_login = False
-            
-            # Save the changes
-            self.system_manager.save_all_data()
-            
-            print("\nYour credentials have been updated successfully!")
-        else:
-            # Even if no changes, mark first login as complete
-            self.current_user.first_login = False
-            self.system_manager.save_all_data()
-            print("\nYou've kept your original credentials.")
+        # Mark first login as complete
+        self.current_user.first_login = False
         
-        input("Press Enter to continue to your account...")
+        # Save the changes
+        self.system_manager.save_all_data()
+        
+        print("\nYour password has been updated successfully!")
     
     def show_user_menu(self):
         """Display user-specific menu based on user type."""
@@ -337,7 +287,7 @@ class MenuManager:
             self.current_user.display_menu()
             
             choice = self.get_user_input("Select an option", int,
-                                       lambda x: 1 <= x <= 8)
+                                       lambda x: 1 <= x <= 9)
             
             if choice is None:
                 continue
@@ -357,6 +307,8 @@ class MenuManager:
             elif choice == 7:
                 self.handle_change_password()
             elif choice == 8:
+                self.handle_admin_export_users()
+            elif choice == 9:
                 self.handle_logout()
                 break
     
@@ -913,21 +865,31 @@ class MenuManager:
             input("Press Enter to continue...")
             return
         
-        # Ask if admin wants to set a custom username and password
-        print("\nWould you like to set a custom username and password?")
-        print("(If no, system will generate them automatically)")
-        custom_creds = self.get_yes_no_input("Set custom credentials (y/n)")
+        # Ask admin to set username and password for the user
+        print("\nPlease set the username and password for the user:")
         
-        custom_username = None
-        custom_password = None
-        if custom_creds:
-            custom_username = self.get_user_input("Enter username")
-            custom_password = self.get_user_input("Enter password")
+        from utils.data_validator import DataValidator
+        
+        # Ask for username with option to generate automatically
+        print("(Leave blank to generate a username automatically)")
+        custom_username = self.get_user_input("Enter username")
+        
+        # If username is not blank, validate it
+        if custom_username:
+            validation_result = DataValidator.validate_username(custom_username)
+            while not validation_result['valid']:
+                print(f"Invalid username: {validation_result['message']}")
+                custom_username = self.get_user_input("Enter username (or leave blank to generate automatically)")
+                
+                # If user decides to let system generate username
+                if not custom_username:
+                    break
+                    
+                validation_result = DataValidator.validate_username(custom_username)
             
-            if not custom_username or not custom_password:
-                print("Username and password cannot be empty.")
-                input("Press Enter to continue...")
-                return
+        # Ask for password
+        print("(Leave blank to generate a password automatically)")
+        custom_password = self.get_user_input("Enter password")
         
         kwargs = {}
         if user_type == "Teacher":
@@ -955,8 +917,6 @@ class MenuManager:
             print("\nFailed to save user. Username might already exist.")
             
         input("\nPress Enter to continue...")
-        
-        input("Press Enter to continue...")
     
     def handle_admin_delete_user(self):
         """Handle deleting users."""
@@ -1003,6 +963,48 @@ class MenuManager:
         self.clear_screen()
         self.print_header("System Logs")
         self.current_user.view_logs()
+        input("\nPress Enter to continue...")
+        
+    def handle_admin_export_users(self):
+        """Handle exporting all user data."""
+        self.clear_screen()
+        self.print_header("Export Users Data")
+        
+        # Get all users from the system
+        all_users = self.system_manager.get_all_users_data()
+        
+        if not all_users:
+            print("No users found in the system.")
+            input("\nPress Enter to continue...")
+            return
+            
+        print(f"Found {len(all_users)} users in the system.")
+        
+        # Ask for custom filename or use default
+        print("\nExport options:")
+        print("1. Use default filename (recommended)")
+        print("2. Specify custom filename")
+        
+        option = self.get_user_input("Select option", int, lambda x: x in [1, 2])
+        
+        file_path = None
+        if option == 2:
+            filename = self.get_user_input("Enter filename (without extension)")
+            if filename:
+                import os
+                export_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'exports')
+                file_path = os.path.join(export_dir, f"{filename}.csv")
+        
+        # Export the data
+        success, result = self.current_user.export_users_data(all_users, file_path)
+        
+        if success:
+            print(f"\n✓ User data exported successfully!")
+            print(f"File saved to: {result}")
+        else:
+            print(f"\n❌ Failed to export user data:")
+            print(f"Error: {result}")
+            
         input("\nPress Enter to continue...")
     
     # Common handlers

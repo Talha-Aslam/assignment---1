@@ -6,7 +6,7 @@
     "email": "admin@portal.edu",
     "user_id": "ADM001",
     "user_type": "Admin",
-    "last_login": "2025-07-28T16:39:43.619961",
+    "last_login": "2025-07-28T16:25:38.143860",
     "first_login": false,
     "admin_id": "ADM001",
     "access_level": "full",
@@ -94,20 +94,6 @@
         "action": "create_user_Student",
         "details": "Created Student account for student35 (ID: STU202507283691)",
         "timestamp": "2025-07-28T16:26:09.416360"
-      },
-      {
-        "log_id": "LOG20250728163602517",
-        "user_id": "ADM001",
-        "action": "create_user_Student",
-        "details": "Created Student account for student36 (ID: STU202507283504)",
-        "timestamp": "2025-07-28T16:36:02.013545"
-      },
-      {
-        "log_id": "LOG20250728164032788",
-        "user_id": "ADM001",
-        "action": "create_user_Student",
-        "details": "Created Student account for student37 (ID: STU202507285498)",
-        "timestamp": "2025-07-28T16:40:32.855073"
       }
     ],
     "created_users": [
@@ -257,32 +243,6 @@
         "created_date": "2025-07-28T16:26:09.416321",
         "first_login": true,
         "student_id": "STU202507283691",
-        "enrolled_courses": []
-      },
-      {
-        "user_id": "STU202507283504",
-        "username": "student36",
-        "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
-        "name": "student36",
-        "email": "student36@gmail.com",
-        "user_type": "Student",
-        "created_by": "ADM001",
-        "created_date": "2025-07-28T16:36:02.013516",
-        "first_login": true,
-        "student_id": "STU202507283504",
-        "enrolled_courses": []
-      },
-      {
-        "user_id": "STU202507285498",
-        "username": "student37",
-        "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
-        "name": "student37",
-        "email": "student37@gmail.com",
-        "user_type": "Student",
-        "created_by": "ADM001",
-        "created_date": "2025-07-28T16:40:32.855036",
-        "first_login": true,
-        "student_id": "STU202507285498",
         "enrolled_courses": []
       }
     ]
@@ -2623,36 +2583,6 @@
     "last_login": null,
     "first_login": true,
     "student_id": "STU202507283691",
-    "enrolled_courses": [],
-    "academic_records": {},
-    "cgpa_history": [],
-    "semester_data": {}
-  },
-  {
-    "username": "student36",
-    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
-    "name": "student36",
-    "email": "student36@gmail.com",
-    "user_id": "STU202507283504",
-    "user_type": "Student",
-    "last_login": null,
-    "first_login": true,
-    "student_id": "STU202507283504",
-    "enrolled_courses": [],
-    "academic_records": {},
-    "cgpa_history": [],
-    "semester_data": {}
-  },
-  {
-    "username": "student37",
-    "password": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
-    "name": "student37",
-    "email": "student37@gmail.com",
-    "user_id": "STU202507285498",
-    "user_type": "Student",
-    "last_login": null,
-    "first_login": true,
-    "student_id": "STU202507285498",
     "enrolled_courses": [],
     "academic_records": {},
     "cgpa_history": [],

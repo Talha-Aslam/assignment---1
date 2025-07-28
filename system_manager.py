@@ -72,6 +72,15 @@ class SystemManager:
         self.file_manager.save_data('courses', courses_data)
         
         # Debug print removed
+        
+    def get_all_users_data(self):
+        """
+        Get all users data in dictionary format.
+        
+        Returns:
+            list: List of user dictionaries
+        """
+        return [user.to_dict() for user in self.users.values()]
     
     def create_user_from_data(self, user_data: Dict[str, Any]) -> Optional[User]:
         """

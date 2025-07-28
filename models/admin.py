@@ -98,14 +98,14 @@ class Admin(User):
     
     def create_user(self, user_type, name, email, custom_username=None, custom_password=None, **kwargs):
         """
-        Create a new user with admin-provided or auto-generated credentials.
+        Create a new user with either admin-provided or system-generated username and password.
         
         Args:
             user_type (str): Type of user to create
             name (str): User's full name
             email (str): User's email
-            custom_username (str, optional): Admin-provided username
-            custom_password (str, optional): Admin-provided password
+            custom_username (str, optional): Admin-provided username (if not provided, one will be generated)
+            custom_password (str, optional): Admin-provided password (if not provided, one will be generated)
             **kwargs: Additional user-specific parameters
             
         Returns:
@@ -330,12 +330,89 @@ class Admin(User):
         print("5. View System Statistics")
         print("6. View System Logs")
         print("7. Change Password")
-        print("8. Logout")
+        print("8. Export Users Data")
+        print("9. Logout")
         print("-" * 30)
     
     def get_user_type(self):
         """Return user type."""
         return "Admin"
+    
+    def export_users_data(self, all_users, file_path=None):
+        """
+        Export all users' data to a file.
+        
+        Args:
+            all_users (list): List of user dictionaries
+            file_path (str, optional): Path to save the file, if None, uses a default path
+            
+        Returns:
+            tuple: (bool, str) Success status and file path or error message
+        """
+        import os
+        import csv
+        import datetime
+        
+        try:
+            # Create export directory if it doesn't exist
+            export_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'exports')
+            os.makedirs(export_dir, exist_ok=True)
+            
+            # Generate default filename with timestamp if not provided
+            if not file_path:
+                timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+                file_path = os.path.join(export_dir, f"users_export_{timestamp}.csv")
+            
+            # Define fields to export (excluding sensitive info like hashed password)
+            fields = ['user_id', 'username', 'name', 'email', 'user_type', 'created_date']
+            
+            # Add user-type specific fields
+            student_fields = fields + ['student_id', 'enrolled_courses']
+            teacher_fields = fields + ['teacher_id', 'department', 'salary']
+            admin_fields = fields + ['admin_id', 'access_level']
+            
+            # Write to CSV file
+            with open(file_path, 'w', newline='') as csvfile:
+                writer = csv.writer(csvfile)
+                
+                # Write header
+                writer.writerow(['User ID', 'Username', 'Name', 'Email', 'User Type', 
+                                'Creation Date', 'Role-specific ID', 'Additional Info'])
+                
+                # Write user data
+                for user in all_users:
+                    user_type = user.get('user_type', '')
+                    row = [
+                        user.get('user_id', ''),
+                        user.get('username', ''),
+                        user.get('name', ''),
+                        user.get('email', ''),
+                        user_type,
+                        user.get('created_date', ''),
+                    ]
+                    
+                    # Add role-specific data
+                    if user_type.lower() == 'student':
+                        row.append(user.get('student_id', ''))
+                        row.append(f"Enrolled in {len(user.get('enrolled_courses', []))} courses")
+                    elif user_type.lower() == 'teacher':
+                        row.append(user.get('teacher_id', ''))
+                        row.append(f"Dept: {user.get('department', '')}, Salary: {user.get('salary', '')}")
+                    elif user_type.lower() == 'admin':
+                        row.append(user.get('admin_id', ''))
+                        row.append(f"Access: {user.get('access_level', '')}")
+                    
+                    writer.writerow(row)
+            
+            # Log the action
+            self.log_action("export_users", f"Exported users data to {file_path}")
+            
+            return True, file_path
+            
+        except Exception as e:
+            error_msg = f"Failed to export users data: {str(e)}"
+            self.log_action("export_users_error", error_msg)
+            return False, error_msg
     
     def to_dict(self):
         """Convert admin object to dictionary."""
