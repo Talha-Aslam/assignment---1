@@ -40,7 +40,6 @@ class SystemManager:
     
     def load_all_data(self):
         """Load all data from files."""
-        # Debug print removed
         
         # Load users
         users_data = self.file_manager.load_data('users')
